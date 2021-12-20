@@ -41,7 +41,13 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 3. ConfigMap - key/value 쌍으로 기밀이 아닌 데이터를 저장하는데 사용하는 API 오브젝트
 
 - Services and Ingress [Network]
-
+1. Services (L4 영역)
+  √ 여러 레플리카에 트래픽을 분산시키는 로드밸런서 (TCP, UDP 모두 가능)
+  √ 노드의 kube-proxy를 활용한 endpoint로 라우팅 되도록 처리
+2. DNS (Domain Name System)은 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발됨. (위키백과)
+  √ 기본 값인 CoreDNS를 애드온
+3. Ingress (L7 영역)
+  √ 클러스터 내의 서비스에 대한 외부 접근을 관리하는 API오브젝트이며, HTTP를 관리함
 
 ## Features
 In addition to the latest Neuroglancer features, KNeuroViz adds:
@@ -62,11 +68,6 @@ KNeuroVIz preprocessing setup manual
 4. cd igneous and pip install -r requirements.txt
 5. python setup.py develop
 6. Download KNeuroViz_preprocessing.py Tool from the python tool folder
-
-## Post-processing
-
-
-
 
 ## Background
 클라우드 네이티브에서 점점 더 중요한 역할을 하고 있으므로, 신속한 확장을 요하는 클라우드 네이티브 애플리케이션을 호스팅하는데 

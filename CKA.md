@@ -11,6 +11,7 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 - 쿠버네티스 리소스: 워크로드 오브젝트
 1. POD
 2. CNI 컨테이너 네트워크 인터페이스 (컨테이너 런타임)
+
 - 쿠버네티스 리소스: 컨트롤러 오브젝트
 1. ReplicaSet
 2. Deployment
@@ -18,7 +19,29 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 4. Service (로드밸런서 오브젝트)
 5. Ingress (로드밸런서 오브젝트)
 6. PV, PVC (스토리지 오브젝트)
-- 쿠버네티스 리소스: 컨트롤러 오브젝트
+
+- APIs / Access [접근/권한]
+1. Label과 Annotation
+2. API접근
+3. 인증서
+4. RBAC (Role Based Access Control) - Role, ClusterRole / RoleBinding, ClusterRoleBinding, ServiceAccount
+
+- Managing State with Deployment, Scheduling [Compute]
+1. Policy 정책 - (Node Selector, Node Affinity, Taint/Toleration)
+2. Multi Container Pod
+3. Namespace
+4. Label과 Selector
+5. Static pod
+6. 클러스터 노드 작업 (cordon/uncordon, drain, taint)
+7. 클러스터 업그레이드
+
+- Volumes and data [Storage]
+1. Persistent Volume(PV) - 관리자가 프로비저닝 or 스토리지 클래스를 사용하여 동적으로 프로비저닝한 클러스터의 스토리지
+2. Persistent Volume Claim(PVC) - 사용자의 스토리지에 대한 요청, 파드와 비슷
+3. ConfigMap - key/value 쌍으로 기밀이 아닌 데이터를 저장하는데 사용하는 API 오브젝트
+
+- Services and Ingress [Network]
+
 
 ## Features
 In addition to the latest Neuroglancer features, KNeuroViz adds:

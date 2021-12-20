@@ -49,6 +49,10 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 3. Ingress (L7 영역)
   √ 클러스터 내의 서비스에 대한 외부 접근을 관리하는 API오브젝트이며, HTTP를 관리함
 
+- Logging and Troubleshooting, Backup, Upgrade [Operation]
+1. SRE(Site Reliability Engineering) - 구글의 사이트 신뢰성 엔지니어링
+
+
 ## Features
 In addition to the latest Neuroglancer features, KNeuroViz adds:
 - Segmentation ID list window

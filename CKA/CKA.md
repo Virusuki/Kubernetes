@@ -63,4 +63,4 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 
 ## CKA 후기
 
-<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/CKA/Namuk%20Kim-CKA.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
+<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/CKA/Namuk%20Kim-CKA.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>

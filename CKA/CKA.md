@@ -44,10 +44,13 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 1. Services (L4 영역)
   - 여러 레플리카에 트래픽을 분산시키는 로드밸런서 (TCP, UDP 모두 가능)
   - 노드의 kube-proxy를 활용한 endpoint로 라우팅 되도록 처리
+
 2. DNS (Domain Name System)은 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발됨. (위키백과)
   √ 기본 값인 CoreDNS를 애드온
+
 3. Ingress (L7 영역)
   √ 클러스터 내의 서비스에 대한 외부 접근을 관리하는 API오브젝트이며, HTTP를 관리
+
 4. Networkpolicy 정책 - Label을 사용하여 pod/namespace를 지정 및 pod/namespace로 유입되는 모든 네트워크 트래픽을 구성
 
 - Logging and Troubleshooting, Backup, Upgrade [Operation]
@@ -57,8 +60,8 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 3. 메트릭/로킹(센싱) -> 메트릭/로깅/트레이스(분석) -> 트러블슈팅
 4. 쿠버네티스의 logs 및 top, Side-car
 5. 백업 및 복구
--ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot save /tmp/snapshot-pre-boot.db
--ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot snapshot restore /tmp/snapshot-pre-boot.db
+  - ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot save /tmp/snapshot-pre-boot.db
+  - ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot snapshot restore /tmp/snapshot-pre-boot.db
   
 
 

@@ -47,59 +47,18 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 2. DNS (Domain Name System)은 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발됨. (위키백과)
   √ 기본 값인 CoreDNS를 애드온
 3. Ingress (L7 영역)
-  √ 클러스터 내의 서비스에 대한 외부 접근을 관리하는 API오브젝트이며, HTTP를 관리함
+  √ 클러스터 내의 서비스에 대한 외부 접근을 관리하는 API오브젝트이며, HTTP를 관리
+4. Networkpolicy 정책 - Label을 사용하여 pod/namespace를 지정 및 pod/namespace로 유입되는 모든 네트워크 트래픽을 구성
 
 - Logging and Troubleshooting, Backup, Upgrade [Operation]
-1. SRE(Site Reliability Engineering) - 구글의 사이트 신뢰성 엔지니어링
-
-
-## Features
-In addition to the latest Neuroglancer features, KNeuroViz adds:
-- Segmentation ID list window
-- 3D Neuron mesh export .ctm or .obj file (KBrain-map App) function 
-- Input data loading button
-- powerful serverless computing and multi storage(local/cloud)
-- Automated pre-processing for visualization of KNeuroViz
-- Processing and accessing terabytes of KNeuroViz 3D images, mesh obj, and ctm data
-
-## Installation
-## Pre-processing
-KNeuroVIz preprocessing setup manual
-
-1. sudo apt-get install g++ python3-dev # recommend Python3
-2. pip install numpy
-3. Download igneous source. You will want to use the master branch from the [KNeuroViz fork](https://github.com/KBRI-NCRG/igneous) of igneous.
-4. cd igneous and pip install -r requirements.txt
-5. python setup.py develop
-6. Download KNeuroViz_preprocessing.py Tool from the python tool folder
-
-## Background
-클라우드 네이티브에서 점점 더 중요한 역할을 하고 있으므로, 신속한 확장을 요하는 클라우드 네이티브 애플리케이션을 호스팅하는데 
-이상적인 플랫폼이다. K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확장 및 관리하는 서비스 중심의 아키텍처로 변화되면서 컨테이너를 오케스트레이션하는 쿠버네티스의 중요성이 높아졌습니다. MicroService와 데브옵스(Devops) 환경에서 application을 빠르게 개발 및 배포하는 애자일 방법론을 적용하기 위해 쿠버네티스와 다른 요소 간의 기술을 제공하는 클라우트 네이티브 오픈소스 S/W 필수적이며, 클라우드 제품이 실행되는 컨테이너가 기준이 되었습니다. 
-### Who is it for?
-해당 CKA 인증은 쿠버네티스 관리자, 클라우드 관리자 및 쿠버네티스 인스턴스를 관리 및 기타 IT 전문가로 생각해볼수가 있습니다.
-
-## CKA을 위한 요구되는 지식
-- 쿠버네티스 리소스: 워크로드 오브젝트
-	-> POD(고래 떼를 일컫음) : 하나 이상의 컨테이너로 구성, 스케일링의 단위, application 친숙(환경변수 / 정상 여부 상태 검사 정의 등 용이하다)
-	-> 컨테이너 네트워크 인터페이스 (CNI) : 파드 간의 연결
-	: 컨테이너 런타임(예:도커)은 CNI 플러그인 실행파일(예:Weave Net)을 호출하여 컨테이너의 네트워킹 네임스페이스에 인터페이스 추가/제거
-
-- 쿠버네티스 리소스: 컨트롤러 오브젝트
-	-> ReplicaSet: (Node 고장/ Pod삭제 등 발생 시) 파드 복제하여 파드 개수 유지
-	-> Delpoyment: old 버전 -> new 버전으로 복제, 레플리카셋 관리
-	-> DaemonSet:
-		√ 모든 노드에 동일한 파드를 실행시키고 싶은 경우에 활용
-		√ 리소스 모니터링, 로그 수집기 등 유용, 클러스터에 노드 추가,삭제 되면 자동으로 파드도 생성/삭제 됨
-
-- 쿠버네티스 리소스: 컨트롤러 오브젝트
--
-
-## 1.2. 마크다운의 장-단점
-### 1.2.1. 장점
-	1. 간결하다.
-	
-## CKA 선행 학습
-
+1. SRE(Site Reliability Engineering) - 구글의 사이트 신뢰성 엔지니어링 [참고사항]
+  √ SRE들은 Devops를 구현 : DevOps는 IT의 silo, ops, network, securiy 등을 허무는 방식, 가이드라인, 문화의 집합
+2. 메트릭&모니터링 / 용량 관리 / 변화 관리 / 긴급대응 / 문화
+3. 메트릭/로킹(센싱) -> 메트릭/로깅/트레이스(분석) -> 트러블슈팅
+4. 쿠버네티스의 logs 및 top, Side-car
+5. 백업 및 복구
+  √ ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot save /tmp/snapshot-pre-boot.db
+  √ ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot snapshot restore /tmp/snapshot-pre-boot.db
+  
 
 ## CKA 후기

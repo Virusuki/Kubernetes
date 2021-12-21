@@ -4,6 +4,9 @@
 - 각 사이드카 컨테이너는 공유 볼륨에서 특정 로그파일을 tail한 다음 stdout 스트림으로 리디렉션 하는 방식
 
 
+<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/CKA/img/Namuk%20Kim-cka.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
+
+
 
 ## 1. 주피터랩 
 ### 1.1. 멀티 컨테이너 파드

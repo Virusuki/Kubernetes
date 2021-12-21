@@ -5,7 +5,7 @@
 
 
 <img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
-
+<Kubernetes Doc 참조>
 
 
 ## 1. 주피터랩 

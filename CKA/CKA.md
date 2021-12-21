@@ -80,4 +80,4 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 프로젝트에서 쿠버네티스를 배포하면서 공부하며 알게된 다양한 방법들을 적용해보고,,,CKA를 취득하길 잘했다는 생각이 든다. 
 앞으로 데브옵스나 컨테이나 기술을 사용하거나 사용 중이면 누구나 충분히 자격증을 취득할 수 있으니, 도전해보길 적극 추천한다.
 
-<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/CKA/Namuk%20Kim-CKA.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
+<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/CKA/img/Namuk%20Kim-cka.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>

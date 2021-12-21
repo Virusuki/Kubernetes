@@ -6,7 +6,7 @@
 
 <img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
 
-사이드카 컨테이너 생성 실습 - nginx-sidecar.yaml
+사이드카 컨테이너 생성 실습 - [nginx-sidecar.yaml](https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/nginx-sidecar.yaml)
 
 
 <Kubernetes Doc 참조>

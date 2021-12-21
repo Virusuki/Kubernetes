@@ -5,18 +5,39 @@
 
 
 <img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
+
+사이드카 컨테이너 생성 실습
+# nginx-sidecar.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-sidecar
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: var-log-nginx
+      mountPath: /var/log/nginx
+    
+  - name: sidecar-access
+    image: busybox
+    args: [/bin/sh, -c, 'tail -n+1 -f /var/log/nginx/access.log']
+    volumeMounts:
+    - name: var-log-nginx
+      mountPath: /var/log/nginx
+    
+  - name: sidecar-error
+    image: busybox
+    args: [/bin/sh, -c, 'tail -n+1 -f /var/log/nginx/error.log']
+    volumeMounts:
+    - name: var-log-nginx
+      mountPath: /var/log/nginx
+  volumes:
+  - name: var-log-nginx
+    emptyDir: {}
+
+
 <Kubernetes Doc 참조>
-
-
-## 1. 주피터랩 
-### 1.1. 멀티 컨테이너 파드
-<백그라운드>
-
-<소스링크 참조>
-링크로 -> 
-
-### 1.2. ArgroCD & gitops 통합 및 가시화
-<백그라운드>
-
-<소스링크 참조>
-링크로 -> 

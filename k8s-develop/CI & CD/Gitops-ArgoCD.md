@@ -10,5 +10,18 @@
  설명하고자 합니다. Gitops의 기본 원칙과 패턴을 알아본 다음 구현체 중 하나인 ArgoCD를 활용해서 샘플 프로젝트에 적용하는 과정을 다루어 보고자 합니다.
  
  
-# What is Gitops?
+## What is Gitops?
+- Gitops는 Weaveworks라는 회사에서 처음 사용한 용어이며, 클라우드 네이티브 application을 타겟으로 한 지속적배포(Continuous Deployment)에 초점을 두고 있습니다.
+
+
+## Gitops의 모델
+1. 선언형 모델 (Declarative Model)   
+- 
+
+
+2. 단일 진실 공급원 (Single Source of Truth, SSOT)   
+- 
+
+
+## What is Gitops?
 - 

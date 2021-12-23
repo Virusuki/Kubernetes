@@ -70,11 +70,11 @@ K8S라고도 하며, Kubernetes는 컨테이너화된 application의 배포, 확
 4. 쿠버네티스의 logs 및 top, Side-car
 5. 백업 및 복구
   - ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot save /tmp/snapshot-pre-boot.db
-  - ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot snapshot restore /tmp/snapshot-pre-boot.db
+  - ETCDCTL_API=3 etcdctl --endpoints, --cacert, --cert, --key snapshot snapshot restore /tmp/snapshot-pre-boot.db   
   
-
-
-
+   
+   
+   
 
 ## CKA 후기
 도커/쿠버네티스는 클라우드 기술에서 주요 역할로 자리매김하고 있으며, 쿠버네티스를 배우게 되면서 배포기술의 이상적인 플랫폼이라 느꼈습니다. 

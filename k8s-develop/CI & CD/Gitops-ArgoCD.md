@@ -23,5 +23,12 @@
 - 
 
 
-## What is Gitops?
+## GitOps 적용
 - 
+[Example GitOps Pipeline]
+
+
+## GitOps의 구현체(ArgoCD)
+-
+[ArgoCD 셋업 과정]
+

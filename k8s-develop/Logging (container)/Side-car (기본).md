@@ -4,9 +4,11 @@
 - 각 사이드카 컨테이너는 공유 볼륨에서 특정 로그파일을 tail한 다음 stdout 스트림으로 리디렉션 하는 방식
 
 
-<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="CKA자격증"></img><br/>
+<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="로깅"></img><br/>
+<Kubernetes Doc 참조>   
+
+
 
 사이드카 컨테이너 생성 실습 - [nginx-sidecar.yaml](https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/nginx-sidecar.yaml)
 
 
-<Kubernetes Doc 참조>

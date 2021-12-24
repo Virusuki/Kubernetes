@@ -25,7 +25,7 @@ spec:
   - name: sec-ctx-vol
     emptyDir: {}
   containers:
-  - name: sec-ctx-demo
+  - name: sec-ctx-ex
     image: busybox
     command: [ "sh", "-c", "sleep 1h" ]
     volumeMounts:
@@ -58,6 +58,22 @@ spec:
       allowPrivilegeEscalation: false  
 ```
 
-- Capabilit
+- Capabilities 적용
+  - Capabilities를 적용하면 리눅스 커널에서 사용할 수 있는 권한을 추가 설정이 가능하다.
+    - date +%T -s "08:00:00" 명령은 SYS_TIME 커널 권한이 있어야만 가능하다
+   
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-ex-3
+spec:
+  containers:
+  - name: sec-ctx-ex3
+    image: gcr.io/google-samples/node-hello:1.0
+    securityContext:
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"]
+```
 
 

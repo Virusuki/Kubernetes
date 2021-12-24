@@ -13,4 +13,9 @@
 [Fluentd] https://www.fluentd.org/   
 [Kibana] https://www.elastic.co/kr/what-is/kibana   
 
-- 
+
+Jupyterlab 배포
+```   
+10. 컨테이너 이름 변경 - rename    
+sudo docker rename apache apache_server   
+```

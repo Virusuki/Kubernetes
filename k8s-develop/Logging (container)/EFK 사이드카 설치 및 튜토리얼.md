@@ -32,7 +32,7 @@ spec:
   selector:
     matchLabels:
       app: jupyter-ceph-user6
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -61,7 +61,12 @@ spec:
   type: NodePort
 ```
 
+2개의 replica를 가진 deployment와 Nodeport로 구성된 Service를 배포했으며, 9000 포트를 통해 접근 가능하다. 위의 예제소스 yaml을 실행합니다.
+다음은 Jupyterlab을 deploy하는 command 입니다.
 
 
-Jupyterlab 배포
+
+
+
+
 

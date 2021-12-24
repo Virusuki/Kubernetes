@@ -1,7 +1,7 @@
 
 
 
-``` 
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -23,4 +23,4 @@ spec:
       mountPath: /data/demo
     securityContext:
       allowPrivilegeEscalation: false
-``` 
+```

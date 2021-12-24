@@ -9,6 +9,6 @@
 
 
 
-사이드카 컨테이너 생성 실습 - [nginx-sidecar.yaml](https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/nginx-sidecar.yaml)
+사이드카 컨테이너 생성 실습 - [nginx-sidecar.yaml](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/nginx-sidecar.yaml)
 
 

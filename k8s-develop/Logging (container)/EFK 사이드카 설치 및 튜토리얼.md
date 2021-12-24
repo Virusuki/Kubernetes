@@ -17,7 +17,9 @@
 
 [구축 과정]
 (1). 앱 배포 (flask로 배포)
-- s.
+- Jupyterlab 배포
+
+jupyterlab-app.yaml
 
 ```   
 apiVersion: apps/v1

@@ -70,9 +70,6 @@ spec:
 
 EFK는 elastic-project namespace에 배포하였으며, 각 yaml 파일을 통해 배포가 가능합니다.
 
-```
-$ kubectl apply -f 
-```
 
 Elasticsearch.yaml
 
@@ -128,5 +125,23 @@ spec:
     app: elasticsearch
   type: NodePort
 ```
+
+```
+$ kubectl apply -f Elasticsearch.yaml
+$ kubectl port-forward svc/elasticsearch-svc -n elastic 9200:9200 --address=0.0.0.0 &
+```
+
+
+
+
+```
+
+
+
+
+```
+
+
+
 
 

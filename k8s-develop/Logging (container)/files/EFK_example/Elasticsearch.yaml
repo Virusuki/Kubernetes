@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: elasticsearch
-  namespace: elastic
+  namespace: elastic-project
   labels:
     app: elasticsearch
 spec:
@@ -32,7 +32,7 @@ metadata:
   labels:
     app: elasticsearch
   name: elasticsearch-svc
-  namespace: elastic
+  namespace: elastic-project
 spec:
   ports:
   - name: elasticsearch-rest

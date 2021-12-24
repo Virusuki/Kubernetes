@@ -17,10 +17,45 @@
 
 [구축 과정]
 (1). 앱 배포 (flask로 배포)
-메시지 요청하면 메시지 리턴하는 간단한 앱을 Dockerfile 이미지 빌드 및 namuk2004/flask-message 도커 허브 push.
+- s.
+
 ```   
-10. 컨테이너 이름 변경 - rename    
-sudo docker rename apache apache_server   
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-example
+  namespace: side-car-app
+spec:
+  selector:
+    app: flask-example
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8088
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-example
+  namespace: side-car-app
+spec:
+  selector:
+    matchLabels:
+      app: flask-example
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: flask-example
+    spec:
+      containers:
+      - name: flask-example
+        image: namuk2004/flask-message
+        ports:
+        - containerPort: 8080   
 ```
 
 

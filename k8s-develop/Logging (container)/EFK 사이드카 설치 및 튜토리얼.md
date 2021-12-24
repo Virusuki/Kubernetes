@@ -74,4 +74,59 @@ EFK는 elastic-project namespace에 배포하였으며, 각 yaml 파일을 통�
 $ kubectl apply -f 
 ```
 
-ela
+Elasticsearch.yaml
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+  namespace: elastic-project
+  labels:
+    app: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+      - name: elasticsearch
+        image: elastic/elasticsearch:7.14.1
+        env:
+        - name: discovery.type
+          value: single-node
+        ports:
+        - containerPort: 9200
+        - containerPort: 9300
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch
+  name: elasticsearch-svc
+  namespace: elastic-project
+spec:
+  ports:
+  - name: elasticsearch-rest
+    nodePort: 30920
+    port: 9200
+    protocol: TCP
+    targetPort: 9200
+  - name: elasticsearch-nodecom
+    nodePort: 30930
+    port: 9300
+    protocol: TCP
+    targetPort: 9300
+  selector:
+    app: elasticsearch
+  type: NodePort
+```
+
+

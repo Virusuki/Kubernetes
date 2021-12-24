@@ -133,15 +133,65 @@ $ kubectl port-forward svc/elasticsearch-svc -n elastic 9200:9200 --address=0.0.
 
 
 
+Kibana.yaml
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana
+  namespace: elastic-project
+  labels:
+    app: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana
+    spec:
+      containers:
+      - name: kibana
+        image: elastic/kibana:7.14.1
+        env:
+        - name: SERVER_NAME
+          value: kibana.kubenetes.example.com
+        - name: ELASTICSEARCH_URL
+          value: http://elasticsearch-svc:9200
+        ports:
+        - containerPort: 5601
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kibana
+  name: kibana-svc
+  namespace: elastic-project
+spec:
+  ports:
+  - nodePort: 30561
+    port: 5601
+    protocol: TCP
+    targetPort: 5601
+  selector:
+    app: kibana
+  type: NodePort
 
 ```
 
-
-
-
+```
+$ kubectl apply -f Elasticsearch.yaml
+$ kubectl port-forward svc/elasticsearch-svc -n elastic 9200:9200 --address=0.0.0.0 &
 ```
 
+```or Docker container를 사용한 Kibana run도 가능합니다.
 
+Docker run 
+```
 
 
 

@@ -188,9 +188,13 @@ $ kubectl apply -f Elasticsearch.yaml
 $ kubectl port-forward svc/elasticsearch-svc -n elastic 9200:9200 --address=0.0.0.0 &
 ```
 
-```or Docker container를 사용한 Kibana run도 가능합니다.
+```
+or 
+Docker container를 사용한 Kibana run도 가능합니다.
 
-Docker run 
+docker run -d --name kib01-test --net elastic -p 5601:5601 -e "ELASTICSEARCH_HOSTS=http://es01-test:9200" kibana:7.14.1
+
+*단, Kibana 애플리케이션을 배포할때는 Elasticsearch의 버전과 동일해야 합니다.!!
 ```
 
 

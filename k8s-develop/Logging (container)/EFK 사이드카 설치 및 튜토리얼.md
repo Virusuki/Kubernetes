@@ -2,4 +2,4 @@
 
 ## EFK 란?   
 
-<img src="https://github.com/Virusuki/kubernetes-k8s/blob/main/k8s-develop/Logging%20(container)/files/Sidecar_img.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/EFK%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>

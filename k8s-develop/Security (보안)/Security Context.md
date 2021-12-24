@@ -34,3 +34,26 @@ spec:
     securityContext:
       allowPrivilegeEscalation: false
 ```
+
+
+- 컨테이너 내부에 새로운 User를 사용하면 그 설정이 우선순위가 된다.
+  - 컨테이너 UID/GID 설정하기
+  - 아래의 yaml 예제에서 Pod 전체를 설정할 수 있고, 컨테이너 자체에서도 설정할 수 있다.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-example2
+spec:
+  securityContext:
+    runAsUser: 1000
+  containers:
+  - name: sec-context-ex2
+    image: busybox
+    command: [ "sh", "-c", "sleep 1h" ]
+    securityContext:
+      runAsUser: 2000
+      allowPrivilegeEscalation: false
+```
+

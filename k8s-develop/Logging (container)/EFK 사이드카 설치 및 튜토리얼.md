@@ -15,8 +15,15 @@
    
    
 
-Jupyterlab 배포
+[구축 과정]
+(1). 앱 배포 (flask로 배포)
+메시지 요청하면 메시지 리턴하는 간단한 앱을 Dockerfile 이미지 빌드 및 namuk2004/flask-message 도커 허브 push.
 ```   
 10. 컨테이너 이름 변경 - rename    
 sudo docker rename apache apache_server   
 ```
+
+
+
+Jupyterlab 배포
+

@@ -20,42 +20,43 @@
 - s.
 
 ```   
-apiVersion: v1
-kind: Service
-metadata:
-  name: flask-example
-  namespace: side-car-app
-spec:
-  selector:
-    app: flask-example
-  ports:
-  - name: http
-    protocol: TCP
-    port: 8088
-    targetPort: 8080
-  type: LoadBalancer
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-example
-  namespace: side-car-app
+  name: jupyter-ceph-user6
+  labels:
+    app: jupyter-ceph-user6
 spec:
   selector:
     matchLabels:
-      app: flask-example
-  replicas: 2
+      app: jupyter-ceph-user6
+  replicas: 3
   template:
     metadata:
       labels:
-        app: flask-example
+        app: jupyter-ceph-user6
     spec:
       containers:
-      - name: flask-example
-        image: namuk2004/flask-message
+      - name: jupyter-ceph-user6
+        image: namuk2004/kbri-jupyterlab
+        #imagePullPolicy: Never
         ports:
-        - containerPort: 8080   
+        - containerPort: 9000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-jupyter-ceph-user6
+spec:
+  sessionAffinity: ClientIP
+  selector:
+    app: jupyter-ceph-user6
+  ports:
+  - protocol: "TCP"
+    port: 9000
+    targetPort: 9000
+  type: NodePort
 ```
 
 

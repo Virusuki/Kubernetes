@@ -87,6 +87,13 @@ date: cannot set date: Operation not permitted
 ```
 # date +%T -s "12:00:00"   # <-- Capabilities 적용 
 12:00:00
+
+#만약 시간이 동기화가 되지 않았다면, 해당 컨테이너를 exit 나와서,,,
+$ kubectl get pod -o wide 
+할당된 worker 노드에 접속해서 sudo timedatectl set-ntp false 실행 후
+다시 security-context-example3에 접속해서
+$ kubectl exec -it security-context-example3 -- sh
+시간이 변경된 것을 확인할 수 있다.
 ```
 
 ```

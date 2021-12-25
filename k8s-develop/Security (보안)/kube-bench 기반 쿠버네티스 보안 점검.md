@@ -28,9 +28,8 @@ kube-bench --config-dir `pwd`/cfg --config `pwd`/cfg/config.yaml run --targets=m
 ```
 - Master 노드 점검 결과
 
+- etcd 관련 부분 Fail이 발생함. 원인은 권장사항에 etcd만 접근이 가능하도록 하라는 사항이 있다.!
 ```
-etcd 관련 부분 Fail이 발생함. 원인은 권장사항에 etcd만 접근이 가능하도록 하라는 사항이 있다.!
-
 [INFO] 1 Master Node Security Configuration
 [INFO] 1.1 Master Node Configuration Files
 [PASS] 1.1.1 Ensure that the API server pod specification file permissions are set to 644 or more restrictive (Automated)
@@ -61,6 +60,29 @@ from the below command:
 ps -ef | grep etcd
 Run the below command (based on the etcd data directory found above).
 For example, chown etcd:etcd /var/lib/etcd
+```
+
+- etcd 사용자 권한으로 변경
+```
+# chown etcd. /var/lib/etcd/
+```
+
+- etcd 수정 후 
+```
+[INFO] 1 Master Node Security Configuration
+[INFO] 1.1 Master Node Configuration Files
+[PASS] 1.1.1 Ensure that the API server pod specification file permissions are set to 644 or more restrictive (Automated)
+[PASS] 1.1.2 Ensure that the API server pod specification file ownership is set to root:root (Automated)
+[PASS] 1.1.3 Ensure that the controller manager pod specification file permissions are set to 644 or more restrictive (Automated)
+[PASS] 1.1.4 Ensure that the controller manager pod specification file ownership is set to root:root (Automated)
+[PASS] 1.1.5 Ensure that the scheduler pod specification file permissions are set to 644 or more restrictive (Automated)
+[PASS] 1.1.6 Ensure that the scheduler pod specification file ownership is set to root:root (Automated)
+[PASS] 1.1.7 Ensure that the etcd pod specification file permissions are set to 644 or more restrictive (Automated)
+[PASS] 1.1.8 Ensure that the etcd pod specification file ownership is set to root:root (Automated)
+[WARN] 1.1.9 Ensure that the Container Network Interface file permissions are set to 644 or more restrictive (Manual)
+[WARN] 1.1.10 Ensure that the Container Network Interface file ownership is set to root:root (Manual)
+[PASS] 1.1.11 Ensure that the etcd data directory permissions are set to 700 or more restrictive (Automated)
+[PASS] 1.1.12 Ensure that the etcd data directory ownership is set to etcd:etcd (Automated)  <--- etcd 관련 부분 Pass로 수정됨.
 
 ```
 

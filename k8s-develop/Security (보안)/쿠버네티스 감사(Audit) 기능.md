@@ -122,7 +122,7 @@ volumeMounts:
     name: audit-log
     readOnly: false
   
-  ...
+  ...#아래의 volumes 라인에도 추가한다.
 
 volumes:
 - name: audit
@@ -135,3 +135,16 @@ volumes:
     type: FileOrCreate
 
 ```
+- 수정한 static-pod가 정상적으로 작동하는지 확인한다.
+```
+# kubectl get pod -n kube-system
+```
+
+- Master 노드에서 볼륨마운트한 저장경로의 로그 확인
+```
+# tail -f /var/log/audit.log
+```
+
+
+
+

@@ -10,7 +10,13 @@
 $ kubectlexec -it security-context-example /bin/bash
 / $ id
 uid=1000 gid=3000 groups=2000
-/$ ps -eaf
+/ $ ps   # 프로세스의 권한이 1000으로 실행되는 것을 확인할 수 있음
+PID   USER     TIME  COMMAND
+    1 1000      0:00 sleep 1h
+    8 1000      0:00 sh
+   15 1000      0:00 ps
+/ $
+
 ```
 
 ```

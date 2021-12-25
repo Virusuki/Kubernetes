@@ -28,7 +28,8 @@ condition: evt.type = execve and evt.dir=<   # 이벤트 type이 execve 이여�
 
 - rule: run_shell_in_container
 desc: a shell was spawned by a non-shell program in a container. Container entrypoints are excluded.
-condition: container and proc.name = bash and spawned_process and proc.pname exists and not proc.pname in (bash, docker) # 컨테이너(==True)와 spawned_process(==True)이고, bash여야하고 proc.pname(parent 프로세스여야하고 고아 프로세스는 안된다). 마지막으로 proc.pname(parent-name)이 bash or 도커는 안된다.(즉, 컨테이너 내에서 특정한 프로세스가 내부적으로 bash를 실행하면 그때 탐지하는 룰이다.)
+condition: container and proc.name = bash and spawned_process and proc.pname exists and not proc.pname in (bash, docker) 
+#해당 조건 풀이, 컨테이너(==True)와 spawned_process(==True)이고, bash여야하고 proc.pname(parent 프로세스여야하고 고아 프로세스는 안된다). 마지막으로 proc.pname(parent-name)이 bash or 도커는 안된다.(즉, 컨테이너 내에서 특정한 프로세스가 내부적으로 bash를 실행하면 그때 탐지하는 룰이다.)
 
 output: "Shell spawned in a container other than entrypoint (user=%user.name container_id=%container.id
 container_name=%container.name shell=%proc.name parent=%proc.pname cmdline=%proc.cmdline)“

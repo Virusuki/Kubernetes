@@ -31,7 +31,9 @@
     - RequestResponse : 이벤트 메타데이터, 요청 및 응답 본문을 기록한다. (리소스가 아닌 요청에는 적용되지 않는다.)
   
 
-
+- audit-policy.yaml 
+- 
+```
 apiVersion: audit.k8s.io/v1 # This is required.
 kind: Policy
 # Don't generate audit events for all requests in RequestReceived stage.
@@ -100,3 +102,12 @@ rules:
     # generate an audit event in RequestReceived.
     omitStages:
       - "RequestReceived"
+```
+
+- /etc/kubernetes/manifests/kube-apiserver.yaml에서 .spec.containers[0].command 에 다음과 같이 인자를 추가
+```
+# vi /etc/kubernetes/manifests/kube-apiserver.yaml
+- --token-auth-file=/etc/kubernetes/pki/somfile.csv #아래에 추가한다.
+- --audit-policy-file=/etc/kubernetes/audit-policy.yaml
+- --audit-log-path=/var/log/audit.log
+```

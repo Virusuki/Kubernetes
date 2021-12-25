@@ -58,20 +58,52 @@ kubectl exec py -- apt update
 kubectl exec py -- apt install -y vim
 ```
 
+- py pod가 할당된 노드 확인
+```
+kubectl get pod -o wide 
+NAME   READY   STATUS    RESTARTS   AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+py     1/1     Running   0          3m12s   10.40.0.10   namuk-04   <none>           <none>
+```
+
+- 생성된 py pod가 할당된 노드로 가서 falco 실행 및 로그 확인
+```
+# flaco  
+cat /var/log/syslog | grep falco
+```
+
 - syslog에 falco를 grep 하면 관련 로그 확인이 가능
 ```
-Sep 22 05:44:13 node01 falco[123799]: 05:44:13.306534965: Error Package management process launched
-in container (user=root user_loginuid=-1 command=apt update container_id=4831e292a3c8
-container_name=k8s_py_py_default_13877cb8-d825-4831-a8ca-f21a9d79b7f0_0 image=python:3.7)
-Sep 22 05:44:13 node01 falco: 05:44:13.306534965: Error Package management process launched in
-container (user=root user_loginuid=-1 command=apt update container_id=4831e292a3c8
-container_name=k8s_py_py_default_13877cb8-d825-4831-a8ca-f21a9d79b7f0_0 image=python:3.7)
-Sep 22 05:45:02 node01 falco[123799]: 05:45:02.431342562: Error Package management process launched
-in container (user=root user_loginuid=-1 command=apt install -y vim container_id=48f80132919f
-container_name=k8s_py_py_default_2293f44d-dfd3-4508-b001-9fc0d43a4c9e_0 image=python:3.7)
-Sep 22 05:45:02 node01 falco: 05:45:02.431342562: Error Package management process launched in
-container (user=root user_loginuid=-1 command=apt install -y vim container_id=48f80132919f
-container_name=k8s_py_py_default_2293f44d-dfd3-4508-b001-9fc0d43a4c9e_0 image=python:3.7)
+root@namuk-04:~# cat /var/log/syslog | grep falco
+Dec 25 14:31:51 namuk-04 falco: Falco version 0.30.0 (driver version 3aa7a83bf7b9e6229a3824e3fd1f4452d1e95cb4)
+Dec 25 14:31:51 namuk-04 falco: Falco initialized with configuration file /etc/falco/falco.yaml
+Dec 25 14:31:51 namuk-04 falco: Loading rules from file /etc/falco/falco_rules.yaml:
+Dec 25 14:31:51 namuk-04 falco: Loading rules from file /etc/falco/falco_rules.local.yaml:
+Dec 25 14:31:51 namuk-04 falco: Loading rules from file /etc/falco/k8s_audit_rules.yaml:
+Dec 25 14:31:52 namuk-04 kernel: [2181313.220859] falco: loading out-of-tree module taints kernel.
+Dec 25 14:31:52 namuk-04 kernel: [2181313.221569] falco: module verification failed: signature and/or required key missing - tainting kernel
+Dec 25 14:31:52 namuk-04 kernel: [2181313.222973] falco: driver loading, falco 3aa7a83bf7b9e6229a3824e3fd1f4452d1e95cb4
+Dec 25 14:31:52 namuk-04 kernel: [2181313.224928] falco: adding new consumer 00000000c5a4424c
+Dec 25 14:31:52 namuk-04 kernel: [2181313.224949] falco: initializing ring buffer for CPU 0
+Dec 25 14:31:52 namuk-04 kernel: [2181313.233721] falco: CPU buffer initialized, size=8388608
+Dec 25 14:31:52 namuk-04 kernel: [2181313.233722] falco: initializing ring buffer for CPU 1
+Dec 25 14:31:52 namuk-04 kernel: [2181313.241641] falco: CPU buffer initialized, size=8388608
+Dec 25 14:31:52 namuk-04 kernel: [2181313.241642] falco: starting capture
+Dec 25 14:31:53 namuk-04 falco: Starting internal webserver, listening on port 8765
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.263826000: Notice Privileged container started (user=root user_loginuid=0 command=container:aa8f22e08c89 k8s_POD_csi-cephfsplugin-chcfl_rook-ceph_fffab893-49dc-4136-a1c2-15c0bc91e706_0 (id=aa8f22e08c89) image=k8s.gcr.io/pause:3.5)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.435128000: Notice Privileged container started (user=root user_loginuid=0 command=container:6fc91e38e92f k8s_driver-registrar_csi-rbdplugin-qf74m_rook-ceph_2d45ea37-fd23-4f1a-ad50-5104b281a57f_0 (id=6fc91e38e92f) image=k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.3.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.467803630: Notice Privileged container started (user=root user_loginuid=0 command=container:75ddffc9ea5d k8s_driver-registrar_csi-cephfsplugin-chcfl_rook-ceph_fffab893-49dc-4136-a1c2-15c0bc91e706_0 (id=75ddffc9ea5d) image=k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.3.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.528355583: Notice Privileged container started (user=root user_loginuid=0 command=container:f696654343cd k8s_csi-rbdplugin_csi-rbdplugin-qf74m_rook-ceph_2d45ea37-fd23-4f1a-ad50-5104b281a57f_0 (id=f696654343cd) image=quay.io/cephcsi/cephcsi:v3.4.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.596012970: Notice Privileged container started (user=root user_loginuid=0 command=container:16378d22a7a7 k8s_liveness-prometheus_csi-rbdplugin-qf74m_rook-ceph_2d45ea37-fd23-4f1a-ad50-5104b281a57f_0 (id=16378d22a7a7) image=quay.io/cephcsi/cephcsi:v3.4.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.596012970: Notice Privileged container started (user=root user_loginuid=0 command=container:1ec6f3ad71f4 k8s_csi-cephfsplugin_csi-cephfsplugin-chcfl_rook-ceph_fffab893-49dc-4136-a1c2-15c0bc91e706_0 (id=1ec6f3ad71f4) image=quay.io/cephcsi/cephcsi:v3.4.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.596012970: Notice Privileged container started (user=root user_loginuid=0 command=container:af11b6901b4b k8s_liveness-prometheus_csi-cephfsplugin-chcfl_rook-ceph_fffab893-49dc-4136-a1c2-15c0bc91e706_0 (id=af11b6901b4b) image=quay.io/cephcsi/cephcsi:v3.4.0)
+Dec 25 14:31:53 namuk-04 falco: 14:31:53.958952077: Notice Privileged container started (user=root user_loginuid=0 command=container:bd3af4f45ef2 k8s_osd_rook-ceph-osd-0-6ff96fdbcf-x8qsw_rook-ceph_efa96c22-e757-49f7-9aad-9df7add7554b_2 (id=bd3af4f45ef2) image=quay.io/ceph/ceph:v16.2.6)
+Dec 25 14:31:54 namuk-04 falco: 14:31:54.368587689: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:d29d3942b4d7 k8s_POD_rook-ceph-osd-0-6ff96fdbcf-x8qsw_rook-ceph_efa96c22-e757-49f7-9aad-9df7add7554b_0 (id=d29d3942b4d7) image=k8s.gcr.io/pause:3.5)
+Dec 25 14:31:55 namuk-04 falco: 14:31:55.092261181: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:5541a2b42b43 k8s_POD_kube-proxy-wnntk_kube-system_4e250fad-9efb-409c-ad58-ab58e37a9430_2 (id=5541a2b42b43) image=k8s.gcr.io/pause:3.5)
+Dec 25 14:31:55 namuk-04 falco: 14:31:55.219721363: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:a237ea5f37d1 k8s_POD_weave-net-6jsp9_kube-system_b6ac0915-be9d-42ce-9c66-dab34adbe50e_1 (id=a237ea5f37d1) image=k8s.gcr.io/pause:3.5)
+Dec 25 14:31:55 namuk-04 falco: 14:31:55.281262139: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:a32d19994e4a k8s_weave_weave-net-6jsp9_kube-system_b6ac0915-be9d-42ce-9c66-dab34adbe50e_2 (id=a32d19994e4a) image=ghcr.io/weaveworks/launcher/weave-kube:2.8.1)
+Dec 25 14:31:55 namuk-04 falco: 14:31:55.402999206: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:793fcfa94408 k8s_weave-npc_weave-net-6jsp9_kube-system_b6ac0915-be9d-42ce-9c66-dab34adbe50e_1 (id=793fcfa94408) image=ghcr.io/weaveworks/launcher/weave-npc:2.8.1)
+Dec 25 14:31:55 namuk-04 falco: 14:31:55.716222955: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:e30818e7ebf3 k8s_POD_csi-rbdplugin-qf74m_rook-ceph_2d45ea37-fd23-4f1a-ad50-5104b281a57f_0 (id=e30818e7ebf3) image=k8s.gcr.io/pause:3.5)
+
 ```
 
 

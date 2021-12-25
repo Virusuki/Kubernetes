@@ -15,7 +15,6 @@ PID   USER     TIME  COMMAND
     1 1000      0:00 sleep 1h
     8 1000      0:00 sh
    15 1000      0:00 ps
-/ $
 
 ```
 
@@ -74,7 +73,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: security-context-ex-3
+  name: security-context-example3
 spec:
   containers:
   - name: sec-ctx-ex3

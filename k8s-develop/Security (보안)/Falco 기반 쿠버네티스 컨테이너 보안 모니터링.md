@@ -3,7 +3,7 @@
 - CNCF에 합류한 최초의 런타임 보안 프로젝트
 - 예기치 않은 애플리케이션 동작을 감지하고 런타임 시 위협에 대해 경고
 
-## flaco 설치
+## flaco 설치 - 전체 
 ```
 curl -s https://falco.org/repo/falcosecurity-3672BA8F.asc | apt-key add -
 echo "deb https://download.falco.org/packages/deb stable main" | tee -a /etc/apt/sources.list.d/falcosecurity.list

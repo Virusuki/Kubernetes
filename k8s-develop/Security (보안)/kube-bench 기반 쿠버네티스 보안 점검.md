@@ -7,5 +7,16 @@
 - 다양한 플랫폼에서 컴파일된 파일을 구성하도록 제공
   - https://github.com/aquasecurity/kube-bench/releases
 
-## 클러스터 진단
-- 
+## kube-bench 설치 및 클러스터 진단 
+
+- 릴리즈 파일 다운로드
+```
+wget https://github.com/aquasecurity/kube-bench/releases/download/v0.6.3/kube-bench_0.6.3_linux_amd64.tar.gz 
+tar -xf kube-bench_0.6.3_linux_amd64.tar.gz
+sudo mv kube-bench /usr/bin/ # 설치 완료
+
+- 깃헙 프로젝트 다운로드
+```
+git clone https://github.com/aquasecurity/kube-bench 
+cd kube-bench
+```

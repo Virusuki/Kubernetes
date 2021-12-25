@@ -77,9 +77,9 @@ spec:
   - Capabilities를 적용하면 리눅스 커널에서 사용할 수 있는 권한을 추가 설정이 가능하다.
     - date +%T -s "08:00:00" 명령은 SYS_TIME 커널 권한이 있어야만 가능하다
 
-```
-- Capabilities를 미적용/적용했을 때의 차이
 
+- Capabilities를 미적용/적용했을 때의 차이
+```
 # date +%T -s "12:00:00"   # <-- Capabilities 미적용 
 date: cannot set date: Operation not permitted
 ```

@@ -14,6 +14,7 @@
 wget https://github.com/aquasecurity/kube-bench/releases/download/v0.6.3/kube-bench_0.6.3_linux_amd64.tar.gz 
 tar -xf kube-bench_0.6.3_linux_amd64.tar.gz
 sudo mv kube-bench /usr/bin/ # 설치 완료
+```
 
 - 깃헙 프로젝트 다운로드
 ```

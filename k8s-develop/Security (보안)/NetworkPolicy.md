@@ -21,13 +21,13 @@ spec:
     matchLabels:
       role: db
   policyTypes:
-  - Egress
-  egress:
-  - to:
+  - Egress    # Egress를 설정한다는 의미 (Default deny가 됨), 모든 트래픽에 대해서 모두 거절하게 됨
+  egress:     # 다만, 허용함(화이트리스트를 정해줌)
+  - to:       # 트래픽을 허용해주는 정책
     - ipBlock:
-        cidr: 10.0.0.0/24
+        cidr: 10.0.0.0/24 # 해당 트래픽은 허용
     ports:
     - protocol: TCP
-      port: 5978
+      port: 5978   
 ```
 

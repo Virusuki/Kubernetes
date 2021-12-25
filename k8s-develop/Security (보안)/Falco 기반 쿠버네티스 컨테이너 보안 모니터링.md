@@ -103,6 +103,9 @@ Dec 25 14:31:55 namuk-04 falco: 14:31:55.219721363: Notice Privileged container 
 Dec 25 14:31:55 namuk-04 falco: 14:31:55.281262139: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:a32d19994e4a k8s_weave_weave-net-6jsp9_kube-system_b6ac0915-be9d-42ce-9c66-dab34adbe50e_2 (id=a32d19994e4a) image=ghcr.io/weaveworks/launcher/weave-kube:2.8.1)
 Dec 25 14:31:55 namuk-04 falco: 14:31:55.402999206: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:793fcfa94408 k8s_weave-npc_weave-net-6jsp9_kube-system_b6ac0915-be9d-42ce-9c66-dab34adbe50e_1 (id=793fcfa94408) image=ghcr.io/weaveworks/launcher/weave-npc:2.8.1)
 Dec 25 14:31:55 namuk-04 falco: 14:31:55.716222955: Notice Privileged container started (user=<NA> user_loginuid=0 command=container:e30818e7ebf3 k8s_POD_csi-rbdplugin-qf74m_rook-ceph_2d45ea37-fd23-4f1a-ad50-5104b281a57f_0 (id=e30818e7ebf3) image=k8s.gcr.io/pause:3.5)
+Dec 25 14:40:48 namuk-04 falco: 14:40:48.524565659: Error Package management process launched in container (user=root user_loginuid=-1 command=apt update container_id=eda4e44edabe container_name=k8s_py_py_default_549185c2-9193-4606-b9f5-cb4565fb70bd_0 image=python:3.7)
+Dec 25 14:40:54 namuk-04 falco: 14:40:54.615781734: Error Package management process launched in container (user=root user_loginuid=-1 command=apt install -y vim container_id=eda4e44edabe container_name=k8s_py_py_default_549185c2-9193-4606-b9f5-cb4565fb70bd_0 image=python:3.7)
+
 
 ```
 

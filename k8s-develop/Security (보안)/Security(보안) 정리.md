@@ -20,7 +20,10 @@ user같은 경우 root권한을 가지지 않아야 한다. 서버에 로그인�
 
 
 # 네트워크 정책 
-
+- 파드 그룹이 서로 간 또는 다른 네트워크 endpoint와 통신하는 방법을 지정한다.
+- Networkpolicy 리소스는 레이블을 사용하여 Pod를 선택한다.
+- 선택한 Pod에 허용되는 트래픽을 지정하는 규칙을 정의한다.
+- 특정 Pod를 선택하는 namespace에 NetworkPolicy가 있으면 해당 Pod는 NetworkPolicy에서 허용하지 않는 연결을 거부한다.
 
 
 # 쿠버네티스 감사(Audit) 기능 활성화

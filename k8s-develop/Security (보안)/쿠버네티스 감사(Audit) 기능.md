@@ -145,6 +145,12 @@ volumes:
 # tail -f /var/log/audit.log
 ```
 
-
+- 감사할수 있는 대시보드 or online viewer를 이용하여 간편하게 확인할 수 있다.
+```
+json viewer
+[http://jsonviewer.stack.hu/](http://jsonviewer.stack.hu/)
+or
+Eleasticsearch 활용
+```
 
 

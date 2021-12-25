@@ -31,8 +31,8 @@
     - RequestResponse : 이벤트 메타데이터, 요청 및 응답 본문을 기록한다. (리소스가 아닌 요청에는 적용되지 않는다.)
   
 
-- audit-policy.yaml 
-- 
+- vi /etc/kubernetes/audit-policy.yaml 
+
 ```
 apiVersion: audit.k8s.io/v1 # This is required.
 kind: Policy
@@ -110,4 +110,28 @@ rules:
 - --token-auth-file=/etc/kubernetes/pki/somfile.csv #아래에 추가한다.
 - --audit-policy-file=/etc/kubernetes/audit-policy.yaml
 - --audit-log-path=/var/log/audit.log
+```
+
+- 이어서, .spec.container[0].volumeMounts와 .spec.volumes에 다음 내용을 추가
+```
+volumeMounts:
+  - mountPath: /etc/kubernetes/audit-policy.yaml
+    name: audit
+    readOnly: true
+  - mountPath: /var/log/audit.log
+    name: audit-log
+    readOnly: false
+  
+  ...
+
+volumes:
+- name: audit
+  hostPath:
+    path: /etc/kubernetes/audit-policy.yaml
+    type: File
+- name: audit-log
+  hostPath:
+    path: /var/log/audit.log
+    type: FileOrCreate
+
 ```

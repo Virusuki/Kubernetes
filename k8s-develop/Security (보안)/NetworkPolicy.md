@@ -111,11 +111,3 @@ kubectl run -l app=other --image=alpine --restart=Never --rm -i -t test-2
 wget: download timed out
 ```
 
-
-## NetworkPolicy(네트워크 폴리시) example
-- 
-
-
-
-
-

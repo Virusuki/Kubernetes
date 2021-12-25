@@ -7,3 +7,5 @@
 - 다양한 플랫폼에서 컴파일된 파일을 구성하도록 제공
   - https://github.com/aquasecurity/kube-bench/releases
 
+## 클러스터 진단
+- 

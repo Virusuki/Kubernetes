@@ -3,6 +3,17 @@
 - CNCF에 합류한 최초의 런타임 보안 프로젝트
 - 예기치 않은 애플리케이션 동작을 감지하고 런타임 시 위협에 대해 경고
 
+## flaco 설치
+```
+curl -s https://falco.org/repo/falcosecurity-3672BA8F.asc | apt-key add -
+echo "deb https://download.falco.org/packages/deb stable main" | tee -a /etc/apt/sources.list.d/falcosecurity.list
+apt-get update -y
+
+apt-get -y install linux-headers-$(uname -r)
+
+apt-get install -y falco
+```
+
 ## 호스트에 falco 설정 정보 확인
 - log_syslog: true 옵션은 /var/log/syslog에 falco 관련 로그를 함께 로깅한다는 의미
 - rules_file 섹션에는 실행할 때 참조하는 룰의 위치가 명시됨 
@@ -64,6 +75,5 @@ container_name=k8s_py_py_default_2293f44d-dfd3-4508-b001-9fc0d43a4c9e_0 image=py
 ```
 
 
-## flaco 설치
 
 

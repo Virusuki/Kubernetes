@@ -94,6 +94,8 @@ $ kubectl get pod -o wide
 다시 security-context-example3에 접속해서
 $ kubectl exec -it security-context-example3 -- sh
 시간이 변경된 것을 확인할 수 있다.
+
+해당 worker 노드에 다시 sudo timedatectl set-ntp yes 를 하면 원래 시간으로 돌아온다.
 ```
 
 ```

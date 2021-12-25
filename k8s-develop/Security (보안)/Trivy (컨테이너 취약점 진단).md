@@ -13,5 +13,12 @@
   
 ```
 docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest
+```
 
+## Trivy를 활용한 도커 이미지 취약점 진단
+  - Trivy에 image 명려을 사용하면 도커 이미지의 취약점을 진단
+  - 현재 구성되어 있는 다양한 모듈들의 취약점을 도출
+
+```
+docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image namuk2004/kbri-jupyterlab
 ```

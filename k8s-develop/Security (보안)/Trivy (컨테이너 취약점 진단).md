@@ -9,4 +9,9 @@
   - 컨테이너를 사용해서 설치하면 호환성 문제 없이 빠른 시간에 Trivy를 구성할 수 있다.
   - -v 옵션을 사용하여 캐시 디렉토리를 마운트 
   - 소켓을 공유하여 현재 호스트에 구성된 도커 소켓을 통해 이미지를 제어할 수 있다.
+    - 도커에서 배포된(실행된) 컨테이너로 다시 도커를 제어할 수 있는 기능을 제공해주기 위해서는 소켓을 공유한다.
   
+```
+docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest
+
+```

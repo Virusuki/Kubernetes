@@ -37,6 +37,33 @@ container_name=%container.name shell=%proc.name parent=%proc.pname cmdline=%proc
 priority: WARNING
 ```
 
+## 간단한 로그 생성과 탐지
+- python 이미지 컨테이너를 구성하고 패키지 매니저를 통해 vim 설치 
+  - 솔루션은 제품을 운영하면서 업데이트를 하지않는게 일반적이다. 컨테이너를 배포한다는 것은 이미 안정적으로 run되는 컨테이너를 배포하고, 
+    레지스트리에 올려놓고 다운로드해서 사용하는 형태인데, 쿠버네티스 안에서 패키지가 실행됐다는 것은 의심하는 사례로 본다.
+```
+kubectl run py --image=python:3.7 -- sleep infinity
+kubectl exec py -- apt update
+kubectl exec py -- apt install -y vim
+```
+
+- syslog에 falco를 grep 하면 관련 로그 확인이 가능
+```
+Sep 22 05:44:13 node01 falco[123799]: 05:44:13.306534965: Error Package management process launched
+in container (user=root user_loginuid=-1 command=apt update container_id=4831e292a3c8
+container_name=k8s_py_py_default_13877cb8-d825-4831-a8ca-f21a9d79b7f0_0 image=python:3.7)
+Sep 22 05:44:13 node01 falco: 05:44:13.306534965: Error Package management process launched in
+container (user=root user_loginuid=-1 command=apt update container_id=4831e292a3c8
+container_name=k8s_py_py_default_13877cb8-d825-4831-a8ca-f21a9d79b7f0_0 image=python:3.7)
+Sep 22 05:45:02 node01 falco[123799]: 05:45:02.431342562: Error Package management process launched
+in container (user=root user_loginuid=-1 command=apt install -y vim container_id=48f80132919f
+container_name=k8s_py_py_default_2293f44d-dfd3-4508-b001-9fc0d43a4c9e_0 image=python:3.7)
+Sep 22 05:45:02 node01 falco: 05:45:02.431342562: Error Package management process launched in
+container (user=root user_loginuid=-1 command=apt install -y vim container_id=48f80132919f
+container_name=k8s_py_py_default_2293f44d-dfd3-4508-b001-9fc0d43a4c9e_0 image=python:3.7)
+```
+
+
 ## flaco 설치
 
 

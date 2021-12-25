@@ -14,7 +14,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: network-policy-ex1
+  name: network-policy-egress-ex1
   namespace: default
 spec:
   podSelector:
@@ -30,4 +30,54 @@ spec:
     - protocol: TCP
       port: 5978   
 ```
+
+
+## 인그레스 (Ingress)
+- 선택된 pod로 들어오는 트래픽에 대한 정책을 설정한다.
+- ipBlock을 통해 허용하고자 하는 ip 대역 설정이 가능하다.
+- Except를 사용하여 예외 항목 설정이 가능하다.
+- namespaceSelector와 podSelector를 사용
+  - 그룹별 더욱 상세한 정책 설정이 가능하다.
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy-ingress-ex1
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 172.17.0.0/16
+        except:
+        - 172.17.1.0/24
+    - namespaceSelector:
+      matchLabels:
+        project: myproject
+    - podSelector:
+        matchLabels:
+          role: frontend
+    ports:
+    - protocol: TCP
+      port: 6379
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 

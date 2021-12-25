@@ -15,7 +15,15 @@ PID   USER     TIME  COMMAND
     1 1000      0:00 sleep 1h
     8 1000      0:00 sh
    15 1000      0:00 ps
+```
 
+```
+/data/demo $ echo hello > testfile # 2000의 권한을 가지고 있기 떄문에 디렉토리를 사용할 수 
+/data/demo $ ls -al
+total 12
+drwxrwsrwx    2 root     2000          4096 Dec 25 00:05 .
+drwxr-xr-x    3 root     root          4096 Dec 25 00:00 ..
+-rw-r--r--    1 1000     2000             6 Dec 25 00:05 testfile
 ```
 
 ```

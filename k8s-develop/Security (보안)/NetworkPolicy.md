@@ -50,17 +50,17 @@ spec:
     matchLabels:
       role: db
   policyTypes:
-  - Ingress
-  ingress:
+  - Ingress     # Default Deny 설정
+  ingress:      # 아래는 화이트리스트로 구성
   - from:
-    - ipBlock:
-        cidr: 172.17.0.0/16
-        except:
+    - ipBlock:   # ipBlock은 IP대역 덩어리를 의미
+        cidr: 172.17.0.0/16  
+        except:  # 다만 172.17.1.0/24는 제외
         - 172.17.1.0/24
-    - namespaceSelector:
+    - namespaceSelector:   # 해당하는 project: myproject NS만 접근이 가능하다.
       matchLabels:
         project: myproject
-    - podSelector:
+    - podSelector:         # 해당 pod만 구성해서 트래픽을 허용한다.
         matchLabels:
           role: frontend
     ports:

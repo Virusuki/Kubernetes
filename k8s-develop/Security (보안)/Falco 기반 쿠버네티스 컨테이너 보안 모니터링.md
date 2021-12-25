@@ -18,7 +18,7 @@ rules_file:
 
 ## flaco 룰 예제
 - A shell is run in a container Rule
-- 룰 조건 
+- Rule condition (룰 조건)
 ```
 - macro: container  
 condition: container.id != host  # 컨테이너 ID가 host 이면 안된다. 즉, 컨테이너로 보겠다.

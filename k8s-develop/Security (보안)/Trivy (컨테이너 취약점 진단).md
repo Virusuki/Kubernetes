@@ -28,5 +28,4 @@ docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/do
 ========================================
 Total: 252 (UNKNOWN:0, LOW:160, MEDIUM:92, HIGH:0, CRITICAL:0) <-- UNKNOWN(알려지지않은),LOW/MEDIUM(공격이 어려운 쪽 레벨 분류, HIGH/CRITICAL(접근성이 편한 경우,취약점이 높다)
 
-
-이미지
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/img/Trivy%EC%8B%A4%ED%96%89%EA%B2%B0%EA%B3%BC.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="Trivy 실행결과"></img><br/>

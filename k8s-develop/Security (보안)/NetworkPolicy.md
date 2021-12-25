@@ -68,16 +68,48 @@ spec:
       port: 6379
 ```
 
+## 인그레스 정책 실습
+[참조: https://cloud.google.com/kubernetes-engine/docs/tutorials/network-policy]
 
+- 보호할 새 pod를 구성 및 클러스터 내부적으로 서비스 노출한다.
+```
+kubectl run hello-web --labels app=hello --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 --port 8080 --expose
+```
 
+- pod를 보호하는 정책을 설정한다.
+```
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: hello-allow-from-foo
+spec:
+  policyTypes:   # ingress 정책으로 제한한다.
+  - Ingress
+  podSelector:  # 해당 pod를 보호한다.
+    matchLabels:
+      app: hello
+  ingress:
+  - from:       # 여기로부터 들어오는 트래픽은 허용한다. (app: foo)
+    - podSelector:
+        matchLabels:
+          app: foo
+```
 
+- 네트워크 정책이 정상적으로 동작하는지 확인한다.
+```
+kubectl run -l app=foo --image=alpine --restart=Never --rm -i -t test-1 실행 후,
+/ # wget -qO- --timeout=2 http://hello-web:8080
+Hello, world!
+Version: 1.0.0
+Hostname: hello-web
+```
 
-
-
-
-
-
-
+- 다른 레이블을 사용할 경우 동작 결과 보기 -> 통신이 안됨!!
+```
+kubectl run -l app=other --image=alpine --restart=Never --rm -i -t test-2
+/ # wget -qO- --timeout=2 http://hello-web:8080
+wget: download timed out
+```
 
 
 

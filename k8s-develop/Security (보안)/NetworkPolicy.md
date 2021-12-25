@@ -10,5 +10,24 @@
 - ipBlock을 통해 허용하고자 하는 ip 대역 설정이 가능하다.
 - Pots에 어떤 포트를 허용하는지에 대해 명시한다.
 
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy-ex1
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.0.0.0/24
+    ports:
+    - protocol: TCP
+      port: 5978
+```
 
-    

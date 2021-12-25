@@ -67,7 +67,7 @@ For example, chown etcd:etcd /var/lib/etcd
 # chown etcd. /var/lib/etcd/
 ```
 
-- etcd 수정 후 
+- etcd 수정 후,  1.1.12 부분에 pass로 변경될 것을 확인할 수 있다. 
 ```
 [INFO] 1 Master Node Security Configuration
 [INFO] 1.1 Master Node Configuration Files
@@ -85,8 +85,6 @@ For example, chown etcd:etcd /var/lib/etcd
 [PASS] 1.1.12 Ensure that the etcd data directory ownership is set to etcd:etcd (Automated)  <--- etcd 관련 부분 Pass로 수정됨.
 
 ```
-
-
 
 - Worker 노드 점검
 ```

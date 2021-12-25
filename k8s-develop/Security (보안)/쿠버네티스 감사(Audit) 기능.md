@@ -12,3 +12,14 @@
 - Where was it observed?         (어디서 관찰되었는가?)
 - Where did it start?            (어디에서 시작되었는가?)
 - Where do the results go?       (결과는 어디로 갔는가?)
+
+## Kube-apiserver를 통해서 실행 및 기록이 시작
+- 감사 레코드는 kube-apiserver를 통해 실행
+- 실행의 각 단계에 대한 각 요청은 감사 이벤트를 생성
+- 특정 정책에 따라 사전 처리되고 백엔드에 기록
+- 각 요청은 연결된 단계에 따라 기록하는 정보가 다름
+  - 요청에 따른 기록 정보
+    - RequestReceived : 감사 핸들러가 요청을 받는 즉시 그리고 핸들러 체인 아래로 위임되기 전에 생성된 이벤트에 대한 단계
+    - ResponseStarted : 응답 헤더 전송되었으나 응답 본문이 전송되기 전 상태다. 이 단계는 장기 실행 요청(예: watch)에 대해 생성
+    - ResponseComplete : 응답 본문이 완료되었으며 더이상 바이트가 전송되지 않는 단계
+    - Panic : 패닉이 발생 시, 생성되는 이벤트

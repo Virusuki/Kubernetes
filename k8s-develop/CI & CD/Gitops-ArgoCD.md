@@ -24,11 +24,15 @@
 - git repository에서 버전이 지정된 애플리케이션 선언을 사용하면 SSOT(Single source of truth, SSOT) 조건을 만족할 수 있습니다.
 - 그러면, app을 쉽게 배포하고 문제 발생시, 롤백하기도 쉽습니다.
 
-2. Git을 이용한 버전 관리 : 
-- 
+2. Git을 이용한 버전 관리 : The canonical desired system state versioned in Git.
+- 선언형 배포 관리 방식을 정의하며, Git을 통해 형상관리할 수 있습니다.
+- 각 버전이 git 저장소에 기록되어 있어야 합니다.
+- Git revert를 통한 쉽게 과거의 버전으로 롤백할 수 있습니다.
 
-3. 선언형 모델 (Declarative Model)   
-- 
+3. 변경사항에 자동화 반영 : Approved changes that can be automatically applied to the system.
+- Git repository에 선언형 배포 정의서를 저장하면 배포가 일어나는 작업은 시스템에 자동으로 허용해야 합니다.
+- 이것은 책임 주체가 ArgoCD와 같은 배포 주체가 되며, Gitops에는 상태 정의가 외부에 존재하는 분리된 환경이 됩니다.
+- 이를 통해 human error를 줄이고 지속적 빌드 및 배포를 가능하게 할 수 있습니다.
 
 4. 선언형 모델 (Declarative Model)   
 - 

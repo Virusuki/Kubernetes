@@ -14,13 +14,27 @@
 - Gitops는 Weaveworks라는 회사에서 처음 사용한 용어이며, 클라우드 네이티브 application을 타겟으로 한 지속적배포(Continuous Deployment)에 초점을 두고 있습니다.
 
 
+## 단일 진실 공급원 (Single Source of Truth, SSOT)   
+- 
+
 ## Gitops의 모델
-1. 선언형 모델 (Declarative Model)   
+1. 선언형 모델 : The entire system described declaratively.
+- Gitops에서 배포 방법은 command(명령형) 방식이 아닌 declaratively(선언형)으로 정의되어야 합니다.
+- 예) 사용자가 kubectl run --image ,,, or kubectl -f example.yaml 와 같이 선언형으로 생성할 수 있습니다.
+- git repository에서 버전이 지정된 애플리케이션 선언을 사용하면 SSOT(Single source of truth, SSOT) 조건을 만족할 수 있습니다.
+- 그러면, app을 쉽게 배포하고 문제 발생시, 롤백하기도 쉽습니다.
+
+2. Git을 이용한 버전 관리 : 
+- 
+
+3. 선언형 모델 (Declarative Model)   
+- 
+
+4. 선언형 모델 (Declarative Model)   
 - 
 
 
-2. 단일 진실 공급원 (Single Source of Truth, SSOT)   
-- 
+
 
 
 ## GitOps 적용
@@ -31,4 +45,10 @@
 ## GitOps의 구현체(ArgoCD)
 -
 [ArgoCD 셋업 과정]
+
+
+
+Reference:
+- https://www.weave.works/technologies/gitops/
+- 
 

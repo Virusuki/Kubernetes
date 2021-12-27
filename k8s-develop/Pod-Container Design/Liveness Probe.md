@@ -49,6 +49,7 @@ spec:
 ```
 
 
+
 - Liveness 웹 설정 - http 요청 확인
    - 서버 응답 코드가 200이상 400미만 (컨테이너 유지)
    - 서버 응답 코드가 그 외일 경우 (컨테이너 재시작)
@@ -80,6 +81,19 @@ spec:
 ```
 
 
+
+### Readiness TCP 설정
+- 준비 프로브는 8080포트를 검사
+- 5초 후부터 검사 시작
+- 검사주기는 10초
+   - 서비스를 시작해도 된다.
+
+### Liveness TCP 설정
+- 활성화 프로브는 8080포트를 검사
+- 15초 후부터 검사시작
+- 검사 주기는 20초
+  - 컨테이너를 재시작하지 않아도 된다.
+
 ```
 apiVersion: v1
 kind: Pod
@@ -93,12 +107,12 @@ spec:
     image: k8s.gcr.io/goproxy:0.1
     ports:
     - containerPort: 8080
-    readinessProbe:
+    readinessProbe:  # 레디네스 프로브가 실패하면 서비스와 연결이 끊기는 결과가 나옴
       tcpSocket:
         port: 8080
       initialDelaySeconds: 5
       periodSeconds: 10
-    livenessProbe:
+    livenessProbe:   # 라이브네스 프로브가 실패하면 재시작함 (handshake 맺어지면 정상적으로 동작)
       tcpSocket:
         port: 8080
       initialDelaySeconds: 15

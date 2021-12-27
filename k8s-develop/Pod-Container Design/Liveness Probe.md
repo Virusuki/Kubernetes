@@ -110,6 +110,22 @@ http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {    # 
 })
 ```
 
+- 3번 실패 마지막 실패한 것은 13초전이며, 가장 처음 실패한 건 19초전 로그를 통해 알 수 있음. 이유는 500 statuscode로 인해 실패
+```
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  42s                default-scheduler  Successfully assigned default/liveness-http to ubuntu-kube-worker3
+  Normal   Pulled     35s                kubelet            Successfully pulled image "k8s.gcr.io/liveness" in 3.210132288s
+  Warning  Unhealthy  13s (x3 over 19s)  kubelet            Liveness probe failed: HTTP probe failed with statuscode: 500
+  Normal   Killing    13s                kubelet            Container liveness failed liveness probe, will be restarted
+  Normal   Pulling    11s (x2 over 38s)  kubelet            Pulling image "k8s.gcr.io/liveness"
+  Normal   Pulled     9s                 kubelet            Successfully pulled image "k8s.gcr.io/liveness" in 2.100023165s
+  Normal   Created    8s (x2 over 31s)   kubelet            Created container liveness
+  Normal   Started    8s (x2 over 30s)   kubelet            Started container liveness
+```
+
+
 ### Readiness와 Liveness 예제
 #### Readiness TCP 설정
 - 준비 프로브는 8080포트를 검사

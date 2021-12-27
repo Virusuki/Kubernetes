@@ -21,3 +21,44 @@
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/files/img/Pod_service_action.PNG" width="550px" height="300px" title="px(픽셀) 크기 설정" alt="Pod service action"></img><br/>
 
+### Readiness와 Liveness 예제
+#### Readiness TCP 설정
+- 준비 프로브는 8080포트를 검사
+- 5초 후부터 검사 시작
+- 검사주기는 10초
+   - 서비스를 시작해도 된다.
+
+#### Liveness TCP 설정
+- 활성화 프로브는 8080포트를 검사
+- 15초 후부터 검사시작
+- 검사 주기는 20초
+  - 컨테이너를 재시작하지 않아도 된다.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goproxy
+  labels:
+    app: goproxy
+spec:
+  containers:
+  - name: goproxy
+    image: k8s.gcr.io/goproxy:0.1
+    ports:
+    - containerPort: 8080
+    readinessProbe:  # 레디네스 프로브가 실패하면 서비스와 연결이 끊기는 결과가 나옴
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    livenessProbe:   # 라이브네스 프로브가 실패하면 재시작함 (handshake 맺어지면 정상적으로 동작)
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 20
+```
+
+
+Reference:
+- https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/

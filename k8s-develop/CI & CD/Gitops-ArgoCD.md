@@ -118,6 +118,14 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_App.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Deploy-App"></img><br/>
+
+
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_sync_click.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD App snyc"></img><br/>
+
+
+
 Reference:
 - https://www.weave.works/technologies/gitops/
 - https://argo-cd.readthedocs.io/en/stable/

@@ -5,6 +5,10 @@
 
   - [쿠버네티스 구조/개념](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/Kubernetes%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EA%B5%AC%EC%A1%B0.md)
 
+- ### Kubernetes Architecture
+
+  - [멀티 컨테이너](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/Kubernetes%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EA%B5%AC%EC%A1%B0.md)
+
 
 - ### Logging
   - [[사이드카] 사이드카 기본](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Side-car%20(%EA%B8%B0%EB%B3%B8).md)

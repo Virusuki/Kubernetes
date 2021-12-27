@@ -120,7 +120,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 - ArgoCD에서 Jupyterlab-container App이 생성된 것을 확인할 수 있습니다.
 - SYNC 버튼을 눌러서 deploy를 진행할 수 있습니다.
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_App.PNG" width="750px" height="450px" title="px(픽셀) 크기 설정" alt="ArgoCD Deploy-App"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_App.PNG" width="1200px" height="600px" title="px(픽셀) 크기 설정" alt="ArgoCD Deploy-App"></img><br/>
 <br>
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_sync_click.PNG" width="750px" height="450px" title="px(픽셀) 크기 설정" alt="ArgoCD App snyc"></img><br/>

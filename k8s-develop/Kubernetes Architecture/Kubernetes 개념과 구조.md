@@ -12,6 +12,7 @@
 3. 확장 가능성
 
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/files/img/kubernetes-architecture.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Kubernetes Structure"></img><br/>
 
 ### 용어
 - 워크로드: 시스템에 의해 실행되어야할 작업의 할당량 
@@ -19,3 +20,4 @@
 ### Reference:
 - https://kubernetes.io/ko/docs/concepts/overview/what-is-kubernetes/
 - https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/
+- https://www.redhat.com/ko/topics/containers/kubernetes-architecture

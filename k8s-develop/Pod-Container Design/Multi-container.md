@@ -37,6 +37,23 @@ spec:
     command: ["/bin/sh"]
     args: ["-c", "echo Hello from the debian container > /pod-data/index.html"]
 ``` 
+
+- 하나의 파드안에서 nginx와 redis 이미지를 실행하는 예제 yaml 파일
+
+``` 
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-containers
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:1.21.3
+  - name: redis-container
+    image: redis:6.2.6
+EOF
+``` 
     
-    
+
     

@@ -46,16 +46,12 @@
 
 
 
-
-
-## GitOps 적용
-- 
-[Example GitOps Pipeline]
-
-
 ## GitOps의 구현체(ArgoCD)
--
-[ArgoCD 셋업 과정]
+- ArgoCD는 쿠버네티스의 오픈소스 도구이며, workflow를 실행 및 클러스터를 관리하고, Gitops의 배포를 수행합니다.
+- 즉, ArgoCD에서 설정 사항을 Git에 푸시하면, 쿠버네티스의 클러스터 상태가 자동으로 Git에 정의된 상태로 동기화 됩니다.
+
+## ArgoCD Install
+
 
 
 

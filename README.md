@@ -7,7 +7,7 @@
 
   - [[C] Architecture] ( )
 
-- ### CI/CD
+## CI / CD
   - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
 
 ## :rocket:  Software Architecture & Engineering

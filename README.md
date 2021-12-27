@@ -3,12 +3,12 @@
 
 ## :rocket:  Language
 
-- ### C
+- ### Kubernetes Architecture
 
-  - [[C] C언어 Practics](https://github.com/Virusuki/Tech-for-Developers/blob/main/Programming%20language/C%EC%96%B8%EC%96%B4(Practice).md)
+  - [[C] Architecture] ( )
 
-- ### Python
-  - [[Python] Python언어 Practics](https://github.com/Virusuki/Tech-for-Developers/blob/main/Programming%20language/C%EC%96%B8%EC%96%B4(Practice).md)
+- ### CI/CD
+  - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
 
 ## :rocket:  Software Architecture & Engineering
 

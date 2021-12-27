@@ -20,7 +20,7 @@
 - 오직 지정한 원천에서만 결과가 나오므로, 배포 상태를 확인하기 위해 원천 하나만 보면 되기 때문에 문제 해결에도 쉽게 파악할 수 있습니다.
 - 안정적으로 운영환경에 배포할 수 있으므로, 사람의 손에 거치치 않아 human error를 최소화할 수 있는 장점이 있습니다.
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK%20Architecture_img.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gitops-pipeline.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
 
 ## Gitops의 모델
 1. 선언형 모델 : The entire system described declaratively.

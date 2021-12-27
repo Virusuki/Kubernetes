@@ -100,10 +100,12 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
   
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Argocd_%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%99%94%EB%A9%B4.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
 
+
 - ArgoCD에서 빨간색 표시된 NEW APP 버튼 클릭해서 App을 추가
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_newapp.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
 
 
+- Ar
 
 Reference:
 - https://www.weave.works/technologies/gitops/

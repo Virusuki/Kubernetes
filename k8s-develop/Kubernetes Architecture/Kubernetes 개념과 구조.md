@@ -31,8 +31,8 @@
 
 
 - 쿠버네티스 리소스 : 스토리지 오브젝트
-    1. Persistent storage: 컨테이너가 동작하도록 관리, 쿠버네티스 클러스터와 워커노드의 CPU/Mem/Disk 간을 연결
-    2. Kube-prox
+    1. Persistent storage: 컨테이너 내의 디스크에 있는 파일은 임시적이며, 퍼시스턴트 볼륨은 지속적으로 존재합니다.
+    2. Container registry: 쿠버네티스가 의존하는 컨테이너 이미지는 컨테이너 레지스트리에 저장됩니다.
 
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/files/img/kubernetes-architecture.PNG" width="850px" height="680px" title="px(픽셀) 크기 설정" alt="Kubernetes Structure"></img><br/>

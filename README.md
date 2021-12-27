@@ -3,9 +3,13 @@
 
 - ### Kubernetes Architecture
 
-- [[C] Architecture] ( )
+  - [[C] Architecture] ( )
 
+## 📌 Computer Science
 
+- ### Computer Architecture
+
+  - [
 
 - ### Logging
 - [[사이드카] 사이드카 기본](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Side-car%20(%EA%B8%B0%EB%B3%B8).md)

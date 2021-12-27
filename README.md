@@ -23,5 +23,5 @@
   - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
 
 
-- ### :books: CKA
+- ### :notebook: CKA
   - [CKA](https://github.com/Virusuki/Kubernetes/blob/main/CKA/CKA.md)

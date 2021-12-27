@@ -5,3 +5,8 @@
 1. 보안성
 2. 사용자 편의성
 3. 확장 가능성
+
+
+Reference:
+- https://kubernetes.io/ko/docs/concepts/overview/what-is-kubernetes/
+- https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/

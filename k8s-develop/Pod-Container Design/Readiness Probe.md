@@ -16,8 +16,8 @@
    - 400, 500은 오류 (실패로 간주)
 
 - 단, Readiness Probe는 Liveness Probe와 다른 점은 아래의 그림과 같이, 외부에서 서비스로 들어오는 사용자 request를 pod에 적절하게 분배하는 것이 서비스의 역할이다.
-   - 그런데, 파드가 적절하게 동작하지 않는다면(파드가 응답없을 때) 그 파드에는 서비스를 할 수 없도록 막아야한다. 나머지 2개의 파드가 있으므로, 미응답 파드 서비스 연결은 끊는다.
-   - 
+- 그런데, 파드가 적절하게 동작하지 않는다면(파드가 응답없을 때) 그 파드에는 서비스를 할 수 없도록 막아야한다. 나머지 2개의 파드가 있으므로, 미응답 파드의 서비스는 연결은 끊는다.
+- 이런 기능을 위해서 Readiness Probe가 있으며 즉, 로드밸런싱 하지않도록 구성해주는게 Readiness probe의 역할이다.
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/files/img/Pod_service_action.PNG" width="550px" height="300px" title="px(픽셀) 크기 설정" alt="Pod service action"></img><br/>
 

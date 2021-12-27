@@ -68,7 +68,7 @@ Events:
 ### Liveness 웹 설정 - http 요청 확인
    - 서버 응답 코드가 200이상 400미만 (컨테이너 유지)
    - 서버 응답 코드가 그 외일 경우 (컨테이너 재시작)
-
+- pods/probe/http-liveness.yaml 
 ```
 apiVersion: v1
 kind: Pod
@@ -81,7 +81,7 @@ spec:
   - name: liveness
     image: k8s.gcr.io/liveness
     args:
-    - /server
+    - /server    # 해당 server는 go로 작성되어 있으며 아래의 http.HandleFunc() 함수를 확인
     livenessProbe:  
 # Liveness에서 3초기다렸다가 3초 주기로 검사, httpGet 포트8080에 요청하는게 프로세스의 역할. 3초마다 /server에 질의 요청하면서 만약 400-500이 발생하면 Liveness Probe에서 재시작함
   (go 언어로 구성되어 있으며, 처음 10초간 200을 반환하는데, 이후 500을 반환하기 시작하면서 Liveness Probe가 실패하는것을 간주하면서 재시작하게끔 구성되어 있음)
@@ -95,6 +95,20 @@ spec:
       periodSeconds: 3
 ```
 
+- pods/probe/http-liveness.yaml의 server 코드
+- 
+```
+http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {    # /healthz에 요청했을 때,
+    duration := time.Now().Sub(started)  # 현재시간(started 시작된시간) = duration (컨테이너를 실행하고나서 지난 시간)
+    if duration.Seconds() > 10 {         # duration이 10초가 넘었으면 500을 실행, 아니면 else가 실행됨
+        w.WriteHeader(500)      # 10초가 지나면 500을 반환하면서 오류가 발생함. liveness Probe가 실패하면서 3번 실패하면 컨테이너 재시작함
+        w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds())))
+    } else {
+        w.WriteHeader(200)      # 10초가 되기전에는 정상
+        w.Write([]byte("ok"))
+    }
+})
+```
 
 ### Readiness와 Liveness 예제
 #### Readiness TCP 설정

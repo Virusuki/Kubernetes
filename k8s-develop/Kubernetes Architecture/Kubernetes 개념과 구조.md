@@ -15,7 +15,7 @@
 ## 쿠버네티스 구조
 - 클러스터 구성요소
 - 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/files/img/kubernetes-architecture.PNG" width="750px" height="650px" title="px(픽셀) 크기 설정" alt="Kubernetes Structure"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/files/img/kubernetes-architecture.PNG" width="850px" height="680px" title="px(픽셀) 크기 설정" alt="Kubernetes Structure"></img><br/>
 
 ### 용어
 - 워크로드: 시스템에 의해 실행되어야할 작업의 할당량 

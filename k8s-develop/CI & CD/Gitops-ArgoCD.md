@@ -112,6 +112,8 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_Source_des.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Source"></img><br/>
+
 
 
 Reference:

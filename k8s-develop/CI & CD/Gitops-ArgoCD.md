@@ -117,12 +117,27 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_Source_des.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Source"></img><br/>
 
 
-
+- ArgoCD에서 Jupyterlab-container App이 생성된 것을 확인할 수 있습니다.
+- SYNC 버튼을 눌러서 deploy를 진행할 수 있습니다.
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_App.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Deploy-App"></img><br/>
 
-
-
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_sync_click.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD App snyc"></img><br/>
+
+- 쿠버네티스에서 Application이 정상적으로 배포됐는지 확인할 수 있습니다.
+```
+root@ubuntu-kube-master1:~# kubectl get pod,deployments.apps,svc -n jupyter-ns
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/jupyter-user-6759d5899-pzhmm   1/1     Running   0          3d21h
+pod/jupyter-user-6759d5899-tllk7   1/1     Running   0          3d21h
+pod/jupyter-user-6759d5899-xhz54   1/1     Running   0          3d21h
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/jupyter-user   3/3     3            3           3d21h
+
+NAME                           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/service-jupyter-user   NodePort   10.103.107.47   <none>        9000:30895/TCP   3d21h
+```
+
 
 
 

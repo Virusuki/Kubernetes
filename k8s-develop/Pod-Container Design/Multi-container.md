@@ -60,5 +60,4 @@ EOF
 ``` 
 # kubectl logs two-containers nginx-container
 # kubectl exec -it two-containers -c nginx-container -- bash
-
 ``` 

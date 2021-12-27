@@ -15,3 +15,34 @@
 3. http : get요청을 했을 때, 응답이 온다면 정상으로 판단함
    - 200, 300이 오면 정상 (200~400미만은 정상)
    - 400, 500은 오류 (실패로 간주)
+
+
+- Liveness 커맨드 설정 - 파일 존재 여부 확인
+   - 리눅스 환경 command 실행 성공 시 0 (컨테이너 유지)
+   - 실패하면 그 외 값 출력 (컨테이너 재시작)
+  
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-exec
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
+```
+
+- Reference:

@@ -98,7 +98,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
   - Username: admin
   - Password: [쿠버네티스 secret으로 할당받은 값]
   
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gitops-pipeline.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Argocd_%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%99%94%EB%A9%B4.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
 
 - ArgoCD에서 App 배포
 

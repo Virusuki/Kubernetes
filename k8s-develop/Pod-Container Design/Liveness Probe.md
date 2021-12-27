@@ -20,7 +20,8 @@
 - Liveness 커맨드 설정 - 파일 존재 여부 확인
    - 리눅스 환경 command 실행 성공 시 0 (컨테이너 유지)
    - 실패하면 그 외 값 출력 (컨테이너 재시작)
-  
+
+- Liveness Probe(라이브네스 프로브) 예제
 ```
 apiVersion: v1
 kind: Pod
@@ -29,20 +30,55 @@ metadata:
     test: liveness
   name: liveness-exec
 spec:
-  containers:
+  containers:           # Liveness는 검사를 하고자하는 컨테이너에 설정
   - name: liveness
     image: k8s.gcr.io/busybox
     args:
     - /bin/sh
     - -c
-    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
-    livenessProbe:
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600  
+    # touch /tmp/healthy; 정상동작 중,,, sleep 30초간 쉬었다가 바로 healthy파일 삭제되면서 파일이 없기 떄문에, 이후 라이브네스프로브가 실패하게 되고, 컨테이너가 재시작됨
+   
+    livenessProbe:     # 라이브네스가 실행되면서 컨테이너가 정상적으로 동작하는지 체크
       exec:
         command:
         - cat
-        - /tmp/healthy
-      initialDelaySeconds: 5
+        - /tmp/healthy  
+      initialDelaySeconds: 5  # 처음에 5초를 딜레이 했다가 periodSeconds를 통해 5초 주기로 cat /tmp/healthy를 실행함
       periodSeconds: 5
 ```
 
-- Reference:
+
+- Liveness 웹 설정 - http 요청 확인
+   - 서버 응답 코드가 200이상 400미만 (컨테이너 유지)
+   - 서버 응답 코드가 그 외일 경우 (컨테이너 재시작)
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-http
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/liveness
+    args:
+    - /server
+    livenessProbe:  
+# Liveness에서 3초기다렸다가 3초 주기로 검사, httpGet 포트8080에 요청하는게 프로세스의 역할. 3초마다 /server에 질의 요청하면서 만약 400-500이 발생하면 Liveness Probe에서 재시작함
+  (go 언어로 구성되어 있으며, 처음 10초간 200을 반환하는데, 이후 500을 반환하기 시작하면서 Liveness Probe가 실패하는것을 간주하면서 재시작하게끔 구성되어 있음)
+      httpGet:
+        path: /healthz
+        port: 8080
+        httpHeaders:
+        - name: Custom-Header
+          value: Awesome
+      initialDelaySeconds: 3
+      periodSeconds: 3
+```
+
+
+Reference:
+- https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/

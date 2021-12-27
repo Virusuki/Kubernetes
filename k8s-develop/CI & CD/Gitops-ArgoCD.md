@@ -52,8 +52,47 @@
 
 ## ArgoCD Install
 
+``` 
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+``` 
+
+- 쿠버네티스에서 ArgoCD pod 및 service가 잘 배포됐는지 확인
+``` 
+root@ubuntu-kube-master1:~# kubectl get svc,pod -n argocd
+NAME                            TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+service/argocd-dex-server       ClusterIP      10.111.218.192   <none>        5556/TCP,5557/TCP,5558/TCP   3d23h
+service/argocd-metrics          ClusterIP      10.96.140.178    <none>        8082/TCP                     3d23h
+service/argocd-redis            ClusterIP      10.106.178.18    <none>        6379/TCP                     3d23h
+service/argocd-repo-server      ClusterIP      10.102.184.241   <none>        8081/TCP,8084/TCP            3d23h
+service/argocd-server           LoadBalancer   10.96.16.254     <pending>     80:31923/TCP,443:30460/TCP   3d23h
+service/argocd-server-metrics   ClusterIP      10.97.67.122     <none>        8083/TCP                     3d23h
+
+NAME                                      READY   STATUS    RESTARTS   AGE
+pod/argocd-application-controller-0       1/1     Running   0          3d23h
+pod/argocd-dex-server-76c978c87-bd8js     1/1     Running   0          3d23h
+pod/argocd-redis-5b6967fdfc-f2sm4         1/1     Running   0          3d23h
+pod/argocd-repo-server-8555f94d4f-kfvrh   1/1     Running   0          3d23h
+pod/argocd-server-bc59fd78c-ndvqv         1/1     Running   0          3d23h
+``` 
+
+- LoadBalancer로 변경 및 service의 IP를 확인
+```
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl get svc argocd-server -n argocd
+```
+
+- 쿠버네티스에서 변경된 service 확인
+```
+root@ubuntu-kube-master1:~# kubectl get svc argocd-server -n argocd
+NAME            TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE
+argocd-server   LoadBalancer   10.96.16.254   <pending>     80:31923/TCP,443:30460/TCP   3d23h
+```
+
+- ArgoCD 접속을 위한 ID 및 Password 확인 (secret 형태로 구성)
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
 
 
 

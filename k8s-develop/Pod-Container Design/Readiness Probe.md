@@ -17,4 +17,5 @@
 
 단, Readiness Probe는 Liveness Probe와 다른 점은 
 
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/files/img/Pod_service_action.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/files/img/Pod_service_action.PNG" width="500px" height="400px" title="px(픽셀) 크기 설정" alt="Pod service action"></img><br/>
+

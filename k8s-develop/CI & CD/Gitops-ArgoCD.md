@@ -111,6 +111,8 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_General_conf.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD General"></img><br/>
 
 
+- Github Repository의 app 파일 위치를 지정합니다. Repository URL에 https://github.com/Virusuki/ArgoCD-Gitops 로 설정 및 main 브랜치를 사용하였습니다. path는 배포할 app의 디렉토리를 지정합니다. (지정한 디렉토리안에 deployment.yaml와 service.yaml이 포함되어 있습니다.
+- Cluster URL은 쿠버네티스 내에 argo가 구성되어 있어서 kube-apiserver에 대한 URL 정보를 도메인 주소로 입력합니다. 그 다음에, namespace명을 설정하고 create 버튼을 누릅니다.
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_Source_des.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Source"></img><br/>
 

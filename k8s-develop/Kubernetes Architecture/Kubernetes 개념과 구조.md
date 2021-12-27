@@ -12,7 +12,7 @@
 3. 확장 가능성
 
 
-#### 쿠버네티스 구조
+### 쿠버네티스 구조
 > Control plane
 
 - 컨트롤 플레인
@@ -24,8 +24,10 @@
        - 노드가 다운되면 통지/대응, 알맞은 수의 파드 유지, Service와 파드 연결 등
     
 
-- 컨트롤 플레인
-    1. kube-api
+- 워커 노드
+    1. kubelet(쿠블렛): 컨테이너가 동작하도록 관리, 쿠버네티스 클러스터와 워커노드의 CPU/Mem/Disk 간을 연결
+    2. Kube-proxy: 쿠버네티스 Service(로드밸런서 리소스)에 맞게 커널의 netfilter(iptables)등을 관리하는 역할
+    3. Container runtime: 컨테이너 실행을 담당하는 소프트웨어(도커, containerd, CRI-O 등)
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/files/img/kubernetes-architecture.PNG" width="850px" height="680px" title="px(픽셀) 크기 설정" alt="Kubernetes Structure"></img><br/>
 

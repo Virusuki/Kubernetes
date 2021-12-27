@@ -17,7 +17,7 @@
 - 300(30*10)초 후에도 파드가 정상 동작하지 않는 경우
    - 300초 동안 파드가 정상 실행되는 시간을 벌어줌
 
-
+```
 ports:
 - name: liveness-port
   containerPort: 8080
@@ -36,7 +36,7 @@ startupProbe:
     port: liveness-port
   failureThreshold: 30  # 30번 실패해도 괜찮은 임계치, 만약 10(s)*30=300 중간에 부팅이 됐을 때, 중간에 빠져나와서 Liveness / Readiness 프로브를 실행하게 됨
   periodSeconds: 10   # 10초마다 검사
-
+```
 
 
 

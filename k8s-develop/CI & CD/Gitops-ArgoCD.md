@@ -19,8 +19,8 @@
 
 ## Gitops의 모델
 1. 선언형 모델 : The entire system described declaratively.
- - Gitops에서 배포 방법은 command(명령형) 방식이 아닌 declaratively(선언형)으로 정의되어야 합니다.
- - 예) 사용자가 kubectl run --image ,,, or kubectl -f example.yaml 와 같이 선언형으로 생성할 수 있습니다.
+- Gitops에서 배포 방법은 command(명령형) 방식이 아닌 declaratively(선언형)으로 정의되어야 합니다.
+- 예) 사용자가 kubectl run --image ,,, or kubectl -f example.yaml 와 같이 선언형으로 생성할 수 있습니다.
 - git repository에서 버전이 지정된 애플리케이션 선언을 사용하면 SSOT(Single source of truth, SSOT) 조건을 만족할 수 있습니다.
 - 그러면, app을 쉽게 배포하고 문제 발생시, 롤백하기도 쉽습니다.
 
@@ -34,8 +34,9 @@
 - 이것은 책임 주체가 ArgoCD와 같은 배포 주체가 되며, Gitops에는 상태 정의가 외부에 존재하는 분리된 환경이 됩니다.
 - 이를 통해 human error를 줄이고 지속적 빌드 및 배포를 가능하게 할 수 있습니다.
 
-4. 선언형 모델 (Declarative Model)   
-- 
+4. 자가 치유 및 이상 탐지
+- 사용자는 시스템의 배포 상태를 작성하게 되면 실제 배포 환경이 일치하고 있는지 ArgoCD와 같은 소프트웨어 에이전트가 배포 주체가 됩니다.
+- 에이전트를 사용하면 현재 배포상태를 확인하고 Git repository의 변경 사항 등 체크하여 배포된 리소스가 이상 유무까지 확인합니다.
 
 
 

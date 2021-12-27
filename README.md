@@ -1,4 +1,4 @@
-# Kubernetes Tech for Developers
+# Kubernetes Tech
 
 
 ## :rocket:  Language

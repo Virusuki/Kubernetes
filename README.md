@@ -1,7 +1,7 @@
 # :rocket: Kubernetes Tech
 
 
-- ### :rocket: Kubernetes Architecture
+- ### Kubernetes Architecture
   - [[C] Architecture] ( )
 
 

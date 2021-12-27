@@ -6,7 +6,12 @@
 
 ## Liveness Probe를 통해서 컨테이너가 살았는지 판단하는 방법 3가지
 1. CommandLine
-2. TCP (3 way handshake)
+   - 0이면 정상
+   - 0 외에 비정상
+2. TCP (3 way handshake) : 3-way handshake가 잘 맺어진다고 하면 통신이 원활하다라 판단하고 파드가 살아있다고 판별함
    - #1. SYN
    - #2. SYN + ACK
    - #3. ACK
+3. http : get요청을 했을 때, 응답이 온다면 정상으로 판단함
+   - 200, 300이 오면 정상
+   - 400, 500은 오류 (실패로 간주)

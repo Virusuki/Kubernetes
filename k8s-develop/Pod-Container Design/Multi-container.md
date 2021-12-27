@@ -55,5 +55,10 @@ spec:
 EOF
 ``` 
     
+- 하나의 파드안에 두 개 이상의 컨테이너가 올라가 있는 환경에서 로그 확인 or exec 명령을 실행할 특정 컨테이너 선택할 경우
 
-    
+``` 
+# kubectl logs two-containers nginx-container
+# kubectl exec -it two-containers -c nginx-container -- bash
+
+``` 

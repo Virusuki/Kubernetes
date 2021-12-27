@@ -138,6 +138,7 @@ NAME                           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S) 
 service/service-jupyter-user   NodePort   10.103.107.47   <none>        9000:30895/TCP   3d21h
 ```
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_Deploy_App.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD App deploy"></img><br/>
 
 
 

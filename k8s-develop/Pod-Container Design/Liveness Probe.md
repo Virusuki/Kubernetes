@@ -47,6 +47,22 @@ spec:
       periodSeconds: 5
 ```
 
+- 0s (x3 over 10s) 의미는 똑같은 메세지로 3번 발생 (10초동안 오류가 3번 발생), 
+- 1번째 오류가 발생한 것은 10초전, 그리고 2번째는 안보이지만 yaml파일을 출력하면 보임, 마지막으로 3번째 발생한 0초전(5초전) 발생 = 10초 5초 0초 시간 순서에 따라서 오류가 발생
+- 3번 요청에 실패하면 killing을 하고 다시 처음부터 
+```
+Events:
+  Type     Reason     Age               From               Message
+  ----     ------     ----              ----               -------
+  Normal   Scheduled  55s               default-scheduler  Successfully assigned default/liveness-exec to ubuntu-kube-worker3
+  Normal   Pulling    50s               kubelet            Pulling image "k8s.gcr.io/busybox"
+  Normal   Pulled     46s               kubelet            Successfully pulled image "k8s.gcr.io/busybox" in 4.220366155s
+  Normal   Created    43s               kubelet            Created container liveness
+  Normal   Started    42s               kubelet            Started container liveness
+  Warning  Unhealthy  0s (x3 over 10s)  kubelet            Liveness probe failed: cat: can't open '/tmp/healthy': No such file or directory
+  Normal   Killing    0s                kubelet            Container liveness failed liveness probe, will be restarted
+```
+
 
 
 ### Liveness 웹 설정 - http 요청 확인

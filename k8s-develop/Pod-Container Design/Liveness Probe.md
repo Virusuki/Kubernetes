@@ -96,7 +96,7 @@ spec:
 ```
 
 - pods/probe/http-liveness.yaml의 server 코드
-- 
+
 ```
 http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {    # /healthz에 요청했을 때,
     duration := time.Now().Sub(started)  # 현재시간(started 시작된시간) = duration (컨테이너를 실행하고나서 지난 시간)

@@ -94,9 +94,15 @@ argocd-server   LoadBalancer   10.96.16.254   <pending>     80:31923/TCP,443:304
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
+- service에서 할당 받은 IP로 https로 접속 및 https://192.168.100.186:30460/ 그리고, secret으로 확인된 password를 입력해서 로그인한다.
+  - Username: admin
+  - Password: [쿠버네티스 secret으로 할당받은 값]
+  
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gitops-pipeline.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
 
+- ArgoCD에서 App 배포
 
 Reference:
 - https://www.weave.works/technologies/gitops/
-- 
+- https://argo-cd.readthedocs.io/en/stable/
 

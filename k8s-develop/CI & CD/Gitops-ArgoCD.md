@@ -98,12 +98,13 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
   - Username: admin
   - Password: [쿠버네티스 secret으로 할당받은 값]
   
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Argocd_%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%99%94%EB%A9%B4.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Argocd_%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%99%94%EB%A9%B4.PNG" width="700px" height="500px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
 
+<br>
 
 - ArgoCD에서 빨간색 표시된 NEW APP 버튼 클릭해서 App을 추가
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_newapp.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD login"></img><br/>
-
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/ArgoCD_newapp.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="ArgoCD Newapp"></img><br/>
+<br>
 
 - Application Name은 Jupyterlab-container 및 Project는 default로 설정합니다. SYNC POLICY는 자동/수동 선택합니다. 자동 동기화는 Git에 설정된 manifest 내용과 현재 application
   상태가 다르거나 정상동작하지 않으면 동시화해서 다시 배포 및 재구성이 가능하다. 수동으로 배포를 진행 및 namespace를 생성할 수 있도록 sync option에 선택합니다.

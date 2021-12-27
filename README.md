@@ -8,7 +8,7 @@
 - ### Pod container Design
 
   - [멀티 컨테이너](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Multi-container.md)
-  - [Liveness Probe[라이브네스]]https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Liveness%20Probe.md
+  - [Liveness Probe[라이브네스]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Liveness%20Probe.md)
 
 - ### Logging
   - [[사이드카] 사이드카 기본](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Side-car%20(%EA%B8%B0%EB%B3%B8).md)

@@ -19,11 +19,7 @@
   - [kube-bench 기반 쿠버네티스 보안 점검](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/kube-bench%20%EA%B8%B0%EB%B0%98%20%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%20%EB%B3%B4%EC%95%88%20%EC%A0%90%EA%B2%80.md)
   - [Falco 기반 쿠버네티스 컨테이너 보안 모니터링](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/Falco%20%EA%B8%B0%EB%B0%98%20%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%EB%B3%B4%EC%95%88%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81.md)
 
-- ### :rocket: CI / CD
+- ### CI / CD
   - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
 
-## :rocket:  Software Architecture & Engineering
 
-- ### Devops
-
-  - [[Devops] Roadmap]

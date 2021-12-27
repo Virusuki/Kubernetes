@@ -7,7 +7,7 @@
 
 - ### Pod container Design
 
-  - [멀티 컨테이너](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Multi-container.md)
+  - [Multi Container [멀티 컨테이너]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Multi-container.md)
   - [Liveness Probe [라이브네스 프로브]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Liveness%20Probe.md)
   - [Readiness Probe [레디네스 프로브]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Readiness%20Probe.md)
   - [Startup Probe [스타트업 프로브]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Startup%20Probe.md)

@@ -26,9 +26,21 @@ chmod 700 get_helm.sh
 helm -h
 ```
 
+- default 스토리지클래스로 rook-ceph-block을 사용하도록 설정
+```
+kubectl patch storageclass rook-ceph-block -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
 
+- rook-ceph-block (default)
 ```
+root@namuk-01:~# kubectl get sc
+NAME                        PROVISIONER                  RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+namuk-rook-ceph-block       rook-ceph.rbd.csi.ceph.com   Delete          Immediate           true                   26d
+rook-ceph-block (default)   rook-ceph.rbd.csi.ceph.com   Delete          Immediate           true                   26d
 ```
+
+
+
 
 Reference:
 - https://helm.sh/ko/docs/intro/install/

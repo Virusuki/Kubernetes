@@ -4,14 +4,55 @@
 
 ## kubernetes Install
 - 설치 command
-
+```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+```
 
-
+- 쿠버네티스 서비스 배포 확인
+```
 root@ubuntu-kube-master1:~# kubectl get svc -n kubernetes-dashboard
 NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
 dashboard-metrics-scraper   ClusterIP   10.104.155.42    <none>        8000/TCP   15s
 kubernetes-dashboard        ClusterIP   10.105.119.221   <none>        443/TCP    15s
+```
+
+- kubernetes-dashboard 서비스는 clusterIP로 접근 불가능하며, NodePort로 변경 및 구성
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":443,"targetPort":8443}],"selector":{"k8s-app":"kubernetes-dashboard"}}}
+  creationTimestamp: "2021-12-29T05:30:34Z"
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
+  resourceVersion: "8095549"
+  uid: 99af0f0c-fc1b-4105-b564-5869cee55c02
+spec:
+  clusterIP: 10.105.119.221
+  clusterIPs:
+  - 10.105.119.221
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30443
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    k8s-app: kubernetes-dashboard
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+```
 
 
 Reference:

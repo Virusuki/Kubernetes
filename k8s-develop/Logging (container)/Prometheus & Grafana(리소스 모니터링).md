@@ -16,10 +16,72 @@
 
 ## Prometheus(프로메테우스) Install
 - 헬름 리파지토리를 통해 프로메테우스 설치
-- 
+- Prometheus(프로메테우스)와 Grafana(그라파나)에 대한 헬름 저장소 추가
+```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
+```
+
+- 헬름 배포를 위한 프로메테우스 및 그라파나 디렉토리 구성
+```
+mkdir grafana_prometheus
+cd grafana_prometheus
+```
+
+- values-prometheus.yaml 파일 생성
+```values-prometheus.yaml 
+cat <<EOF > values-prometheus.yaml # 프로메테우스를 사용하는데 있어서, 변수들을 value파일에 구성함
+server:
+  enabled: true    # 서버를 활성화
+
+  persistentVolume:
+    enabled: true   # PVC 활용 체크
+    accessModes:
+      - ReadWriteOnce
+    mountPath: /data # 프로메테우스가 데이터를 저장하는 공간
+    size: 10Gi
+  replicaCount: 1
+
+  ## Prometheus data retention period (default if not specified is 15 days)
+  ##
+  retention: "15d"  # 15일 기간 정도 저장
+EOF
+```
+
+- values-grafana.yaml 파일을 생성 및 pvc 구성하여 설정정보를 유지
+```
+cat << EOF > values-grafana.yaml
+replicas: 1
+
+service:
+  type: NodePort
+
+persistence:
+  type: pvc
+  enabled: true
+  # storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+  # annotations: {}
+  finalizers:
+    - kubernetes.io/pvc-protection
+
+# Administrator credentials when not using an existing secret (see below)
+adminUser: admin
+adminPassword: test1234!234
+EOF
+```
+
+
+
+
+
+
+
+
+
 
 
 Reference:

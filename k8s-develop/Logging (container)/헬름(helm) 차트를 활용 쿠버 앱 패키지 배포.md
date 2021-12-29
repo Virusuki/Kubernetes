@@ -19,12 +19,16 @@ helm client가 구성되는 곳은 kubectl에 구성된 곳이어야 됨.
 ## helm Install
 - 호스트에 구성된 kubectl과 인증 설정이 있어야 정상적 동작
 
+```
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
 helm -h
+```
 
 
+```
+```
 
 Reference:
 - https://helm.sh/ko/docs/intro/install/

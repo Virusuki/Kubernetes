@@ -39,6 +39,28 @@ namuk-rook-ceph-block       rook-ceph.rbd.csi.ceph.com   Delete          Immedia
 rook-ceph-block (default)   rook-ceph.rbd.csi.ceph.com   Delete          Immediate           true                   26d
 ```
 
+## helm 차트 repository 초기화
+- helm은 외부에서 정의된 yaml 파일을 내려 받아 쿠버네티스 애플리케이션 배포
+- apt, yum과 같이 저장소를 별도로 두고 있음
+- 외부 저장소를 helm repo add 명령으로 추가
+
+- 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
+```
+# helm repo add bitnami https://charts.bitnami.com/bitnami
+
+```
+
+- 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
+```
+# helm repo update
+```
+
+
+
+
+
+
+
 
 
 

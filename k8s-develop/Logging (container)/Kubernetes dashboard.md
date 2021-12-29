@@ -54,6 +54,17 @@ status:
   loadBalancer: {}
 ```
 
+- 쿠버네티스 마스터노드의 IP/port를 통해 대시보드에 접속
+```
+https://192.168.100.186:30443
+
+root@ubuntu-kube-master1:~# kubectl get svc -n kubernetes-dashboard
+NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+dashboard-metrics-scraper   ClusterIP   10.104.155.42    <none>        8000/TCP        6m49s
+kubernetes-dashboard        NodePort    10.105.119.221   <none>        443:30443/TCP   6m49s
+
+```
+
 
 Reference:
 - https://kubernetes.io/ko/docs/tasks/access-application-cluster/web-ui-dashboard/

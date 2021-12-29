@@ -55,6 +55,13 @@ rook-ceph-block (default)   rook-ceph.rbd.csi.ceph.com   Delete          Immedia
 # helm repo update
 ```
 
+- 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
+```
+# helm search repo bitnami (bitnami 라는 키워드 검색)
+
+
+```
+
 
 
 

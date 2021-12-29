@@ -11,9 +11,20 @@
 - 간단한 공유: 차트는 공용 or 개인 서버에서 쉽게 버전관리, 공유 및 호스팅
 - 롤백: helm 롤백을 사용하면 이전 버전의 release로 쉽게 롤백
 
-   * 주로 helm 3버전을 사용하며, 별도의 helm 서버를 운영하지 않고, Helm Client(helm)를 구성해서 바로 배포할 수 있도록 구성
-   * helm client는 Chart repository(yaml파일들이 많음)에 접근하여 helm client에 helm install 명령만 하면 kubernetes API server에 배포가 됨
-   * helm client가 구성되는 곳은 kubectl에 구성된 곳이어야 됨.
+### 헬름 3버전 아키텍처 구성
+주로 helm 3버전을 사용하며, 별도의 helm 서버를 운영하지 않고, Helm Client(helm)를 구성해서 바로 배포할 수 있도록 구성
+helm client는 Chart repository(yaml파일들이 많음)에 접근하여 helm client에 helm install 명령만 하면 kubernetes API server에 배포가 됨
+helm client가 구성되는 곳은 kubectl에 구성된 곳이어야 됨.
 
 ## helm Install
-- 
+- 호스트에 구성된 kubectl과 인증 설정이 있어야 정상적 동작
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+helm -h
+
+
+
+Reference:
+- https://helm.sh/ko/docs/intro/install/

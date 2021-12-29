@@ -31,7 +31,7 @@ helm -h
 kubectl patch storageclass rook-ceph-block -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-- rook-ceph-block (default)
+- rook-ceph-block (default)가 되어있어야 함
 ```
 root@namuk-01:~# kubectl get sc
 NAME                        PROVISIONER                  RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE

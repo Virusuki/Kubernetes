@@ -47,27 +47,82 @@ rook-ceph-block (default)   rook-ceph.rbd.csi.ceph.com   Delete          Immedia
 - 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
 ```
 # helm repo add bitnami https://charts.bitnami.com/bitnami
-
+"bitnami" has been added to your repositories
 ```
 
 - 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
+- 리자피토리 리스트에 등록된 repo에 대한 내용을 업데이트함
 ```
 # helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈
 ```
 
-- 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행
+- 다음 명령을 실행해 bitnami 저장소를 helm 목록에 추가한 뒤 업데이트 진행(bitnami 라는 키워드 검색)
 ```
-# helm search repo bitnami (bitnami 라는 키워드 검색)
-
-
+# helm search repo bitnami 
 ```
 
+- helm 차트로 mysql 배포
+```
+- 네임스페이스 생성
+# kubectl create ns mysql  
 
+- mysqlname 라는 고유이름을 지어줌
+# helm install mysqlname bitnami/mysql -n mysql
+```
 
+- mysqlname 이름으로 배포 확인
+```
+root@namuk-01:~# helm install mysqlname bitnami/mysql -n mysql
+NAME: mysqlname
+LAST DEPLOYED: Thu Dec 30 08:58:42 2021
+NAMESPACE: mysql
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: mysql
+CHART VERSION: 8.8.18
+APP VERSION: 8.0.27
 
+** Please be patient while the chart is being deployed **
+...
 
+kubectl run mysqlname-client --rm --tty -i --restart='Never' --image  docker.io/bitnami/mysql:8.0.27-debian-10-r63 --namespace mysql --command -- bash
+...
+kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-password}" | base64 --decode)
+```
 
+- 아래의 그대로 복사하면 mysql namespace에 정보를 얻을 수 있음 
+```
+# kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-password}" | base64 --decode) 패스워드가 나옴
 
+```
+
+- 배포된 mysql 확인 및 패스워드 확인
+```
+# kubectl get pod -n mysql
+# kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-password}" | base64 --decode
+```
+
+- mysql 접속
+```
+# kubectl -n mysql exec -it mysqlname-0 -- mysql -u root -p
+```
+
+- 헬름 리스트, 상태 확인 및 배포된 패키지 삭제
+```
+# helm list -n mysql
+# helm status mysqlname -n mysql
+# helm uninstall mysqlname -n mysql
+```
+
+- 헬름 리파지토리 삭제
+```
+# helm repo remove bitnami
+```
 
 
 

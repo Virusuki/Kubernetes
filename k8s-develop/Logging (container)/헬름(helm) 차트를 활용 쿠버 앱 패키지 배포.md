@@ -225,6 +225,14 @@ mychart                      LoadBalancer   10.108.162.167   <pending>     80:32
 ```
 
 
+## 차트 패키징 및 github 리파지토리를 활용한 배포
+
+- 
+```
+
+```
+
+
 Reference:
 - https://helm.sh/ko/docs/intro/install/
 - https://docs.vmware.com/en/VMware-Application-Catalog/services/tutorials/GUID-create-first-helm-chart-index.html

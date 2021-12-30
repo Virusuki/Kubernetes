@@ -142,6 +142,19 @@ kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-pa
 # sudo apt update && sudo apt install tree -y
 # tree mychart
 ```
+```
+mychart
+|-- Chart.yaml
+|-- charts
+|-- templates
+|   |-- NOTES.txt
+|   |-- _helpers.tpl
+|   |-- deployment.yaml
+|   |-- ingress.yaml
+|   `-- service.yaml
+`-- values.yaml
+```
+
 
 - templates 디렉토리
    - 템플릿 디렉토리는 서비스 하는데 필요한 자원들의 yaml 파일의 집합
@@ -149,11 +162,60 @@ kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-pa
    - 템플릿 파일은 go 템플릿 렌더링엔진에서 읽을 수 있는 변수 형태로 구성
    - {{}}기호안의 내용들은 템플릿이 구성될 때 외부의 값을 통해 코드가 실행되면서 결정되는 내용
 
+- 템플릿 자료 확인
+```
+# head -n 20 mychart/templates/deployment.yaml
 ```
 
+- 템플릿 자료 확인
+```
+# cat mychart/templates/service.yaml
 ```
 
+- 서비스에 value 전달하기 
+- -values.yaml 파일로 전달
+```
+# vi mychart/values.yaml
+```
+image:
+  repository: httpd
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "2.4"
 
+service:
+  type: LoadBalancer
+  port: 80
+
+```
+
+- 헬름차트 배포
+
+```
+helm install mychart ./mychart/
+```
+
+- namespace를 별도로 주지않았기 떄문에 namespace를 정의
+```
+NAME: mychart
+LAST DEPLOYED: Thu Dec 30 11:16:36 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get the application URL by running these commands:
+     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+           You can watch the status of by running 'kubectl get --namespace default svc -w mychart'
+  export SERVICE_IP=$(kubectl get svc --namespace default mychart --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
+  echo http://$SERVICE_IP:80
+```
+
+- 서비스 목록을 보면 확인할 수 있음
+```
+root@ubuntu-kube-master1:~# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+mychart                      LoadBalancer   10.108.162.167   <pending>     80:32383/TCP     4m3s
+```
 
 
 

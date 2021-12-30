@@ -114,8 +114,18 @@ helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Prometheus_select.PNG" width="500px" height="300px" title="px(픽셀) 크기 설정" alt="Prometheus select"></img><br/>
 
 
-- Prometheus를 선택
+- Prometheus URL 도메인 정보 입력 (prometheus-server)
+root@namuk-01:~# kubectl get svc -n prometheus
 
+```
+NAME                            TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+grafana                         NodePort    10.102.253.89    <none>        80:30845/TCP   8h
+prometheus-alertmanager         ClusterIP   10.111.117.233   <none>        80/TCP         8h
+prometheus-kube-state-metrics   ClusterIP   10.108.200.135   <none>        8080/TCP       8h
+prometheus-node-exporter        ClusterIP   None             <none>        9100/TCP       8h
+prometheus-pushgateway          ClusterIP   10.106.116.188   <none>        9091/TCP       8h
+prometheus-server               ClusterIP   10.107.17.248    <none>        80/TCP         8h
+```
 
 
 

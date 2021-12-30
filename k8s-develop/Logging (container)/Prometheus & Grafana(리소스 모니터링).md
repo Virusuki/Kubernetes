@@ -132,14 +132,14 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 
 
 
-
 - grafana 공식사이트의 대시보드에 접속 (대시보드 다운받기를 위해 진행)
-- 쿠버네티스를 모니터링 대시보드를 위해 "kubernetes" 검색 및 카테고리를 통해 원하는 대시보드를 다운로드
-
+- 쿠버네티스를 모니터링 대시보드를 위해 "kubernetes" 검색 및 카테고리를 통해 원하는 대시보드를 다운로드   
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="600px" height="600px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>   
 
 
-- Grafana 대시보드 검색된 번호
+
+- Grafana 대시보드 검색된 번호   
+
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="600px" height="600px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>   
 
 

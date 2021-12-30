@@ -124,7 +124,39 @@ kubectl get secret --namespace mysql mysqlname -o jsonpath="{.data.mysql-root-pa
 # helm repo remove bitnami
 ```
 
+## helm 차트 생성/실행
+
+### 헬름 차트 구성요소
+- 쿠버네티스에서 애플리케이션을 배포할 때 필요한 기본적인 리소스를 확인
+- 3-티어로 구성된 해당 그림은 각 계층마다 디플로이먼트와 서비스를 포함
+- 추가적으로 Configmap과 secret등을 사용해 추가 설정할 수 있도록 구성되어 있음
+- 헬름 차트 내에서도 이러한 정보들은 yaml 파일로 정의
+
+- helm create
+```
+# helm create mychart
+```
+
+- tree 설치 명령어
+```
+# sudo apt update && sudo apt install tree -y
+# tree mychart
+```
+
+- templates 디렉토리
+   - 템플릿 디렉토리는 서비스 하는데 필요한 자원들의 yaml 파일의 집합
+   - deployment, service, hpa 등 구성됨
+   - 템플릿 파일은 go 템플릿 렌더링엔진에서 읽을 수 있는 변수 형태로 구성
+   - {{}}기호안의 내용들은 템플릿이 구성될 때 외부의 값을 통해 코드가 실행되면서 결정되는 내용
+
+```
+
+```
+
+
+
 
 
 Reference:
 - https://helm.sh/ko/docs/intro/install/
+- https://docs.vmware.com/en/VMware-Application-Catalog/services/tutorials/GUID-create-first-helm-chart-index.html

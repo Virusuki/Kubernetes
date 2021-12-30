@@ -99,18 +99,21 @@ helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
 ```
 
 - Grafana login 화면
-그림
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometheus_login.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="Grafana login"></img><br/>
+
 
 
 
 - grafana 대시보드에서 프로메테우스 연결 과정
 - Configuration -> Add data source 클릭
-그림
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometh_grafana_connection.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="connection"></img><br/>
+
 
 
 
 - Prometheus를 선택
-그림
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Prometheus_select.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus select"></img><br/>
+
 
 
 

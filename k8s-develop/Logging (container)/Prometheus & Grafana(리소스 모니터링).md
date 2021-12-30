@@ -151,7 +151,6 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 
 
 - import 후 프로메테우스 선택
-- 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/import_clieck.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>   
 
 

@@ -138,7 +138,7 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 
 - 선택된 Grafana 대시보드 번호 확인
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="600px" height="600px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="8800px" height="700px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>   
 
 
 

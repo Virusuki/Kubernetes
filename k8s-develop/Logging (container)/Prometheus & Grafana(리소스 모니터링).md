@@ -160,6 +160,8 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Promethus_dashboard_UI.PNG" width="600px" height="600px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>   
 
 
+- 13370 대시보드 (한국형)
+
 
 
 Reference:

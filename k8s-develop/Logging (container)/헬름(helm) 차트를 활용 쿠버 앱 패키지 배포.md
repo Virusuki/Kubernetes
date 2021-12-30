@@ -177,7 +177,7 @@ mychart
 ```
 # vi mychart/values.yaml
 ```
-- values.yaml 확인
+- values.yaml에서 다음과 같이 수정 라인
 ```
 image:
   repository: httpd

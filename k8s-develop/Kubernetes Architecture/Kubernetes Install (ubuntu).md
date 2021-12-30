@@ -80,6 +80,27 @@ namuk-03   Ready    <none>                 4m16s   v1.23.1
 namuk-04   Ready    <none>                 4m14s   v1.23.1
 ```  
 
+
+- ## dpkg 관련 에러 일때
+``` 
+1번째
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg]
+https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker.io
+--------------------------------------------
+
+2번째
+sudo rm -vf /var/lib/apt/lists/*
+sudo apt-get update
+sudo touch /var/lib/dpkg/status
+sudo apt update && sudo apt upgrade
+
+```  
+
+
 Reference:
 - https://stackoverflow.com/questions/43794169/docker-change-cgroup-driver-to-systemd
 - https://kubernetes.io/ko/docs/setup/production-environment/tools/kubeadm/install-kubeadm/

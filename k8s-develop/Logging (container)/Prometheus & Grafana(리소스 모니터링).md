@@ -98,7 +98,19 @@ helm install prometheus prometheus-community/prometheus -f values-prometheus.yam
 helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
 ```
 
+- Grafana login 화면
+그림
 
+
+
+- grafana 대시보드에서 프로메테우스 연결 과정
+- Configuration -> Add data source 클릭
+그림
+
+
+
+- Prometheus를 선택
+그림
 
 
 

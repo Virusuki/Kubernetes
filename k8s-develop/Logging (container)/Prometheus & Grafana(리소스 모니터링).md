@@ -146,14 +146,18 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 - Grafana의 대시보드 import UI 이동 [+ -> import] 및 검색된 번호 입력
    
    
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/315number.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/315number.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>   
+
+
 
 - import 후 프로메테우스 선택
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/import_clieck.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>
+- 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/import_clieck.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>   
 
 
-- 프로메테우스 대시보드 UI
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Promethus_dashboard_UI.PNG" width="480px" height="400px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>   
+
+- 프로메테우스 대시보드 UI   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Promethus_dashboard_UI.PNG" width="600px" height="600px" title="px(픽셀) 크기 설정" alt="Prometheus import"></img><br/>   
 
 
 

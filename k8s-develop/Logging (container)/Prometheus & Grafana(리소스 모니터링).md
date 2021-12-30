@@ -128,7 +128,7 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 ```
 
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometheus_url_save.PNG" width="500px" height="800px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometheus_url_save.PNG" width="600px" height="1000px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
 
 
 

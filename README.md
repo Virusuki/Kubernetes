@@ -3,6 +3,8 @@
 
 - ### Kubernetes Architecture
   - [쿠버네티스 구조/개념](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/Kubernetes%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EA%B5%AC%EC%A1%B0.md)
+  
+  - [쿠버네티스 설치[우분투용]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Kubernetes%20Architecture/Kubernetes%20Install%20(ubuntu).md)
 
 - ### Pod container Design
   - [Multi Container [멀티 컨테이너]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Pod-Container%20Design/Multi-container.md)

@@ -98,6 +98,13 @@ sudo apt-get update
 sudo touch /var/lib/dpkg/status
 sudo apt update && sudo apt upgrade
 
+sudo rm /var/lib/dkpg/info/*
+sudo dpkg --configure -a
+sudo apt update -y
+
+sudo touch /var/lib/dpkg/available
+sudo sh -c 'for i in /var/lib/apt/lists/*_Packages; do dpkg --merge-avail "$i"; done'
+
 ```  
 
 

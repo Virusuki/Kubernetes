@@ -114,7 +114,7 @@ helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Prometheus_select.PNG" width="500px" height="300px" title="px(픽셀) 크기 설정" alt="Prometheus select"></img><br/>
 
 
-- Prometheus URL 도메인 정보 입력 (prometheus-server)
+- Prometheus URL 도메인 정보 입력 (prometheus-server) 및 save & test 클릭
 root@namuk-01:~# kubectl get svc -n prometheus
 
 ```
@@ -126,6 +126,11 @@ prometheus-node-exporter        ClusterIP   None             <none>        9100/
 prometheus-pushgateway          ClusterIP   10.106.116.188   <none>        9091/TCP       8h
 prometheus-server               ClusterIP   10.107.17.248    <none>        80/TCP         8h
 ```
+
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometheus_url_save.PNG" width="500px" height="800px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+
+
 
 
 

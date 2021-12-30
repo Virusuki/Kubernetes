@@ -1,7 +1,22 @@
-# 쿠버네티란? 
-- 쿠버
+# 쿠버네티스 설치 
+- 설치 URL: https://kubernetes.io/ko/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
-[kubernetes 공식문서]
+## 런타임 설치
+- 도커
 
-## 쿠버네티스 디자인 원칙
-- 쿠버네티스 클러스터의 설계는 3가지 원칙에 기반을 두고 있습니다.
+cat <<EOF > kube_install.sh
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl docker.io
+
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+EOF
+
+
+bash kube_install.sh

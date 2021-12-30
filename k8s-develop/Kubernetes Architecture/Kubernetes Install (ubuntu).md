@@ -17,11 +17,24 @@ bash kube_install.sh
 ```
 
 ## cgroup 드라이버 구성
-- 
+- kubelet은 systemd를 사용하니, cgrupd에서 매칭 시켜줘야 함
 
+```
+cat <<EOF > /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"]
+}
+EOF
+
+service docker restart
+```
 
 ########################
-apt update && apt install -y docker.io
+
 
 - 
 docker info 
+
+Reference:
+- https://stackoverflow.com/questions/43794169/docker-change-cgroup-driver-to-systemd
+- https://kubernetes.io/ko/docs/setup/production-environment/tools/kubeadm/install-kubeadm/

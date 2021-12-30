@@ -140,7 +140,7 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 
 
 - Grafana 대시보드 검색된 번호
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="850px" height="900px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="600px" height="700px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
 
 
 
@@ -148,7 +148,7 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 - import via grafana.com의 찾은 대시보드 번호 import
 - Grafana의 대시보드 import UI 이동 [+ -> import] 및 검색된 번호 입력
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/315number.PNG" width="850px" height="900px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/315number.PNG" width="500px" height="300px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
 
 
 

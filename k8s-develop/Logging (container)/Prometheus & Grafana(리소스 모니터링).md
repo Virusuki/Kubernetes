@@ -13,6 +13,22 @@
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Promethous_architecture.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>
 
+## Helm(헬름) 설치 (프로메테우스 설치하기 앞서)
+- 헬름 설치 command
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+helm -h
+```
+
+
+- 헬름의 기본 스토리지 클래스로 rook-ceph-block을 사용하도록 설정
+- 프로메테우스는 헬름차트로 인해 구성되므로, 내부적으로 스토리지 클래스를 활용함 그래서, rook-ceph는 설치되어 있어야 함.(포인트!!)
+```
+kubectl patch storageclass rook-ceph-block -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
 
 ## Prometheus(프로메테우스) Install
 - 헬름 리파지토리를 통해 프로메테우스 설치

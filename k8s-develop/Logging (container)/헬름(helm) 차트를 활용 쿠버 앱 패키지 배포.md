@@ -219,6 +219,10 @@ NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(
 mychart                      LoadBalancer   10.108.162.167   <pending>     80:32383/TCP     4m3s
 ```
 
+- 헬름 mychart 삭제
+```
+# helm uninstall mychart
+```
 
 
 Reference:

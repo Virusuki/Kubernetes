@@ -109,12 +109,12 @@ helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/prometh_grafana_connection.PNG" width="500px" height="300px" title="px(픽셀) 크기 설정" alt="connection"></img><br/>
 
 
-- Prometheus를 선택   
+- Prometheus를 선택
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Prometheus_select.PNG" width="500px" height="300px" title="px(픽셀) 크기 설정" alt="Prometheus select"></img><br/>
 
 
-
+- Prometheus를 선택
 
 
 

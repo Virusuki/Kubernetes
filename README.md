@@ -18,6 +18,8 @@
   - [[Monitoring] 모니터링 시스템과 아키텍처](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.md)
   - [[Monitoring] 쿠버네티스 대시보드](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C.md)
 
+  - [[Monitoring] 프로메테우스[Prometheus]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Prometheus%20&%20Grafana(%EB%A6%AC%EC%86%8C%EC%8A%A4%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81).md)
+
 - ### Security (보안)
   - [Security context](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/Security%20Context.md)
   - [NetworkPolicy](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/NetworkPolicy.md)

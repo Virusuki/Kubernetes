@@ -75,7 +75,12 @@ EOF
 ```
 
 
-
+- 프로메테우스를 위한 Namespace를 구성하고 위 설정대로 yaml 파일을 배포
+```
+kubectl create ns prometheus
+helm install prometheus prometheus-community/prometheus -f values-prometheus.yaml -n prometheus
+helm install grafana grafana/grafana -f values-grafana.yaml -n prometheus
+```
 
 
 

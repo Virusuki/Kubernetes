@@ -135,13 +135,21 @@ prometheus-server               ClusterIP   10.107.17.248    <none>        80/TC
 
 - grafana 공식사이트의 대시보드에 접속 (대시보드 다운받기를 위해 진행)
 - 쿠버네티스를 모니터링 하고 싶으면 "kubernetes" 검색 및 카테고리를 통해 원하는 대시보드를 다운로드
-https://grafana.com/grafana/dashboards/?search=kubernetes
+<img src="https://grafana.com/grafana/dashboards/?search=kubernetes" width="850px" height="900px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
 
+
+
+- Grafana 대시보드 검색된 번호
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/grafana_dashboard_search_number.PNG" width="850px" height="900px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
 
 
 
 - grafana의 Import dashboard from file or Grafana.com
-- import via grafana.com의 찾은 대시보드 번호 입력!
+- import via grafana.com의 찾은 대시보드 번호 import
+- Grafana의 대시보드 import UI 이동 [+ -> import] 및 검색된 번호 입력
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/315number.PNG" width="850px" height="900px" title="px(픽셀) 크기 설정" alt="Prometheus URL"></img><br/>
+
 
 
 Reference:

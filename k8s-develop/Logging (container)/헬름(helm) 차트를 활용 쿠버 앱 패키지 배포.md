@@ -177,6 +177,8 @@ mychart
 ```
 # vi mychart/values.yaml
 ```
+- values.yaml 확인
+```
 image:
   repository: httpd
   pullPolicy: IfNotPresent

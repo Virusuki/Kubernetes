@@ -1,8 +1,14 @@
 # EFK 기반 웹 로그 수집을 위한 사이드 컨테이너 및 파이프 라인 구축 및 튜토리얼
 
-## EFK 란?   
+## EFK(Elasticsearch, Fluentd, Kibana) 란?   
+- 쿠버네티스에서 EFK를 사용하면 도커의 각 컨테이너 로그를 수집, 시각화, 분석 가능
+- 해당 환경은 메모리 8GB 이상 필요
+- 엘라스틱스택은 주로 비츠나 로그스태시를 사용하는 것이 일반적
+- 또는, 쿠버네티스에서는 fluentd를 사용해서 수집하는 것이 트렌드
+
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK%20Architecture_img.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>
+
 
 
 - EFK stack은 Elasticsearch + Fluentd + Kibana 3개의 플랫폼 조합을 의미하며, 쿠버네티스 클러스터 환경에서 로그를 수집 및 검색과 시각화할 수있는구조이다. 본 튜토리얼 문서에서는 EFK 아키텍처의 각 플랫폼에 대해 자세히 다루지는 않고, 간단한 튜토리얼을 통해 설치 과정을 담았습니다.

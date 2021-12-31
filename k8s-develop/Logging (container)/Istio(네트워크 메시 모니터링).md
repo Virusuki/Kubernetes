@@ -192,4 +192,15 @@ NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)     
 istio-ingressgateway   LoadBalancer   10.101.193.63   <pending>     15021:31254/TCP,80:30376/TCP,443:31328/TCP   152m
 ```
 
-  
+- 대시보드와 데이터베이스를 설치하고 서비스 오픈
+```
+kubectl apply -f samples/addons/kiali.yaml
+kubectl apply -f samples/addons/prometheus.yaml
+
+배포될때까지 기다렸다가  
+@ kubectl get svc -n istio-system에서 kiali 서비스가 clusterIP로 있는데 kiali 서비스를 NodePort로 수정해야함
+istioctl dashboard kiali # localhost:20001 서비스를 오픈
+```
+
+
+

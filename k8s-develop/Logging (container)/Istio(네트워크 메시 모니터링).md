@@ -54,7 +54,7 @@ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="600px" height="270px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="600px" height="300px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
 
 
 

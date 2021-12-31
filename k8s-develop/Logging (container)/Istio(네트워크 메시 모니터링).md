@@ -15,7 +15,10 @@ export PATH=$PWD/bin:$PATH # 실행 경로를 환경 변수에 추가
 istioctl # kubectl 설정을 사용
 ```
 
-
+- istio 배포 형태 
+- istiod 데몬 역할
+- istio-ingressgateway는 들어오는 트래픽을 로드밸런싱해주는 기능(ALB-Application Load-balance), L7계층에서 부하분산해주는 기능(쿠버의 ingress 대체)
+- 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Istio_deploy_design.PNG" width="600px" height="270px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
 
 

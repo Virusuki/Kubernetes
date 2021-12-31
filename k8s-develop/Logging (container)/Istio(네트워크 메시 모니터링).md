@@ -52,7 +52,7 @@ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 - Book Info를 외부로 서비스할 수 있도록 게이트웨이 생성 (istio의 기능)
 
 ```
-kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.ya 
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
 
 - 그림에서, default 네임스페이스에 istio-injection=enabled 라는 레이블 달아놓으면, 배포가 되는 시점에 Python[Product page]측면에
@@ -68,7 +68,16 @@ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.ya
 
 
 
-
+```
+root@namuk-01:~/istio/istio-1.12.1# kubectl get pod
+NAME                              READY   STATUS    RESTARTS   AGE
+details-v1-5498c86cf5-wjkvw       2/2     Running   0          17m
+productpage-v1-65b75f6885-ztq8b   2/2     Running   0          16m
+ratings-v1-b477cf6cf-6sdm6        2/2     Running   0          17m
+reviews-v1-79d546878f-jgsnj       2/2     Running   0          17m
+reviews-v2-548c57f459-4x62t       2/2     Running   0          16m
+reviews-v3-6dd79655b9-52vvg       2/2     Running   0          16m
+```
 
 
 

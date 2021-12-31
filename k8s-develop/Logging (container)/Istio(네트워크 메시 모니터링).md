@@ -214,6 +214,8 @@ istioctl dashboard kiali # localhost:20001 서비스를 오픈
 
 
 - uri에 정의되지 않은 /test로 페이지를 찾을 수 없음 상태를 kiari 대시보드에서 unknown 확인
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/error_status_confirm.PNG" width="950px" height="400px" title="px(픽셀) 크기 설정" alt="kiari conne"></img><br/>
+
 
 
 

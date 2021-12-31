@@ -15,5 +15,7 @@ export PATH=$PWD/bin:$PATH # 실행 경로를 환경 변수에 추가
 istioctl # kubectl 설정을 사용
 ```
 
-- 
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Istio_deploy_design.PNG
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Istio_deploy_design.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
+
+

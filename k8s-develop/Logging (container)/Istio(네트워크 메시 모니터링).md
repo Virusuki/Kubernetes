@@ -111,12 +111,12 @@ NET_ADMIN과 NET_RAW는 네트워크의 정보를 변경하기 위해 권한을 
       runAsGroup: 0
       runAsNonRoot: false
       runAsUser: 0
-
 ```
 
-```
+
 - ingress gateway와 북인포 프로젝트 연결 수행함.
 - 생성된 gateway에 의해 어떻게 로드밸런싱할지 결정
+
 ```
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 

@@ -31,6 +31,9 @@ istioctl # kubectl 설정을 사용
 ```
 
 - 네임스페이스 레이블을 istio 인젝션이 수행되도록 수정
+- istio를 적용하고 싶은 namespace에다가 레이블을 지정함. 
+- 만약 default 네임스페이스에다가 구성할 경우, 네임스페이스에 레이블을 달고, default ns 배포되는 (구성되지않은)pod들은 자동으로 해당 ns에 들어감
+- 추가 컨테이너는 proxy역할을 하고, 엠베서더 컨테이너로서 ingress/egress 트래픽들을 관찰할 수 있도록 추가 컨테이너가 배포되는 걸로 이해하면 됨
 ```
 # kubectl label namespace default istio-injection=enabled
 ```

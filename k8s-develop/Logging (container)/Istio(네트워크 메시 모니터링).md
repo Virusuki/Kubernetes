@@ -24,8 +24,15 @@ istioctl # kubectl 설정을 사용
 
 ## 쿠버네티스에 istio 구성하기
 - istioctl을 사용해 데모 버전으로 설치
+
+- istioctl 명령어 설치이며, install부터는 kuber에다가 istio를 구성할 수 있도록 설치, --set profile은 demo 버전(그림참조)으로 설치
 ```
-# 
+# istioctl install --set profile=default --skip-confirmation
+```
+
+- 네임스페이스 레이블을 istio 인젝션이 수행되도록 수정
+```
+# kubectl label namespace default istio-injection=enabled
 ```
 
 

@@ -16,3 +16,4 @@ istioctl # kubectl 설정을 사용
 ```
 
 - 
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Istio_deploy_design.PNG

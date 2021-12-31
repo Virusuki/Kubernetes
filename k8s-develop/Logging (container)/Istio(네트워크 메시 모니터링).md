@@ -8,7 +8,11 @@
 - Istioctl 설치
 - istioctl은 kubectl이 설치된 곳에 설치해야 함. (마스터노드에서 istioctl을 구성함)
 
+```
 curl -L https://istio.io/downloadIstio | sh -
 cd istio-1.12.1
 export PATH=$PWD/bin:$PATH # 실행 경로를 환경 변수에 추가
 istioctl # kubectl 설정을 사용
+```
+
+- 

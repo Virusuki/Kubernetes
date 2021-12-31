@@ -67,6 +67,8 @@ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="640px" height="330px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
 
 
+- bookinfo-gateway.yaml 실행 후, get pod 보면 2개씩 pod가 배포됨
+- pod가 2개씩 배포 된 것은 1개: 앱 컨테이너, 1개: proxy 컨테이너
 
 ```
 root@namuk-01:~/istio/istio-1.12.1# kubectl get pod
@@ -79,5 +81,91 @@ reviews-v2-548c57f459-4x62t       2/2     Running   0          16m
 reviews-v3-6dd79655b9-52vvg       2/2     Running   0          16m
 ```
 
+- details-v1-5498c86cf5-wjkvw에서 proxy 컨테이너 확인
+```
+kubectl get pod -o yaml details-v1-5498c86cf5-wjkvw 
+```
+
+NET_ADMIN과 NET_RAW는 네트워크의 정보를 변경하기 위해 권한을 가져옴
+```
+ image: docker.io/istio/proxyv2:1.12.1
+    imagePullPolicy: IfNotPresent
+    name: istio-init
+    resources:
+      limits:
+        cpu: "2"
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        add:
+        - NET_ADMIN
+        - NET_RAW
+        drop:
+        - ALL
+      privileged: false
+      readOnlyRootFilesystem: false
+      runAsGroup: 0
+      runAsNonRoot: false
+      runAsUser: 0
+
+```
+
+- ingress gateway와 북인포 프로젝트 연결 수행함.
+- 생성된 gateway에 의해 어떻게 로드밸런싱할지 결정
+```
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+
+kubectl get svc -n istio-system -l istio=ingressgateway
+```
+
+- samples/bookinfo/networking/bookinfo-gateway.yaml를 보면 80포트로 접속 밒 서비스쪽 bookinfo-gateway에 들어오면
+  /productpage,/static 등 uri에 따라서 route destination(productpage)로 구성 및 9080으로 보내지도록 룰이 구성되어 있음
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - bookinfo-gateway
+  http:
+  - match:
+    - uri:
+        exact: /productpage
+    - uri:
+        prefix: /static
+    - uri:
+        exact: /login
+    - uri:
+        exact: /logout
+    - uri:
+        prefix: /api/v1/products
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080
+```
 
 

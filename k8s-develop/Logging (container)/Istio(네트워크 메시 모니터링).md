@@ -210,6 +210,6 @@ istioctl dashboard kiali # localhost:20001 서비스를 오픈
 - product webpage 접속량에 따른 kiari 대시보드 모니터링
 - kiari dashboard - Graph의 namespace 포함    
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/kiari_connection_confirm.PNG" width="900px" height="400px" title="px(픽셀) 크기 설정" alt="kiari conne"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/kiari_connection_confirm.PNG" width="950px" height="400px" title="px(픽셀) 크기 설정" alt="kiari conne"></img><br/>
 
 

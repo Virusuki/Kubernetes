@@ -38,5 +38,27 @@ istioctl # kubectl 설정을 사용
 # kubectl label namespace default istio-injection=enabled
 ```
 
-- 애플리케이션 배포
+### istio 구동을 위한 애플리케이션 배포
+- Book Info에 대한 프로젝트 배포
+
+```
+kubectl delete all --all # 잘못 설치한 경우 삭제
+kubectl delete limitrange default-limit-range # 잘못 설치한 경우 삭제
+kubectl delete -f samples/bookinfo/platform/kube/bookinfo.yaml # 잘못 설치한 경우 삭제
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+```
+
+
+- Book Info를 외부로 서비스할 수 있도록 게이트웨이 생성 (istio의 기능)
+
+```
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+```
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="600px" height="270px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
+
+
+
+
+
+
 

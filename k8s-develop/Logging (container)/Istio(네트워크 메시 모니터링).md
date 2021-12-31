@@ -62,6 +62,7 @@ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.ya
 - proxy 파드는 작은 단위로 올라가기 때문에 부하가 크게 미치지는 않음
 - bookinfo-gateway.yaml에 부하분산 rule이 있음, L7 ingress에 트래픽이 들어오게 되면 python으로 포워딩하는 기능이 설정되어 있음
 - ingress 게이트웨이는 istioctl install --set profile=demo 설치를 통해 생성됨.
+- 아래의 구조는 ratings, reviews, details 표현하는 앱들로 구성되어 있으며 MSA라는형태로 되
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="640px" height="330px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
 

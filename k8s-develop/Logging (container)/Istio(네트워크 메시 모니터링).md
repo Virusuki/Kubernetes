@@ -171,7 +171,8 @@ spec:
 
 - kubectl get svc 확인
 - productpage 서비스가 앞단의 python 페이지라고 보면 됨
----
+
+```
 root@namuk-01:~/istio/istio-1.12.1# kubectl get svc
 NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
 details       ClusterIP   10.110.46.201    <none>        9080/TCP   33m
@@ -179,16 +180,16 @@ kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP    149m
 productpage   ClusterIP   10.104.153.117   <none>        9080/TCP   33m
 ratings       ClusterIP   10.106.244.189   <none>        9080/TCP   33m
 reviews       ClusterIP   10.97.62.190     <none>        9080/TCP   33m
----
+```
 
 - 80페이지로 접속하면 productpage로 연결
 
----
+```
 kubectl get svc -n istio-system -l istio=ingressgateway
  or
 root@namuk-01:~/istio/istio-1.12.1# kubectl get svc -n istio-system
 NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                      AGE
 istio-ingressgateway   LoadBalancer   10.101.193.63   <pending>     15021:31254/TCP,80:30376/TCP,443:31328/TCP   152m
----
+```
 
   

@@ -38,4 +38,5 @@ istioctl # kubectl 설정을 사용
 # kubectl label namespace default istio-injection=enabled
 ```
 
+- 애플리케이션 배포
 

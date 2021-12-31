@@ -59,6 +59,8 @@ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
   proxy가 붙여지고, 들어오는 request 및 나가는 트래픽을 관찰할 수 있음
 - java로 배포하는 부분도 마찬가지로 proxy 컨테이너가 붙으면서 모든 트래픽의 모니터링이 가능함
 - 여기서, 관찰하는 proxy 파드들이 생성되면서 클러스터의 부하가 발생하는 단점은 있지만, 장애에 대한 처리하는 속도는 굉장히 빨라짐
+- proxy 파드는 작은 단위로 올라가기 때문에 부하가 크게 미치지는 않음   
+
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/book_info_architecture.PNG" width="640px" height="330px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>
 
 

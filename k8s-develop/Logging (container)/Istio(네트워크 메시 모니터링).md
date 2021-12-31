@@ -22,6 +22,10 @@ istioctl # kubectl 설정을 사용
 - istio-egressgateway는 나가는 트래픽에 대해 분산해주는 역할
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Istio_deploy_design.PNG" width="600px" height="270px" title="px(픽셀) 크기 설정" alt="istio deploy 형태"></img><br/>   
 
-
+## 쿠버네티스에 istio 구성하기
+- istioctl을 사용해 데모 버전으로 설치
+```
+# 
+```
 
 

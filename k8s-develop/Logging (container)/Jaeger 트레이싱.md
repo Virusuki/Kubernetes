@@ -41,6 +41,7 @@ pip3 install requests
    - first-service는 start_span('get-ip-api-jos')이름으로 로깅하는데 
    - 트레이서를 활용해 get-ip-api-jobs 라는 span을 구성
    - 웹 요청 결과를 span에 데이터 추가
+   - python-jaeger.example.py
 ```
 import logging
 from jaeger_client import Config

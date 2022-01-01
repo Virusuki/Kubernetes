@@ -90,7 +90,7 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 ```
 - HPA는 pod의 정보를 계속 모니터링하면서 pod가 너무 많은 자원을 사용하고 있으면 Deployment에 HPA가 제어 및 수행 (그림 참조)
 - 
-
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/HPA%20process.PNG
 
 
 Reference:

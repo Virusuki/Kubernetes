@@ -147,15 +147,15 @@ kibana-svc          NodePort   10.108.21.97    <none>        5601:30561/TCP     
 
 - kibana main 화면   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/main_display.PNG" width="600px" height="500px" title="px(픽셀) 크기 설정" alt="kibana main"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/main_display.PNG" width="750px" height="550px" title="px(픽셀) 크기 설정" alt="kibana main"></img><br/>
 
 
 
 - index pattern: logstash   
   
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/logstash_indexpattern.PNG" width="600px" height="500px" title="px(픽셀) 크기 설정" alt="index pattern"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/logstash_indexpattern.PNG" width="750px" height="550px" title="px(픽셀) 크기 설정" alt="index pattern"></img><br/>
 
 - discover   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/Discover.PNG" width="600px" height="500px" title="px(픽셀) 크기 설정" alt="discover"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/Discover.PNG" width="750px" height="550px" title="px(픽셀) 크기 설정" alt="discover"></img><br/>
 

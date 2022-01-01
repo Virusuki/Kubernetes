@@ -11,3 +11,4 @@
 
 ## HPA(Horizontal Pod Autoscaler) 설정 방법
 - 명령어를 사용하여 오토스케일 저장
+-ㅇㅇ

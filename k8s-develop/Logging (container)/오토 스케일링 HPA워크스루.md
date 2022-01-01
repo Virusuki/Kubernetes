@@ -110,6 +110,28 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
+- kubectl get hpa -w 를 통해 부하증가 상태 확인
+
+```
+root@namuk-01:~# kubectl get hpa -w
+NAME         REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+php-apache   Deployment/php-apache   0%/50%    1         10        1          7m41s
+php-apache   Deployment/php-apache   71%/50%   1         10        1          8m16s
+php-apache   Deployment/php-apache   258%/50%   1         10        2          8m31s
+php-apache   Deployment/php-apache   246%/50%   1         10        4          8m46s
+php-apache   Deployment/php-apache   161%/50%   1         10        6          9m1s
+php-apache   Deployment/php-apache   62%/50%    1         10        6          9m16s
+php-apache   Deployment/php-apache   48%/50%    1         10        6          9m31s
+php-apache   Deployment/php-apache   41%/50%    1         10        6          9m46s
+php-apache   Deployment/php-apache   50%/50%    1         10        6          10m
+php-apache   Deployment/php-apache   39%/50%    1         10        6          10m
+php-apache   Deployment/php-apache   4%/50%     1         10        6          10m
+php-apache   Deployment/php-apache   0%/50%     1         10        6          10m
+```
+
+
+
+
 
 
 Reference:

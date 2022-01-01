@@ -34,4 +34,55 @@ spec:
   targetCPUUtilizationPercentage: 30
 ```
   
+- HPA 테스트
+   - php-apache 서버 구동 및 노출
+
+- application/php-apache.yaml 테스트
+- 중요한 점은 HPA를 할려면 Deployment의 resources에서 limits과 requests를 정해야 함
+- 자원 사용량 100%의 기준은 resources의 requests(최소사양)로 HPA에서는 정해짐.
+- HPA는 사용자가 지정해준 %를 초과하면 그때 복제하게 되어 있음.
+- 따라서, 100% 기준은 requests에서 가져옴 (CPU200m가 사용되었을 때 -> 100%가 됨),
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: k8s.gcr.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+```
+
+Reference:
+- https://kubernetes.io/ko/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
   

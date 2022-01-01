@@ -99,3 +99,14 @@ http://ip-api.com:80 "GET /json/naver.com HTTP/1.1" 200 269
 Getting status success
 Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-jobs
 ```
+
+- Jaeger 메인 UI
+[그림]
+
+
+- Jaeger trace UI
+[그림]
+
+
+- Jaeger trace first-service 추적 UI
+[그림]

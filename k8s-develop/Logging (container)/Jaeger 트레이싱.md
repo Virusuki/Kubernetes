@@ -13,7 +13,7 @@
    - 범위 - 이름, 시작시간 및 작업의 기간을 포함하는 예거에서 작업의 논리적 단위
    - 추적 - 예거가 실행 요청을 제시하는 방식, 추적은 하나 이상의 범위로 구성
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_system.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_system.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="EFK 웹 사이드카 아키텍처"></img><br/>
 
 ## Jaeger(예거) Install
 - 추적 정보를 수집, 저장 및 표시하기 위해 분산 구성 요소 집합
@@ -113,6 +113,6 @@ Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-job
 
 - Jaeger trace first-service 추적 UI   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="800px" height="700px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="850px" height="650px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
 
 

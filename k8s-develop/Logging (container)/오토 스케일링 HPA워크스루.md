@@ -83,16 +83,33 @@ spec:
     run: php-apache
 ```
 
+- HPA는 pod의 정보를 계속 모니터링하면서 pod가 너무 많은 자원을 사용하고 있으면 Deployment에 HPA가 제어 및 수행 
+- (그림 참조)
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/HPA%20process.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="kiari conne"></img><br/>
+
+### HPA 테스트
+- !! 테스트에 앞서, metrics 서버가 설치되어 있어야 함 (참조)
+```
+https://github.com/kubernetes-sigs/metrics-server
+```
+- php-apache 테스트 생성 
+```
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
+```
+
 - HPA 생성
 - CPU가 50% 넘어가면 최소1개, 최대 10개를 유지하도록 구성
 ```
 kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 ```
-- HPA는 pod의 정보를 계속 모니터링하면서 pod가 너무 많은 자원을 사용하고 있으면 Deployment에 HPA가 제어 및 수행 
-- (그림 참조)
 
+- 부하 증가
+- 부하증가함에 따라 오토스케일러가 어떻게 반응하는지 체킹
+```
+kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+```
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/HPA%20process.PNG" width="550px" height="400px" title="px(픽셀) 크기 설정" alt="kiari conne"></img><br/>
 
 
 Reference:

@@ -23,8 +23,114 @@
 [구축 과정]
 (1). EFK 다운로드
 - https://github.com/Virusuki/Kubernetes/tree/main/k8s-develop/Logging%20(container)/files/EFK%20example_stable
-- yaml 복사
+- yaml 복사 
+
+```
+kubectl -f 
 elasticsearch.yaml
 fluentd.yaml
 kibana.yaml
 ns.yaml
+```
+
+
+- fluentd.yaml 핵심 포인트
+- fluentd에 권한을 줌
+```
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd
+  namespace: kube-system
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluentd
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: fluentd
+roleRef:
+  kind: ClusterRole
+  name: fluentd
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: fluentd
+  namespace: kube-system
+---
+apiVersion: apps/v1
+kind: DaemonSet   # 로그를 수집하는 역할
+metadata:
+  name: fluentd
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      k8s-app: fluentd-logging
+      version: v1
+  template:
+    metadata:
+      labels:
+        k8s-app: fluentd-logging
+        version: v1
+    spec:
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: fluentd
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
+        env:
+        - name:  FLUENT_ELASTICSEARCH_HOST
+          value: elasticsearch-svc.elastic
+        - name:  FLUENT_ELASTICSEARCH_PORT
+          value: "9200"
+        - name: FLUENT_ELASTICSEARCH_SCHEME
+          value: http
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog   
+        hostPath:
+          path: /var/log   ## 노드에서 로그를 저장하는 기본적인 위치 
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers   ## 도커 컨테이너의 로그 저장 
+```
+
+
+
+

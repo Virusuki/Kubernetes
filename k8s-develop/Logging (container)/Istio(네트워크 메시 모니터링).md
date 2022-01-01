@@ -220,6 +220,7 @@ istioctl dashboard kiali # localhost:20001 서비스를 오픈
 
 - 생성한 istio 관련 패키지 및 프로젝트 삭제
 ```
+kubectl label ns default istio-injection-
 kubectl delete all --all --force
 kubectl delete ns --force istio-system
 ```

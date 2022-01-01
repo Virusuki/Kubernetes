@@ -132,5 +132,27 @@ spec:
 ```
 
 
+- 4개 yaml 파일 실행 후, kibana svc를 통해 NodePort 확인하고 접속한다.
 
+```
+kubectl get svc -n elastic
+```
+
+```
+root@namuk-01:/home/ubuntu/EFK# kubectl get svc -n elastic
+NAME                TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         A                                                                                                                       GE
+elasticsearch-svc   NodePort   10.96.189.208   <none>        9200:30920/TCP,9300:30930/TCP   1                                                                                                                       7m
+kibana-svc          NodePort   10.108.21.97    <none>        5601:30561/TCP                  1 
+```
+
+- kibana main 화면
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/main_display.PNG
+
+
+- index pattern: logstash 
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/logstash_indexpattern.PNG
+
+
+- discover
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/EFK_images/Discover.PNG
 

@@ -38,6 +38,7 @@ pip3 install requests
      return config.initialize_tracer() 반환하는데 config.initialize_tracer() 객체를 통해 로깅정보를 남긴다.
 
 - first-service 트레이서를 구성
+   - first-service는 start_span('get-ip-api-jos')이름으로 로깅하는데 
    - 트레이서를 활용해 get-ip-api-jobs 라는 span을 구성
    - 웹 요청 결과를 span에 데이터 추가
 ```
@@ -67,15 +68,17 @@ tracer = init_tracer('first-service')
 
 with tracer.start_span('get-ip-api-jobs') as span:
     try:
-        res = requests.get('http://ip-api.com/json/naver.com')
-        result = res.json()
+        res = requests.get('http://ip-api.com/json/naver.com')  # 해당 사이트에 접근 (도메인 -> 지도 정보를 바꿔주는 url)
+        result = res.json()                           # json 형태로 값 넘김
         print('Getting status %s' % result['status'])
         span.set_tag('jobs-count', len(res.json()))
-        for k in result.keys():
-            span.set_tag(k, result[k])
+        for k in result.keys():                     # key를 파싱해서 정보를 받아옴
+            span.set_tag(k, result[k])    # span.set_tag 정보
 
     except:
         print('Unable to get site for')
 
 input('')
 ```
+- 위의 파이썬 코드
+   - first-service => (로그) get-ip-api-jobs => status":"success","country":"South Korea","countryCode":"KR", 등등 key-value를 묶어줌

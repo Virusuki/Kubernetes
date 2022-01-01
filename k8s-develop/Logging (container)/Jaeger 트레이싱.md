@@ -80,6 +80,7 @@ with tracer.start_span('get-ip-api-jobs') as span:
         print('Unable to get site for')
 
 input('')
+input('') ## 해당 라인은 너무 빨리 끝나서 예거 UI에 기록 유지를 위해 추가 (옵션)
 ```
 - 위의 파이썬 코드
    - first-service => (로그) get-ip-api-jobs => status":"success","country":"South Korea","countryCode":"KR", 등등 key-value를 묶어줌
@@ -100,14 +101,19 @@ Getting status success
 Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-jobs
 ```
 
-- Jaeger 메인 UI
-[그림]
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_UI.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="Jaeger main UI"></img><br/>
+- Jaeger 메인 UI   
 
-- Jaeger trace UI
 [그림]
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_UI.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger main UI"></img><br/>
 
-- Jaeger trace first-service 추적 UI
-[그림]
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>
+
+- Jaeger trace UI   
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
+
+
+- Jaeger trace first-service 추적 UI   
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
+
+

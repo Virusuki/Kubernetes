@@ -11,4 +11,26 @@
 
 ## HPA(Horizontal Pod Autoscaler) 설정 방법
 - 명령어를 사용하여 오토스케일 저장
--ㅇㅇ
+
+```
+# kubectl autoscale deployment my-app --max 6 --min 4 --cpu-percent 50
+```
+
+- HPA yaml을 작성하여 타겟 파드 지정
+```
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: myapp-hpa
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: myapp
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 30
+```
+  
+  

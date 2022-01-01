@@ -83,6 +83,16 @@ spec:
     run: php-apache
 ```
 
+- HPA 생성
+- CPU가 50% 넘어가면 최소1개, 최대 10개를 유지하도록 구성
+```
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+```
+- HPA는 pod의 정보를 계속 모니터링하면서 pod가 너무 많은 자원을 사용하고 있으면 Deployment에 HPA가 제어 및 수행 (그림 참조)
+- 
+
+
+
 Reference:
 - https://kubernetes.io/ko/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
   

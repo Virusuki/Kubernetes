@@ -108,11 +108,11 @@ Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-job
 
 - Jaeger trace UI   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="800px" height="650px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="880px" height="650px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
 
 
 - Jaeger trace first-service 추적 UI   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="850px" height="650px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="880px" height="650px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
 
 

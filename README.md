@@ -22,7 +22,7 @@
 
   - [[Monitoring] istio[서비스 메시 모니터링]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Istio(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%A9%94%EC%8B%9C%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81).md)
 
-  - [[Monitoring] 쿠버네티스 대시보드](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C.md)
+  - [[Monitoring] 쿠버네티스 대시보드](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/%EC%98%A4%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81_HPA%EC%9B%8C%ED%81%AC%EC%8A%A4%EB%A3%A8.md)
 
 - ### Security (보안)
   - [Security context](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/Security%20Context.md)

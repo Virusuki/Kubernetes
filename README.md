@@ -22,6 +22,7 @@
 
   - [[Monitoring] istio[서비스 메시 모니터링]](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Istio(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%A9%94%EC%8B%9C%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81).md)
 
+  - [[Monitoring] 오토스케일링 HPA 워크스루]]( )
 
 - ### Security (보안)
   - [Security context](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Security%20(%EB%B3%B4%EC%95%88)/Security%20Context.md)

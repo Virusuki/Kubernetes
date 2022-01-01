@@ -18,12 +18,16 @@
 ## Jaeger(예거) Install
 - 추적 정보를 수집, 저장 및 표시하기 위해 분산 구성 요소 집합
 - 전체 예거 시스템을 실행하는 '올인원' 이미지로 설치
-
-
+- 만약 쿠버네티스로 배포하고 싶은 경우, 헬름차트 or istios 등 활용해 설치 가능
+```
 docker run -d --name jaeger -p 16686:16686 \
            -p 6831:6831/udp \
            jaegertracing/all-in-one:1.22
-
+```
+- 예거 클라이언트 설치 과정 
+- jaeger-client 및 requests는 lib
+```
 apt install python3-pip -y
 pip3 install jaeger-client
 pip3 install requests
+```

@@ -84,3 +84,18 @@ input('')
 - 위의 파이썬 코드
    - first-service => (로그) get-ip-api-jobs => status":"success","country":"South Korea","countryCode":"KR", 등등 key-value를 묶어줌
 - MSA 아키텍처에서 각각의 애플리케이션 마다 로그 기능을 만들어주면 현재 어떤 작업들이 내부적으로 진행되는지 남길 수 있도록 만들 수 있음
+
+
+- python3 python-jaeger.example.py 파일 실행 
+- 로깅을 시작하고, first-service 인 곳에 get-ip-api-jobs 부분에다가 리포팅을 했는 것을 나타내고 있음
+```
+root@namuk-01:/home/ubuntu/Jeager# python3 python-jaeger.example.py
+Initializing Jaeger Tracer with UDP reporter
+Using selector: EpollSelector
+Using sampler ConstSampler(True)
+opentracing.tracer initialized to <jaeger_client.tracer.Tracer object at 0x7fce8ab60198>[app_name=first-service]
+Starting new HTTP connection (1): ip-api.com
+http://ip-api.com:80 "GET /json/naver.com HTTP/1.1" 200 269
+Getting status success
+Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-jobs
+```

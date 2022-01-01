@@ -24,7 +24,7 @@
 
   - [[Monitoring] 오토스케일링 HPA 워크스루](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/%EC%98%A4%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81_HPA%EC%9B%8C%ED%81%AC%EC%8A%A4%EB%A3%A8.md)
 
-  - [[Monitoring] Jaeger(예거) 추](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Jaeger%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8B%B1.md)
+  - [[Monitoring] Jaeger(예거) 트레이싱](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/Jaeger%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8B%B1.md)
 
 
 - ### Security (보안)

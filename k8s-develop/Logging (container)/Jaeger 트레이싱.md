@@ -31,3 +31,51 @@ apt install python3-pip -y
 pip3 install jaeger-client
 pip3 install requests
 ```
+
+- 파이썬 프로그램에 트레이싱 예제
+- init_tracer 함수는 db에 등록할 정보와 로깅 레벨 등을 설정한 추적 객체를 구성해 반환
+   - 예거 클라이언트를 구성하고, 함수의 service인자를 config 설정 관련된 셋팅에서 service_name=service 인자값 받고
+     return config.initialize_tracer() 반환하는데 config.initialize_tracer() 객체를 통해 로깅정보를 남긴다.
+
+- first-service 트레이서를 구성
+   - 트레이서를 활용해 get-ip-api-jobs 라는 span을 구성
+   - 웹 요청 결과를 span에 데이터 추가
+```
+import logging
+from jaeger_client import Config
+import requests
+
+def init_tracer(service):
+    logging.getLogger('').handlers = []
+    logging.basicConfig(format='%(message)s', level=logging.DEBUG)
+
+    config = Config(
+        config={
+            'sampler': {
+                'type': 'const',
+                'param': 1,
+            },
+            'logging': True,
+        },
+        service_name=service,
+    )
+
+    # this call also sets opentracing.tracer
+    return config.initialize_tracer()
+
+tracer = init_tracer('first-service')
+
+with tracer.start_span('get-ip-api-jobs') as span:
+    try:
+        res = requests.get('http://ip-api.com/json/naver.com')
+        result = res.json()
+        print('Getting status %s' % result['status'])
+        span.set_tag('jobs-count', len(res.json()))
+        for k in result.keys():
+            span.set_tag(k, result[k])
+
+    except:
+        print('Unable to get site for')
+
+input('')
+```

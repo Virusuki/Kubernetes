@@ -82,3 +82,4 @@ input('')
 ```
 - 위의 파이썬 코드
    - first-service => (로그) get-ip-api-jobs => status":"success","country":"South Korea","countryCode":"KR", 등등 key-value를 묶어줌
+- MSA 아키텍처에서 각각의 애플리케이션 마다 로그 기능을 만들어주면 현재 어떤 작업들이 내부적으로 진행되는지 남길 수 있도록 만들 수 있음.

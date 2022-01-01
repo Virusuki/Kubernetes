@@ -11,6 +11,7 @@
 
 ## HPA(Horizontal Pod Autoscaler) 설정 방법
 - 명령어를 사용하여 오토스케일 저장
+- --max 최대개수를 몇개로 할지(그 이상으로 올라가지 않음), --min 최소개수는 몇개를 유지할지 지정(그 이하로 떨어지지 않음)
 
 ```
 # kubectl autoscale deployment my-app --max 6 --min 4 --cpu-percent 50

@@ -1,4 +1,4 @@
-# 오토스케일링 HAP 워크스루란
+# 오토스케일링 HPA 워크스루란
 - 파드 스케일링의 두 가지 방법
    - HPA: 파드 자체를 복제하여 처리할 수 있는 파드의 (Horizontal Pod Autoscaler) <-- 포인트!
    - VPA: 리소스를 증가시켜 파드의 사용 가능한 리소스를 늘리는 방법 (Vertical Scaling)

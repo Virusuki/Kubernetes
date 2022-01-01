@@ -103,17 +103,16 @@ Reporting span a325e04a249bbb5:bb50604f3468ea3e:0:1 first-service.get-ip-api-job
 
 - Jaeger 메인 UI   
 
-[그림]
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_UI.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger main UI"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_UI.PNG" width="700px" height="420px" title="px(픽셀) 크기 설정" alt="Jaeger main UI"></img><br/>
 
 
 - Jaeger trace UI   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace.PNG" width="800px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger trace UI"></img><br/>
 
 
 - Jaeger trace first-service 추적 UI   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="650px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/Logging%20(container)/files/img/Jaeger_images/Jaeger_trace_first_service.PNG" width="700px" height="500px" title="px(픽셀) 크기 설정" alt="Jaeger first-ervice"></img><br/>   
 
 

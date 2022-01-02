@@ -118,7 +118,7 @@ NET_ADMIN과 NET_RAW는 네트워크의 정보를 변경하기 위해 권한을 
 - 생성된 gateway에 의해 어떻게 로드밸런싱할지 결정
 
 ```
-kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml  # 중복된 명령어(실행안해도 됨)
 
 kubectl get svc -n istio-system -l istio=ingressgateway
 ```

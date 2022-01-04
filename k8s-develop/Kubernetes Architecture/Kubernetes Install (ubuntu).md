@@ -81,6 +81,12 @@ namuk-04   Ready    <none>                 4m14s   v1.23.1
 ```  
 
 
+- kubectl 자동 완성
+```  
+source <(kubectl completion bash)
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+```  
+
 - ## dpkg 관련 에러 일때
 ``` 
 1번째

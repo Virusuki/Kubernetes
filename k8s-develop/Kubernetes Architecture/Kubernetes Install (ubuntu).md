@@ -106,7 +106,7 @@ sudo touch /var/lib/dpkg/available
 sudo sh -c 'for i in /var/lib/apt/lists/*_Packages; do dpkg --merge-avail "$i"; done'
 
 
-3
+3번째 대안
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/lib/apt/lists/lock
 sudo rm /var/cache/apt/archives/lock

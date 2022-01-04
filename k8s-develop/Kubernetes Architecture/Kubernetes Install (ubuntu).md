@@ -105,6 +105,13 @@ sudo apt update -y
 sudo touch /var/lib/dpkg/available
 sudo sh -c 'for i in /var/lib/apt/lists/*_Packages; do dpkg --merge-avail "$i"; done'
 
+
+3
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+sudo apt-get update
 ```  
 
 

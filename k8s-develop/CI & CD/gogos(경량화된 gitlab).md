@@ -113,7 +113,9 @@ git remote add origin http://172.30.4.108:3000/gogs/KNeuroViz.git
 git push -u origin master
 ```
 
-- gogs에서 git commit 확인
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/like_github_gogs.PNG" width="720px" height="730px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
+- gogs에서 git commit 확인   
+
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/like_github_gogs.PNG" width="750px" height="770px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 
 

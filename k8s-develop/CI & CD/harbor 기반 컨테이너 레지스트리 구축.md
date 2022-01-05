@@ -56,8 +56,8 @@ openssl x509 -req -in server.csr -CA ca.crt \
 
 # 키와 인증서 복제
 mkdir -p /etc/docker/certs.d/server
-cp server.crt /etc/docker/certs.d/server/
-cp server.key /etc/docker/certs.d/server/
+cp server.crt /etc/docker/certs.d/server/  # harbor.yaml 파일 내부의 certificate
+cp server.key /etc/docker/certs.d/server/  # harbor.yaml 파일 내부의 private_key 
 cp ca.crt /etc/docker/certs.d/server/
 
 cp ca.crt /usr/local/share/ca-certificates/harbor-ca.crt
@@ -71,6 +71,27 @@ cd ~/harbor
 cp harbor.yml.tmpl harbor.yml
 vim harbor.yml
 ```
+
+- harbor.yaml 파일의 내부에서 hostname, 
+```
+# 현재 인스턴스의 IP
+hostname: 10.0.2.7
+
+# http related config
+http:
+  # port for http, default is 80. If https enabled, this port will redirect to https port
+  port: 80
+
+# https related config
+https:
+  # https port for harbor, default is 443
+  port: 443
+  # The path of cert and key files for nginx
+  certificate: /etc/docker/certs.d/server/server.crt
+  private_key: /etc/docker/certs.d/server/server.key
+```
+
+
 
 
 

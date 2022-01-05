@@ -54,6 +54,20 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 [jenkins_setup_complete]
 
 
+- Jenkins 플러그인 관리 선택 및 설치
+[Jenkins_manage_plugin]
+
+
+- Jenkins 플러그인:설치가능에서 docker pipeline 검색 및 [Install without restart] 선택
+[Jenkins_docker_pipeline_install]
+
+- Jenkins 플러그인 설치 후 메인페이지 돌아가기
+[Jenkins_plugin_install_mainpage_back]
+
+
+- Jenkins 플러그인 gogs 설치 
+[Jenkins_gogs_install]
+
 
 
 

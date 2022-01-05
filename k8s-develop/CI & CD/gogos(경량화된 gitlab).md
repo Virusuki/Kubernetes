@@ -65,4 +65,13 @@ docker-compose -f docker-compose.yml up -d
 docker ps -a
 ```
 
+- Gogs 첫 화면 UI
+
+
+
+- Gogs DB 설정과 관리자계정 설정
+- 애플리케이션 일반 설정에서 도메인은 인스턴스 IP로 설정 
+
+
+
 

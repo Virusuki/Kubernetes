@@ -32,6 +32,23 @@
    - 컴퓨터를 사용하여 반복적인 작업을 수행함으로써 프로세스를 자동화하면 보다 창의적인 작업에 열중
   
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/CICD_image.png" width="700px" height="450px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -46,7 +46,14 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 [jenkins_create_First_admin_user]
 
 
-- 
+- 인스턴스의 URL은 자동 입력되며, 서비스하고 있는 인스턴스의 IP로 진행
+[jenkins_IP_conf]   
+
+
+- Jenkins 구성 완료
+[jenkins_setup_complete]
+
+
 
 
 

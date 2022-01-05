@@ -32,7 +32,7 @@
    - 컴퓨터를 사용하여 반복적인 작업을 수행함으로써 프로세스를 자동화하면 보다 창의적인 작업에 열중
   
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/CICD_image.png" width="900px" height="490px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/CICD_image.png" width="900px" height="490px" title="px(픽셀) 크기 설정" alt="CICD platform"></img><br/>
 
 
 - 도커와 쿠버네티스 CI/CD 플랫폼
@@ -42,7 +42,7 @@
    - 쿠버네티스 배포를 위한 메니페스트를 위해 두 번째 github 레파지토리 구성
    - Argo를 사용해 실시간으로 현재 레파짙리와 클러스터의 상태를 모니터링하고 싱크 상태를 조정
 
-
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/CICD_structure.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="CI/CD structure"></img><br/>
 
 
 

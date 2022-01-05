@@ -34,7 +34,8 @@
 - ### CI / CD
   - [[CI/CD] CI/CD 개념 및 아키텍처](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/CI%20%26%20CD%20%EC%9D%B4%ED%95%B4.md)
   - [[CI/CD] Harbor 컨테이너 레지스트리](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/harbor%20%EA%B8%B0%EB%B0%98%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%EB%A0%88%EC%A7%80%EC%8A%A4%ED%8A%B8%EB%A6%AC%20%EA%B5%AC%EC%B6%95.md)
-  - [[CI/CD] Gogs(경량화된 gitlab)](  https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/gogos(%EA%B2%BD%EB%9F%89%ED%99%94%EB%90%9C%20gitlab).md)
+  - [[CI/CD] Gogs(경량화된 gitlab)](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/gogos(%EA%B2%BD%EB%9F%89%ED%99%94%EB%90%9C%20gitlab).md)
+  - [[CI] Jenkins(젠킨스)](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20&%20CD/Jenkins(%EC%A0%A0%ED%82%A8%EC%8A%A4).md)
   - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
   
 

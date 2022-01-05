@@ -35,6 +35,12 @@
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/CICD_image.png" width="900px" height="490px" title="px(픽셀) 크기 설정" alt="gitops 파이프라인"></img><br/>
 
 
+- 도커와 쿠버네티스 CI/CD 플랫폼
+   - 개발팀에서 코드를 작성하여 github 레파지토리에 코드 푸시
+   - 코드 푸시 이벤트를 감지해 Webhook Request를 사용하여 Jenkins에 코드 전송
+   - Jenkins에서 코드를 사용해 빌드, 테스트한 후 도커 레지스트리에 업로드
+   - 쿠버네티스 배포를 위한 메니페스트를 위해 두 번째 github 레파지토리 구성
+   - Argo를 사용해 실시간으로 현재 레파짙리와 클러스터의 상태를 모니터링하고 싱크 상태를 조정
 
 
 
@@ -42,16 +48,5 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-@ Agile 
+Reference:
+- https://cd.foundation/blog/2020/09/17/ci-cd-patterns-and-practices/

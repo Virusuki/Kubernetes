@@ -107,18 +107,18 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 
 - harbor 안전하지 않음 버튼 클릭
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor%20UI1.PNG" width="700px" height="500px" title="px(픽셀) 크기 설정" alt="harbor init UI"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor%20UI1.PNG" width="660px" height="520px" title="px(픽셀) 크기 설정" alt="harbor init UI"></img><br/>   
 
 
 - harbor login UI
 - admin / password는 harbor.yaml에서 설정한 비밀번호
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_login.PNG" width="700px" height="500px" title="px(픽셀) 크기 설정" alt="harbor login UI"></img><br/>   
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_login.PNG" width="660px" height="520px" title="px(픽셀) 크기 설정" alt="harbor login UI"></img><br/>   
 
 
 
 - harbor New Project 생성
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="700px" height="500px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="660px" height="520px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
 
 

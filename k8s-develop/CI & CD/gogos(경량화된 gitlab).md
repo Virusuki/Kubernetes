@@ -92,5 +92,5 @@ docker ps -a
 
 - github와 같은 gogs gitlab 확인
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_github_flask.PNG" width="680px" height="700px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_github_flask.PNG" width="710px" height="700px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 

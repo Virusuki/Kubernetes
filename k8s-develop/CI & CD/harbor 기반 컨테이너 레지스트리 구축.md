@@ -127,3 +127,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
   프로젝트 단위로 권한 부여해 엑세스할 수 있는 사용자 
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_User_privilege.PNG" width="785px" height="450px" title="px(픽셀) 크기 설정" alt="harbor user privilege"></img><br/>
+
+
+- docker CLI를 활용한 Harbor 사용
+   - 도커 CLI에서, admin 사용자를 사용해 이미지 업로드를 위해 로그인 진행
+```
+docker login 127.0.0.1 -u admin -p Test1234
+```

@@ -16,4 +16,18 @@ docker run -d -p 8080:8080 --name jenkins -v /home/jenkins:/var/jenkins_home -v 
    젠킨스에다가 도커를 컨트롤할 수 있는 소켓을 준다. 젠킨스에서 소켓을 컨트롤해서 도커를 다시 한번 컨트롤할 수 있도록 만들어주는 시스템.
    이런 방식을 DooD(Docker Out of Docker)라 부름. 도커->젠킨스 올린다음 다시 ->도커는 젠킨스에 컨트롤 받는 방식
    반면, DinD는 도커를 통해서 컨테이너가 올라가면 컨테이너 안에 도커가 있으며, 도커2개가 돌아가는 방식
+   
+   -u root jenkins/jenkins:lts 에서 root권한을 줬는 이유는 도커에 접근을 하기 위해,,,
+```
+
+- Jenkins 컨테이너에도 docker 클라이언트가 필요하므로 도커를 설치
+```
+# jenkins에 docker client 설치
+docker exec jenkins apt update
+docker exec jenkins apt install -y docker.io
+```
+
+- Jenkins의 초기화에 사용할 패스워드를 조회
+```
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```

@@ -123,6 +123,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
     
 
 
-- harbor New Project 생성
+- harbor 프로젝트를 생성하고 admin 프로젝트로 가면 해당 기능을 사용할 수 있는 user를 지정할 수 있는 기능이 있으며, 
+  프로젝트 단위로 권한 부여해 엑세스할 수 있는 사용자 
 
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_User_privilege.PNG" width="660px" height="490px" title="px(픽셀) 크기 설정" alt="harbor user privilege"></img><br/>
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_User_privilege.PNG" width="760px" height="450px" title="px(픽셀) 크기 설정" alt="harbor user privilege"></img><br/>

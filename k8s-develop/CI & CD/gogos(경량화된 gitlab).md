@@ -94,3 +94,21 @@ docker ps -a
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_github_flask.PNG" width="720px" height="730px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 
+- git 프로그램 설치 및 사용자 설정
+```
+apt update && apt install git -y
+git config --global user.name gogs
+git config --global user.email test@test.com
+```
+
+- 기존 github의 있는 자료를 가져와서 gogs에 업로드
+```
+git clone https://github.com/Virusuki/KNeuroViz
+cd KNeuroViz/
+rm -rf .git/
+git init
+git add .
+git commit -m "first commit"
+git remote add origin http://172.30.4.108:3000/gogs/KNeuroViz.git
+git push -u origin master
+```

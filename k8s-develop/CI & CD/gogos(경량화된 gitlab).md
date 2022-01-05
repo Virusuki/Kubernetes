@@ -77,9 +77,20 @@ docker ps -a
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogos_env_setting.PNG" width="570px" height="720px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 
 
-- Gogs 저장소 생성을 위한 (새저장소)+ 클릭   
-이미지
+- 
+
+- Gogs 저장소 생성을 위한 (새저장소)+ 클릭 및 새저장소 생성
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_new-repository.PNG" width="570px" height="400px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 
 
-- Gogs 새저장소 만들기
-이미지
+
+- Gogs 새저장소 셋팅 및 저장소 만들기
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_repository_creation.PNG" width="570px" height="720px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
+
+
+- github와 같은 gogs gitlab 확인
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogs_github_flask.PNG" width="570px" height="720px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
+

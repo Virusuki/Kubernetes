@@ -133,4 +133,19 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
    - 도커 CLI에서, admin 사용자를 사용해 이미지 업로드를 위해 로그인 진행
 ```
 docker login 127.0.0.1 -u admin -p Test1234
-```
+```   
+
+- admin 권한으로 업로드 진행
+- nginx를 pulling 및 nginx에 태그 추가
+- ip는 harbor 인스턴스의 IP이며, harbor repository에 push 진행
+```   
+docker pull nginx
+docker tag nginx 127.0.0.1/admin/nginx
+docker push 127.0.0.1/admin/nginx
+```   
+
+- harbor 대시보드의 repository에 nginx 이미지 업로드 확인  
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_repository.PNG" width="785px" height="450px" title="px(픽셀) 크기 설정" alt="harbor repository 확인"></img><br/>
+
+

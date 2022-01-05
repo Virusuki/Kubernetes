@@ -54,9 +54,15 @@ volumes:
       driver: local
 ```
 
-
+- docker-compose 실행
+```
+docker-compose -f docker-compose.yml up -d
 ```
 
+- 아래의 명령어를 통해 포트 확인(3000) 서비스 실행
+- 인스턴스 IP/Port로 서비스 접속
+```
+docker ps -a
 ```
 
 

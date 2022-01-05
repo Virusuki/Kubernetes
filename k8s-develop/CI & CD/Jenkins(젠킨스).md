@@ -42,7 +42,11 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 [jenkins_unlock 이미지]
 
 
-- 플
+- Jenkins 관리자 계정 생성
+[jenkins_create_First_admin_user]
+
+
+- 
 
 
 

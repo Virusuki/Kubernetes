@@ -89,9 +89,17 @@ https:
   # The path of cert and key files for nginx
   certificate: /etc/docker/certs.d/server/server.crt
   private_key: /etc/docker/certs.d/server/server.key
+...
+harbor_admin_password: Test1234   # Harbor의 비밀번호를 바꿔주는 것을 권장. 외부 공격으로부터 패스워드 변경 방지
 ```
 
-
-
+- 마지막으로 prepare 및 install.sh 스크립트를 실행
+- prepare 스크립트는 이미지를 준비하고 인증서 파일을 위한 설정을 구성
+- install.sh 파일은 도커 컴포즈를 사용해 harbor 실행에 필요한 컨테이너들을 배포
+```
+./prepare
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+./install.sh
+```
 
 

@@ -1,4 +1,62 @@
 # gogos (경량화된 gitlab)
 - gogos의 최소 사양은 4 CPU(추천 8)
 
-  
+## gogos 설치 
+```
+mkdir ~/gogs
+cd ~/gogs 
+wget https://gist.githubusercontent.com/ahromis/4ce4a58623847ca82cb1b745c2f83c82/raw/31e8ced3d7e08c602a1c0ca8994c063994971c7f/docker-compose.yml
+
+vim docker-compose.yml
+```   
+
+
+- 데이터베이스의 ID와 비밀번호 설정
+```
+version: '2'
+services:
+    postgres:
+      image: postgres:9.5
+      restart: always
+      environment:
+       - "POSTGRES_USER=gogs"
+       - "POSTGRES_PASSWORD=test1234"
+       - "POSTGRES_DB=gogs"
+      volumes:
+       - "db-data:/var/lib/postgresql/data"
+      networks:
+       - gogs
+    gogs:
+      image: gogs/gogs:latest
+      restart: always
+      ports:
+       - "10022:22"
+       - "3000:3000"
+      links:
+       - postgres
+      environment:
+       - "RUN_CROND=true"
+      networks:
+       - gogs
+      volumes:
+       - "gogs-data:/data"
+      depends_on:
+       - postgres
+
+networks:
+    gogs:
+      driver: bridge
+
+volumes:
+    db-data:
+      driver: local
+    gogs-data:
+      driver: local
+```
+
+
+```
+
+```
+
+

@@ -93,9 +93,11 @@ https:
 harbor_admin_password: Test1234   # Harbor의 비밀번호를 바꿔주는 것을 권장. 외부 공격으로부터 패스워드 변경 방지
 ```
 
+
 - 마지막으로 prepare 및 install.sh 스크립트를 실행
 - prepare 스크립트는 이미지를 준비하고 인증서 파일을 위한 설정을 구성
-- install.sh 파일은 도커 컴포즈를 사용해 harbor 실행에 필요한 컨테이너들을 배포
+- install.sh 파일은 도커 컴포즈를 사용해 harbor 실행에 필요한 컨테이너들을 배포   
+
 ```
 ./prepare
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -103,22 +105,20 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 ```
 
 
-
-
-
 - harbor 안전하지 않음 버튼 클릭
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor%20UI1.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor init UI"></img><br/>   
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor%20UI1.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor init UI"></img><br/>   
 
 
 - harbor login UI
 - admin / password는 harbor.yaml에서 설정한 비밀번호
+
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_login.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor login UI"></img><br/>   
 
 
 
 - harbor New Project 생성
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
 
 

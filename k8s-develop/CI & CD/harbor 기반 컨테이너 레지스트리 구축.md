@@ -118,7 +118,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 
 
 - harbor New Project 생성
-
-<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="660px" height="520px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
+- 스토리지 할당량의 -1은 제한이 없는 것
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/harbor_newproject.PNG" width="700px" height="550px" title="px(픽셀) 크기 설정" alt="harbor New project"></img><br/>
 
 

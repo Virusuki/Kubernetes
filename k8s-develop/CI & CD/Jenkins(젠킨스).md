@@ -31,3 +31,19 @@ docker exec jenkins apt install -y docker.io
 ```
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+
+- Jenkins가 8080포트로 서비스 중이며, 인스턴스의 IP를 사용해 인스턴스IP/8080 브라우저 접속
+- 그리고 초기 패스워드를 입력
+[unlock 이미지]
+
+
+
+- 초기 설치는 Install suggested plugins를 사용
+[jenkins_unlock 이미지]
+
+
+- 플
+
+
+
+

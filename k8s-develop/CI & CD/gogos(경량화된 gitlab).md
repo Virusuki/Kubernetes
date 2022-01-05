@@ -67,12 +67,14 @@ docker ps -a
 
 - Gogs 첫 화면 UI
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogos_UI.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Gogs UI"></img><br/>   
 
 
 - Gogs DB 설정과 관리자계정 설정
 - 애플리케이션 일반 설정에서 도메인은 인스턴스 IP로 설정 
 - 애플리케이션 URL : http://인스턴스IP:3000/
 
-
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/gogos_env_setting.PNG
+" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Gogs setting"></img><br/>
 
 

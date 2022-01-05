@@ -144,7 +144,8 @@ docker tag nginx 127.0.0.1/admin/nginx
 docker push 127.0.0.1/admin/nginx
 ```   
 
-- harbor 대시보드의 repository에 nginx 이미지 업로드 확인  
+- harbor 대시보드의 repository에 nginx 이미지 업로드 확인
+- 도커 hub와 같은 GUI로 제어할 수 있는 harbor 레지스트리  
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Harbor_repository.PNG" width="785px" height="450px" title="px(픽셀) 크기 설정" alt="harbor repository 확인"></img><br/>
 

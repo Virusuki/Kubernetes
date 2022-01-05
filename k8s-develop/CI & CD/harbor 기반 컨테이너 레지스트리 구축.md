@@ -1,0 +1,76 @@
+# Harbor란?
+- CNCF 졸업 프로젝트 오픈 소스 레지스트리
+- 정책 및 역할 기반 엑세스 제어를 제공
+- Artifact(이미지)를 보호하고, 이미지 스캔, 취약성 확인, 이미지를 신뢰할 수 있도록 서명
+- 웹 대시보드 제공
+
+## Harbor install
+```
+# docker 설치
+apt update  && apt install -y docker.io
+
+# 도커 컴포즈 설치
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+docker rm --force `docker ps -a -q`
+docker volume rm --force `docker volume ls -q`
+```
+
+
+- harbor 컨테이너 레지스트리 설치
+- 스크립트를 사용해서 설치 진행(harbor io)
+```
+wget https://gist.githubusercontent.com/kacole2/95e83ac84fec950b1a70b0853d6594dc/raw/ad6d65d66134b3f40900fa30f5a884879c5ca5f9/harbor.sh
+bash harbor.sh
+```
+
+- 도메인이 없으면, IP 선택
+```
+1) IP
+2) FQDN
+Would you like to install Harbor based on IP or FQDN?
+> 1번 선택
+```
+
+- harbor는 https를 통신
+- HTTPS 통신을 위한 인증서를 구성하고 설정하여 설치를 진행해야 한다. 
+- 다음 스크립트를 구성하고 실행해 CA와 Harbor에서 사용할 Certificate를 생성한다.
+
+```
+cd ~
+mkdir pki
+cd pki
+
+# ca 키와 인증서 생성
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
+    -out ca.crt \
+    -keyout ca.key \
+    -subj "/CN=ca"
+
+# harbor server 키와 인증서 생성
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -out server.csr -subj "/CN=harbor-server"
+openssl x509 -req -in server.csr -CA ca.crt \
+                                  -CAkey ca.key \
+                                  -CAcreateserial -out server.crt -days 365
+
+# 키와 인증서 복제
+mkdir -p /etc/docker/certs.d/server
+cp server.crt /etc/docker/certs.d/server/
+cp server.key /etc/docker/certs.d/server/
+cp ca.crt /etc/docker/certs.d/server/
+
+cp ca.crt /usr/local/share/ca-certificates/harbor-ca.crt
+cp server.crt /usr/local/share/ca-certificates/harbor-server.crt
+update-ca-certificates
+```
+
+- harbor.yaml 템플릿을 사용해 harbor의 설정을 구성
+```
+cd ~/harbor
+cp harbor.yml.tmpl harbor.yml
+vim harbor.yml
+```
+
+
+

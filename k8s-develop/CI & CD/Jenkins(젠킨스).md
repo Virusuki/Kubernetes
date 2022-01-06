@@ -103,6 +103,7 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 
 - 인증정보 add 
 - gogs의 인증정보를 설정하고 저장
+- gogs의 ID/PW 기입
 [jenkins_gogs_credit_info]
 
 
@@ -115,10 +116,27 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 - Branch는 github와 같이 기본 master로 설정
 - script path는 jenkinsfile 파일 선택
    - jenkinsfile은 gogs에 jenkins 빌드 및 레지스트리 업로드 정보 포함
+- 저장 및 젠킨스의 파이프라인 구성은 끝
 
 [jenkins_branch_scriptpath_save]
 
+
+- Gogs의 변경사항이 발생할 때, jenkins에 알려주기 위해, gogs에서 설정탭을 클릭
+[jenkins_gogs_설정]
+
+
+- Gogs의 설정탭 -> Webhooks 페이지 이동
+- Webhooks은 어떤 이벤트가 발생했을 때, gogs에서 특정한 애플리케이션을 알림 역할
+- gogs 선택
+[jenkins_webhook_gogs_select]
+
+- webhook 추가 설정 
+- 페이로드 URL은 jenkins로 보내기 위해, jenkins의 IP:port/gogs-webhook 라고 입력
 - 
+
+
+
+
 
 
 

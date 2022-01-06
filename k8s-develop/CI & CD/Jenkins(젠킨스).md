@@ -83,6 +83,22 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 : 만약 재시작이 안될 경우, "설치가 끝나고 실행중인 작업이 없으면 Jenkins 재시작" 버튼 클릭
 
+- 재부팅 후, 다시 젠킨스 로그인 시작!
+- 파이프라인을 만들기 위해, job을 생성
+[jenkins_job_pipeline]
+
+- github에 있는 파일의 변동사항이 발생했을때마다, 젠킨스가 정보를 받아서 빌드, 테스트, registry(harbor)에 보냄
+- 일련의 작업을 위한 jenkins(젠킨스)에서 '새로운 item'의 파이프라인 생성
+[jenkins_pipeline_select]
+
+- 어느 repository에서  가져올지 관련한 정보를 기입
+- (gogs에서 받아올수 있도록)"GitHub hook trigger for GITScm polling"를 선택 
+- 하단의 (스크립트를 github에서 불러오도록)Pipeline script from SCM 선택
+   - SCM -> Git 선택
+(Failed to connect to repository : Command "git ls-remote -h -- http://172.30.4.108:3000/gogs/flask-example HEAD" returned status code 128:
+stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/flask-example/') 라는 오류가 발생하는데, 정상입니다. 이유는 (gogos의 인증정보가 없어서 오류가 발생함)
+
+
 
 
 

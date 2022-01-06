@@ -81,6 +81,9 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_gogs_install.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins plugin : gogs"></img><br/>
 
+: 만약 재시작이 안될 경우, "설치가 끝나고 실행중인 작업이 없으면 Jenkins 재시작" 버튼 클릭
+
+
 
 
 

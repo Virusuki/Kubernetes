@@ -129,7 +129,7 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 - 저장 및 젠킨스의 파이프라인 구성은 끝
 
 [jenkins_branch_scriptpath_save]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_branch_scriptpath_save.PNG
+
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_branch_scriptpath_save.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_branch_scriptpath_save"></img><br/>
 
 

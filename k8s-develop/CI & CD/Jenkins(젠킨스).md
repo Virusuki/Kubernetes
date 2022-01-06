@@ -131,7 +131,14 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 [jenkins_webhook_gogs_select]
 
 - webhook 추가 설정 
-- 페이로드 URL은 jenkins로 보내기 위해, jenkins의 IP:port/gogs-webhook 라고 입력
+- 페이로드 URL은 jenkins로 보내기 위해, jenkins의 페이로드 URL은 다음과 같이 입력
+- IP:port/gogs-webhook/?job=flask-example-docker-pipeline
+- (gogs의 IP:Port 작성 gogs-webhook은 정해져있음, /?job=flask-example-docker-pipeline은 젠킨스의 생성한 파이프라인 name)
+- http://10.0.0.1:8080/github-webhook <-- 만약 github에 보낼경우
+
+[jenkins_webhook_add]
+
+
 - 
 
 
@@ -143,8 +150,33 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 
 
 
-
-
 ---
-Reference:
-- https://github.com/gasbugs/flask-example
+jenkinsfile 젠킨스 파일 수정 
+
+node {
+     stage('Clone repository') {
+         checkout scm
+     }
+     stage('Build image') {
+         app = docker.build("10.0.2.7/admin/flask-example")
+         
+     }
+     stage('Push image') {
+         docker.withRegistry('https://10.0.2.7', 'harbor-cred') {
+             app.push("${env.BUILD_NUMBER}")
+             app.push("latest")
+         }
+     }
+}
+
+stage('Build image') {
+  app = docker.build("10.0.2.7/admin/flask-example")
+}
+
+stage('Push image') {
+  docker.withRegistry('https://10.0.2.7', 'harbor-cred') 
+  {
+     app.push("${env.BUILD_NUMBER}")
+     app.push("latest")
+  }
+}

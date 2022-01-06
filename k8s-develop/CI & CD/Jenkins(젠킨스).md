@@ -98,9 +98,35 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 (Failed to connect to repository : Command "git ls-remote -h -- http://172.30.4.108:3000/gogs/flask-example HEAD" returned status code 128:
 stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/flask-example/') 라는 오류가 발생하는데, 정상입니다. 이유는 (gogos의 인증정보가 없어서 오류가 발생함)
 
+[jenkins_pipeline_definition]
+
+
+- 인증정보 add 
+- gogs의 인증정보를 설정하고 저장
+[jenkins_gogs_credit_info]
+
+
+
+- 설정한 gogs 인증정보를 선택하면 오류 사라짐
+- ID/PW로 접속하면 정보를 볼 수 있음
+[jenkins_credentials_select]
+
+- Branch specifier (blank for 'any') & script path 설정
+- Branch는 github와 같이 기본 master로 설정
+- script path는 jenkinsfile 파일 선택
+   - jenkinsfile은 gogs에 jenkins 빌드 및 레지스트리 업로드 정보 포함
+
+[jenkins_branch_scriptpath_save]
+
+- 
 
 
 
 
 
 
+
+
+---
+Reference:
+- https://github.com/gasbugs/flask-example

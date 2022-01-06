@@ -215,7 +215,7 @@ https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_harbor_image.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_harbor_image"></img><br/>
 
 
-- 이로써, - Gogs -> 젠킨스 파이프라인 -> harbor에 업로드 하는데 까지 CI(Continuous Integration)를 구성 테스트 완료!!
+- 이로써, [Gogs] -> [젠킨스 파이프라인] -> [harbor]에 업로드 하는데 까지 CI(Continuous Integration)를 구성 테스트 완료!!
 
 
 

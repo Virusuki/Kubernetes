@@ -86,10 +86,16 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 - 재부팅 후, 다시 젠킨스 로그인 시작!
 - 파이프라인을 만들기 위해, job을 생성
 [jenkins_job_pipeline]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_job_pipeline.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_job_pipeline"></img><br/>
+
 
 - github에 있는 파일의 변동사항이 발생했을때마다, 젠킨스가 정보를 받아서 빌드, 테스트, registry(harbor)에 보냄
 - 일련의 작업을 위한 jenkins(젠킨스)에서 '새로운 item'의 파이프라인 생성
 [jenkins_pipeline_select]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_pipeline_select.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_pipeline_select"></img><br/>
+
+
 
 - 어느 repository에서  가져올지 관련한 정보를 기입
 - (gogs에서 받아올수 있도록)"GitHub hook trigger for GITScm polling"를 선택 
@@ -99,18 +105,22 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/flask-example/') 라는 오류가 발생하는데, 정상입니다. 이유는 (gogos의 인증정보가 없어서 오류가 발생함)
 
 [jenkins_pipeline_definition]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_pipeline_definition.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_pipeline_definition"></img><br/>
 
 
 - 인증정보 add 
 - gogs의 인증정보를 설정하고 저장
 - gogs의 ID/PW 기입
 [jenkins_gogs_credit_info]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_gogs_credit_info.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_pipeline_definition"></img><br/>
 
 
 
 - 설정한 gogs 인증정보를 선택하면 오류 사라짐
 - ID/PW로 접속하면 정보를 볼 수 있음
 [jenkins_credentials_select]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_credentials_select.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_credentials_select"></img><br/>
+
 
 - Branch specifier (blank for 'any') & script path 설정
 - Branch는 github와 같이 기본 master로 설정
@@ -119,16 +129,24 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 - 저장 및 젠킨스의 파이프라인 구성은 끝
 
 [jenkins_branch_scriptpath_save]
+https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_branch_scriptpath_save.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_branch_scriptpath_save.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_branch_scriptpath_save"></img><br/>
+
 
 
 - Gogs의 변경사항이 발생할 때, jenkins에 알려주기 위해, gogs에서 설정탭을 클릭
 [jenkins_gogs_설정]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_gogs_%EC%84%A4%EC%A0%95.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_gogs_설정"></img><br/>
+
 
 
 - Gogs의 설정탭 -> Webhooks 페이지 이동
 - Webhooks은 어떤 이벤트가 발생했을 때, gogs에서 특정한 애플리케이션을 알림 역할
 - gogs 선택
 [jenkins_webhook_gogs_select]
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_webhook_gogs_select.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_webhook_gogs_select"></img><br/>
+
+
 
 - webhook 추가 설정 
 - 페이로드 URL은 jenkins로 보내기 위해, jenkins의 페이로드 URL은 다음과 같이 입력
@@ -137,6 +155,9 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 - http://10.0.0.1:8080/github-webhook <-- 만약 github에 보낼경우
 - 마지막으로 추가 버튼을 누름
 [jenkins_webhook_add]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_webhook_add.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_webhook_add"></img><br/>
+
 
 
 - jenkinsfile을 수정함 (jenkinsfile은 맨 하단에 참조)
@@ -147,35 +168,51 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 - 생성한 Credentials의 Jenkins를 클릭 -> Global credentials를 클릭하면 생성된 gogs-cred이 나옴
 [jenkins_harbor_credentials]
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_harbor_credentials.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_harbor_credentials"></img><br/>
+
 
 - harbor cred 생성을 위해 add Credentials 클릭 후 추가
 [jenkins_add_cred_harbor]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_add_cred_harbor.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_add_cred_harbor"></img><br/>
+
 
 
 - harbor 인증서 만들기 위해 설정 및 ok 버튼 클릭
 [jenkins_harbord_add_cred_config_complete]
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_harbord_add_cred_config_complete.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_harbord_add_cred_config_complete"></img><br/>
+
 
 - harbor 인증서 생성 확인
 [jenkins_harbor_cred_생성완료]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_harbor_cred_%EC%83%9D%EC%84%B1%EC%99%84%EB%A3%8C.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_harbor_cred_생성완료"></img><br/>
 
 
 - gogs의 jenkinsfile은 다음과 같아야 함
 [jenkins_gogs_jenkinsfile_config]
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_gogs_jenkinsfile_config.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_gogs_jenkinsfile_config"></img><br/>
+
 
 - [gogs의 앱(명칭)메인] -> [설정 탭] 이동 -> [Webhooks] 녹색 체크 확인
 [jenkins_gogs_webhook_green_status]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_gogs_webhook_green_status.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_gogs_webhook_green_status"></img><br/>
 
 
 - Jenkins에서 생성한 파이프라인 변경사항 감지 확인
 - 만약, 젠킨스에서 build가 안될 경우 build now 클릭
 [jenkins_gogs의 변경사항 감지확인]
 
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_gogs%EC%9D%98%20%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD%20%EA%B0%90%EC%A7%80%ED%99%95%EC%9D%B8.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_gogs의 변경사항 감지확인"></img><br/>
 
 - harbor 브라우저 접속
 - [Projects] -> [admin 계정] -> [Repositories]에서 push된 이미지 확인
 [jenkins_harbor_image]
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_harbor_image.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="jenkins_harbor_image"></img><br/>
 
 
 - 이로써, - Gogs -> 젠킨스 파이프라인 -> harbor에 업로드 하는데 까지 CI(Continuous Integration)를 구성 테스트 완료!!

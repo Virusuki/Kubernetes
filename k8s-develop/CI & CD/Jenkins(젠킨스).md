@@ -41,37 +41,47 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 - 초기 설치는 Install suggested plugins를 사용
 [jenkins_unlock 이미지]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_suggested_plugins_install.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_suggested_plugins_install.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins Install suggested plugins"></img><br/>
+
 
 - Jenkins 관리자 계정 생성
 [jenkins_create_First_admin_user]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_create_First_admin_user.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_create_First_admin_user.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins admin creation"></img><br/>
+
 
 - 인스턴스의 URL은 자동 입력되며, 서비스하고 있는 인스턴스의 IP로 진행
 [jenkins_IP_conf]   
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_IP_conf.PNG
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_IP_conf.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins service URL"></img><br/>
+
 
 - Jenkins 구성 완료
 [jenkins_setup_complete]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_setup_complete.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_setup_complete.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins config complete"></img><br/>
+
 
 - Jenkins 플러그인 관리 선택 및 설치
 [Jenkins_manage_plugin]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_manage_plugin.PNG
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_manage_plugin.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins plugin install"></img><br/>
 
 
 - Jenkins 플러그인:설치가능에서 docker pipeline 검색 및 [Install without restart] 선택
 [Jenkins_docker_pipeline_install]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_docker_pipeline_install.PNG
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_docker_pipeline_install.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins plugin : docker pipeline"></img><br/>
 
 
 - Jenkins 플러그인 설치 후 메인페이지 돌아가기
 [Jenkins_plugin_install_mainpage_back]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_plugin_install_mainpage_back.PNG
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_plugin_install_mainpage_back.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins plugin : mainpage back"></img><br/>
+
 
 - Jenkins 플러그인 gogs 설치 
 [Jenkins_gogs_install]
-https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_gogs_install.PNG
+
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/Jenkins_gogs_install.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins plugin : gogs"></img><br/>
+
 
 
 

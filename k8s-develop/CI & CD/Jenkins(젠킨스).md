@@ -139,15 +139,43 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 [jenkins_webhook_add]
 
 
-- jenkinsfile을 수정함 [
+- jenkinsfile을 수정함 (jenkinsfile은 맨 하단에 참조)
+[gogs 설치 및 셋팅은 https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/gogos(%EA%B2%BD%EB%9F%89%ED%99%94%EB%90%9C%20gitlab).md 를 참조]
+- jenkinsfile에서 이미지를 레지스트리에 push하기 위해서 harbor-cred를 만들어야 함
+- harbor-cred은 harbor에 접속할 수 있는 인증정보이다. (젠킨스에서 생성이 필요)
+- jenkins [dashboard] -> [Jenkins 관리] -> [Manage Credentials] 으로 진입
+- 생성한 Credentials의 Jenkins를 클릭 -> Global credentials를 클릭하면 생성된 gogs-cred이 나옴
+[jenkins_harbor_credentials]
 
 
+- harbor cred 생성을 위해 add Credentials 클릭 후 추가
+[jenkins_add_cred_harbor]
 
 
+- harbor 인증서 만들기 위해 설정 및 ok 버튼 클릭
+[jenkins_harbord_add_cred_config_complete]
 
 
+- harbor 인증서 생성 확인
+[jenkins_harbor_cred_생성완료]
 
 
+- gogs의 jenkinsfile은 다음과 같아야 함
+[jenkins_gogs_jenkinsfile_config]
+
+
+- [gogs의 앱(명칭)메인] -> [설정 탭] 이동 -> [Webhooks] 녹색 체크 확인
+[jenkins_gogs_webhook_green_status]
+
+
+- Jenkins에서 생성한 파이프라인 변경사항 감지 확인
+- 만약, 젠킨스에서 build가 안될 경우 build now 클릭
+[jenkins_gogs의 변경사항 감지확인]
+
+
+- harbor 브라우저 접속
+- [Projects] -> [admin 계정] -> [Repositories]에서 push된 이미지 확인
+[jenkins_harbor_image]
 
 
 ---

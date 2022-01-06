@@ -35,7 +35,6 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 - Jenkins가 8080포트로 서비스 중이며, 인스턴스의 IP를 사용해 인스턴스IP/8080 브라우저 접속
 - 그리고 초기 패스워드를 입력
 [unlock 이미지]
-
 <img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/files/img/Jenkins_img/jenkins_unlock.PNG" width="800px" height="400px" title="px(픽셀) 크기 설정" alt="Jenkins unlock"></img><br/>
 
 

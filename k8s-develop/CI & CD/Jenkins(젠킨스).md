@@ -178,6 +178,11 @@ stdout: stderr: fatal: Authentication failed for 'http://172.30.4.108:3000/gogs/
 [jenkins_harbor_image]
 
 
+- 이로써, - Gogs -> 젠킨스 파이프라인 -> harbor에 업로드 하는데 까지 CI(Continuous Integration)를 구성 테스트 완료!!
+
+
+
+
 ---
 jenkinsfile 젠킨스 파일 수정 
 - 10.0.2.7 IP를 인스턴스의 IP로 수정 필요

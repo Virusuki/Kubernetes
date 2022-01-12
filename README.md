@@ -39,7 +39,7 @@
   - [[CD] GitOps/ArgoCD](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/CI%20%26%20CD/Gitops-ArgoCD.md)
 
 - ### MSA (마이크로서비스
-- [[MSA] 소개](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/MSA(%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98).md)
+  - [[MSA] 소개](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/MSA(%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98).md)
 
 
 - ### :books: Certificate

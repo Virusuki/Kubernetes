@@ -10,10 +10,16 @@
 
 
 ## Flask 실습 환경 구성
+- Rest api 라이브러리 설치
 
+pip install flask_restx
 
 
 
 ### Host -> docker로 파일 전송 방법
 전송할 파일  컨테이너명:저장할 파일 경로
 docker cp alldb.dmp ContainerID:/alldb.dmp
+
+
+Reference:
+- https://restfulapi.net/http-methods/  (REST API 참조)

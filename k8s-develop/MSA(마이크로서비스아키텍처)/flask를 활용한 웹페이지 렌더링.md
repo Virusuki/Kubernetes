@@ -10,3 +10,10 @@
 
 
 ## Flask 실습 환경 구성
+
+
+
+
+####
+전송할 파일  컨테이너명:저장할 파일 경로
+docker cp alldb.dmp ContainerID:/alldb.dmp

@@ -41,7 +41,7 @@
        - 자동차를 검색
        - 자동차 엔진이나 옵션, 소개글 등 조회
        
-
+<img src="https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/MSA(%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)/img/MSA%EA%B8%B0%EB%B3%B8%EC%84%A4%EA%B3%84.PNG" width="900px" height="490px" title="px(픽셀) 크기 설정" alt="MSA 설계 예"></img><br/>
 
 
   

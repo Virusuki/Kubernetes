@@ -12,7 +12,10 @@
 ## Flask 실습 환경 구성
 - Rest api 라이브러리 설치
 
+```
 pip install flask_restx
+```
+
 
 
 

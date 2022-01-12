@@ -14,6 +14,6 @@
 
 
 
-####
+### Host -> docker로 파일 전송 방법
 전송할 파일  컨테이너명:저장할 파일 경로
 docker cp alldb.dmp ContainerID:/alldb.dmp

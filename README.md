@@ -42,5 +42,8 @@
   - [[MSA] 소개](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/MSA(%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)/MSA%20%EC%86%8C%EA%B0%9C.md)
   - [[MSA] REST API 기본 설계](https://github.com/Virusuki/Kubernetes/blob/main/k8s-develop/MSA(%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)/REST%20API%20%EA%B8%B0%EB%B3%B8.md)
 
+- ### MSA (마이크로서비스 아키텍처) 프로젝트
+  - [[MSA] Rest API 및 flask 기반 영화 정보 제공 프로젝트](https://github.com/Virusuki/Flask-MSA_Movie_project)
+
 - ### :books: Certificate
   - [CKA(Certified Kubernetes Administrator)](https://github.com/Virusuki/Kubernetes/blob/main/CKA/CKA.md)

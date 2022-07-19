@@ -46,7 +46,7 @@ vi install-kubectl.sh # 아래의 스크립트 ctl+c & ctl+v
 
 chmod 755 install-kubectl.sh
 
-'''
+```
 #!/usr/bin/env bash
 ## INFO: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management
 
@@ -68,6 +68,7 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 
 # Install kubectl
 sudo apt-get update && sudo apt-get install -y kubectl
+```
 ===============================================================================================================================================
 
 ### 용어
